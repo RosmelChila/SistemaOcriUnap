@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +29,7 @@ Route::middleware([
 
     //para vistas sin controlador
     Route::view('/soporte', 'administrador.soporte')->name('soporte');
-    Route::view('/usuarios', 'administrador.usuarios')->name('usuarios');
+    Route::get('/usuarios',[UsuariosController::class,'index'])->name('usuarios');
 
     //controlador solo para prueba
     Route::view('/agregar', 'administrador.convenio.agregar')->name('agregar');
