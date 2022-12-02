@@ -32,15 +32,22 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+                        @php
+                            $i=1;
+                        @endphp
+                        @foreach ($users as $user)
+
                         <tr class="text-gray-700 dark:text-gray-400">
                             <td class="px-2 py-2 text-xs">
-                                1
+                                @php
+                                    echo $i;
+                                @endphp
                             </td>
                             <td class="px-2 py-2 text-xs">
-                                Lorem, ipsum dolor sit am
+                                {{$user->name}}
                             </td>
                             <td class="px-2 py-2 text-xs">
-                                Lorem
+                                {{$user->email}}
                             </td>
                             <td class="px-3 py-3 flex justify-center">
                                 <div class="flex items-center space-x-4 text-sm">
@@ -76,6 +83,10 @@
                                 </div>
                             </td>
                         </tr>
+                        @php
+                            $i++;
+                        @endphp
+                        @endforeach
                     </tbody>
                 </table>
             </div>

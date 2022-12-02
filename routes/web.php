@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,13 +24,11 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
     //para vistas sin controlador
     Route::view('/soporte', 'administrador.soporte')->name('soporte');
-    Route::view('/usuarios', 'administrador.usuarios')->name('usuarios');
+    Route::get('/usuarios',[UsuariosController::class,'index'])->name('usuarios');
 
     //controlador solo para prueba
     Route::view('/agregar', 'administrador.convenio.agregar')->name('agregar');
