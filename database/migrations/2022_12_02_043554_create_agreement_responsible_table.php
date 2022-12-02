@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('countries', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->unique();
-            $table->timestamps();
+        Schema::create('agreement_responsible', function (Blueprint $table) {
+            $table->unsignedBigInteger('agreement_id');
+            $table->unsignedBigInteger('responsible_id');
+
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('countries');
+        Schema::dropIfExists('agreement_responsible');
     }
 };

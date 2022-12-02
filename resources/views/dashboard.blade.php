@@ -16,7 +16,7 @@
                         Total De Convenios
                     </p>
                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                        131
+                        {{$total}}
                         {{-- {{$total}} --}}
                     </p>
                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
@@ -37,7 +37,7 @@
                         Convenios Internacionales
                     </p>
                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                        12
+                        {{$international}}
                         {{-- {{$international}} --}}
                     </p>
                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
@@ -59,7 +59,7 @@
                         Convenios Nacionales
                     </p>
                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                        12
+                        {{$national}}
                         {{-- {{ $national }} --}}
                     </p>
                 </div>
@@ -77,7 +77,7 @@
                         Convenios Locales
                     </p>
                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                        1
+                        {{$local}}
                         {{-- {{ $local }} --}}
                     </p>
                 </div>
