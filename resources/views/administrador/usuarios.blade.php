@@ -32,10 +32,16 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+                        @php
+                            $i=1;
+                        @endphp
                         @foreach ($users as $user)
+
                         <tr class="text-gray-700 dark:text-gray-400">
                             <td class="px-2 py-2 text-xs">
-                                1
+                                @php
+                                    echo $i;
+                                @endphp
                             </td>
                             <td class="px-2 py-2 text-xs">
                                 {{$user->name}}
@@ -77,6 +83,9 @@
                                 </div>
                             </td>
                         </tr>
+                        @php
+                            $i++;
+                        @endphp
                         @endforeach
                     </tbody>
                 </table>
