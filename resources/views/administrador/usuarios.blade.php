@@ -2,14 +2,15 @@
 
     {{-- cuadro de usuarios es responsibe ahhh jajaj--}}
     <div class="grid grid-rows-1 gap-4 justify-center md:grid-cols-4">
+        @foreach ($users as $user)
         {{-- para foto y datos de usuario --}}
         <div class="md:basis-1/3 mx-4 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
             <div class="flex space-x-4">
                 {{-- esta imagen cambia aletriamente icono si no logras filtrar img eso no mas queda --}}
                 <img alt="" src="https://source.unsplash.com/100x100/?portrait" class="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500">
                 <div class="flex flex-col space-y-1">
-                    <a rel="noopener noreferrer" href="#" class="text-sm font-semibold">Ariel</a>
-                    <span class="text-xs dark:text-gray-400">admin@gmal.com</span>
+                    <a rel="noopener noreferrer" href="#" class="text-sm font-semibold">{{$user->name}}</a>
+                    <span class="text-xs dark:text-gray-400">{{$user->email}}</span>
                 </div>
             </div>
             {{-- botones para eliminar y editar --}}
@@ -34,8 +35,9 @@
                 </div>
             </div>
         </div>
-
+        @endforeach
       </div>
+    
 </x-app-layout>
 
 
