@@ -1,176 +1,142 @@
 <x-app-layout>
-    <div class="container grid grid-cols-2 gap-4 mx-auto px-6">
-        <div class="flex justify-start">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-              </svg>
-              <span class="px-5">Convenios locales</span>
-        </div>
-
-        <div class="container grid grid-cols-6 gap-4 p-4">
-            <div class="min-w-0-4 bg-white rounded-lg shadow-xs dark:bg-gray-900 py-4">
-                <span class="px-5 text-center">Regiones</span>
-                <span class="px-5 text-center text-sky-200">--------------- ></span>
-                <table class="w-full whitespace-no-wrap">
-                    <thead>
-                        {{-- <tr
-                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                            <th class=""></th>
-                        </tr> --}}
-                    </thead>
-                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
-
-                        <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-3 flex justify-center">
-                                <a href="" class="hover:bg-gray-800 py-1 px-10 rounded-full"><p class="font-semibold">PERU</p></a>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-
-            {{-- para las tablas --}}
-            <div class="container grid px-6 mx-auto col-span-5 ">
-                <div class="w-full overflow-hidden rounded-lg shadow-xs">
-                    <div class="w-full overflow-x-auto">
-                        <table class="table-fixed ">
-                            <thead>
-                                <tr
-                                    class=" text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-900">
-                                    <th class="px-2 py-2">N°</th>
-                                    <th class="px-2 py-2 w-1/3">TÍTULO</th>
-                                    <th class="px-2 py-2 w-1/5">RESOLUCIÓN</th>
-                                    <th class="px-2 py-2 w-1/6">ESTADO</th>
-                                    <th class="px-2 py-2 w-1/6">EXPIRACIÓN</th>
-                                    <th class="px-2 py-2 w-1/6">ACCIONES</th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
-                                <tr class="text-gray-700 dark:text-gray-400">
-                                    <td class="px-2 py-2 text-xs">
-                                        1
-                                    </td>
-                                    <td class="px-2 py-2 text-xs">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis officia excepturi saepe,
-                                        delectus quis ipsam cum modi dicta neque laudantium sint optio laboriosam, dolor,
-                                        eligendi quos minima dignissimos id earum.
-                                    </td>
-                                    <td class="px-2 py-2 text-xs">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde fugit hic tempora nobis
-                                        quos magnam quaerat aliquid voluptas. Quas velit beatae incidunt nisi ut qui sint
-                                        commodi possimus, praesentium aut.
-                                    </td>
-                                    <td class="px-2 py-2 text-xs">
-                                        <div class="flex items-stretch px-10 ">
-                                        <button class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-indigo-500 shadow-lg shadow-indigo-500/50 text-gray-100">
-                                            Por vencer
-                                        </button></div>
-                                    </td>
-                                    <td class="px-3 py-3 text-xs">
-                                        27/12/2300
-                                    <td class="px-3 py-3">
-                                        <div class="flex items-center space-x-4 text-sm">
-                                            <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                                                aria-label="Edit">
-                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path
-                                                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
-                                                    </path>
-                                                </svg>
-                                            </button>
-                                            <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                                                aria-label="Delete">
-                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd"
-                                                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                                                        clip-rule="evenodd"></path>
-                                                </svg>
-                                            </button>
-                                            <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                                                aria-label="Delete">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                    fill="currentColor" class="w-5 h-5">
-                                                    <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
-                                                    <path fill-rule="evenodd"
-                                                        d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                                                        clip-rule="evenodd" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    {{-- para paginación --}}
-                    <div
-                        class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-900">
-                        <span class="flex items-center col-span-3">
-                            Paginas 21-30 of 100
-                        </span>
-                        <span class="col-span-2"></span>
-                        <!-- Pagination -->
-                        <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
-                            <nav aria-label="Table navigation">
-                                <ul class="inline-flex items-center">
-                                    <li>
-                                        <button
-                                            class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-sky"
-                                            aria-label="Previous">
-                                            <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                                    clip-rule="evenodd" fill-rule="evenodd"></path>
-                                            </svg>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-sky">
-                                            1
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-sky">
-                                            2
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button
-                                            class="px-3 py-1 text-white transition-colors duration-150 bg-sky-600 border border-r-0 border-sky-600 rounded-md focus:outline-none focus:shadow-outline-sky">
-                                            3
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-sky">
-                                            4
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button
-                                            class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-sky"
-                                            aria-label="Next">
-                                            <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                    clip-rule="evenodd" fill-rule="evenodd"></path>
-                                            </svg>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+<!-- component -->
+<link
+	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+	rel="stylesheet">
+<div class="flex items-center justify-center min-h-screen bg-gray-900">
+	<div class="col-span-12">
+		<div class="overflow-auto lg:overflow-visible ">
+			<table class="table text-gray-400 border-separate space-y-6 text-sm">
+				<thead class="bg-gray-800 text-gray-500">
+					<tr>
+						<th class="p-3">Brand</th>
+						<th class="p-3 text-left">Category</th>
+						<th class="p-3 text-left">Price</th>
+						<th class="p-3 text-left">Status</th>
+						<th class="p-3 text-left">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="bg-gray-800">
+						<td class="p-3">
+							<div class="flex align-items-center">
+								<img class="rounded-full h-12 w-12  object-cover" src="https://images.unsplash.com/photo-1613588718956-c2e80305bf61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80" alt="unsplash image">
+								<div class="ml-3">
+									<div class="">Appple</div>
+									<div class="text-gray-500">mail@rgmail.com</div>
+								</div>
+							</div>
+						</td>
+						<td class="p-3">
+							Technology
+						</td>
+						<td class="p-3 font-bold">
+							200.00$
+						</td>
+						<td class="p-3">
+							<span class="bg-green-400 text-gray-50 rounded-md px-2">available</span>
+						</td>
+						<td class="p-3 ">
+							<a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
+								<i class="material-icons-outlined text-base">visibility</i>
+							</a>
+							<a href="#" class="text-gray-400 hover:text-gray-100  mx-2">
+								<i class="material-icons-outlined text-base">edit</i>
+							</a>
+							<a href="#" class="text-gray-400 hover:text-gray-100  ml-2">
+								<i class="material-icons-round text-base">delete_outline</i>
+							</a>
+						</td>
+					</tr>
+					<tr class="bg-gray-800">
+						<td class="p-3">
+							<div class="flex align-items-center">
+								<img class="rounded-full h-12 w-12   object-cover" src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="unsplash image">
+								<div class="ml-3">
+									<div class="">Realme</div>
+									<div class="text-gray-500">mail@rgmail.com</div>
+								</div>
+							</div>
+						</td>
+						<td class="p-3">
+							Technology
+						</td>
+						<td class="p-3 font-bold">
+							200.00$
+						</td>
+						<td class="p-3">
+							<span class="bg-red-400 text-gray-50 rounded-md px-2">no stock</span>
+						</td>
+						<td class="p-3">
+							<a href="#" class="text-gray-400 hover:text-gray-100  mr-2">
+								<i class="material-icons-outlined text-base">visibility</i>
+							</a>
+							<a href="#" class="text-gray-400 hover:text-gray-100 mx-2">
+								<i class="material-icons-outlined text-base">edit</i>
+							</a>
+							<a href="#" class="text-gray-400 hover:text-gray-100 ml-2">
+								<i class="material-icons-round text-base">delete_outline</i>
+							</a>
+						</td>
+					</tr>
+					<tr class="bg-gray-800">
+						<td class="p-3">
+							<div class="flex align-items-center">
+								<img class="rounded-full h-12 w-12   object-cover" src="https://images.unsplash.com/photo-1600856209923-34372e319a5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2135&q=80" alt="unsplash image">
+								<div class="ml-3">
+									<div class="">Samsung</div>
+									<div class="text-gray-500">mail@rgmail.com</div>
+								</div>
+							</div>
+						</td>
+						<td class="p-3">
+							Technology
+						</td>
+						<td class="p-3 font-bold">
+							200.00$
+						</td>
+						<td class="p-3">
+							<span class="bg-yellow-400 text-gray-50  rounded-md px-2">start sale</span>
+						</td>
+						<td class="p-3">
+							<a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
+								<i class="material-icons-outlined text-base">visibility</i>
+							</a>
+							<a href="#" class="text-gray-400 hover:text-gray-100 mx-2">
+								<i class="material-icons-outlined text-base">edit</i>
+							</a>
+							<a href="#" class="text-gray-400 hover:text-gray-100 ml-2">
+								<i class="material-icons-round text-base">delete_outline</i>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
+<style>
+	.table {
+		border-spacing: 0 15px;
+	}
 
+	i {
+		font-size: 1rem !important;
+	}
+
+	.table tr {
+		border-radius: 20px;
+	}
+
+	tr td:nth-child(n+5),
+	tr th:nth-child(n+5) {
+		border-radius: 0 .625rem .625rem 0;
+	}
+
+	tr td:nth-child(1),
+	tr th:nth-child(1) {
+		border-radius: .625rem 0 0 .625rem;
+	}
+</style>
 
 </x-app-layout>
