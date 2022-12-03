@@ -1,5 +1,6 @@
 <x-app-layout>
-    {{-- cuadro de usuarios es responsibe ahhh--}}
+
+    {{-- cuadro de usuarios es responsibe ahhh jajaj--}}
     <div class="grid grid-rows-1 gap-4 justify-center md:grid-cols-4">
         {{-- para foto y datos de usuario --}}
         <div class="md:basis-1/3 mx-4 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
