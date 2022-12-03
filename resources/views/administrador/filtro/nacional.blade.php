@@ -52,10 +52,12 @@
                                         commodi possimus, praesentium aut.
                                     </td>
                                     <td class="px-2 py-2 text-xs">
-                                        <div class="flex items-stretch px-10 ">
-                                        <button class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-indigo-500 shadow-lg shadow-indigo-500/50 text-gray-100">
-                                            Por vencer
-                                        </button></div>
+                                        <div class="grid justify-items-center px-10 ">
+                                            <button
+                                                class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
+                                                Activo
+                                            </button>
+                                        </div>
                                     </td>
                                     <td class="px-3 py-3 text-xs text-center">
                                         27/12/2300
