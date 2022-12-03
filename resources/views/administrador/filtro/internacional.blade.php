@@ -131,7 +131,7 @@
                                             </button>
                                         </div>
                                     </td>
-                                    <td class="px-3 py-3 text-xs">
+                                    <td class="px-3 py-3 text-xs text-center">
                                         27/12/2300
                                     <td class="px-3 py-3">
                                         <div class="flex items-center space-x-4 text-sm">
