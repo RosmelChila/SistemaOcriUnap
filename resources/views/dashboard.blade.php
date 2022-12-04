@@ -121,30 +121,27 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+                        @foreach ($expirate as $expire)
                         <tr class="text-gray-700 dark:text-gray-400">
                             <td class="px-2 py-2 text-xs">
                                 1
                             </td>
                             <td class="px-2 py-2 text-xs">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis officia excepturi saepe,
-                                delectus quis ipsam cum modi dicta neque laudantium sint optio laboriosam, dolor,
-                                eligendi quos minima dignissimos id earum.
+                                {{$expire->title}}
                             </td>
                             <td class="px-2 py-2 text-xs">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde fugit hic tempora nobis
-                                quos magnam quaerat aliquid voluptas. Quas velit beatae incidunt nisi ut qui sint
-                                commodi possimus, praesentium aut.
+                                {{$expire->resolution}}
                             </td>
                             <td class="px-2 py-2 text-xs">
                                 <div class="grid justify-items-center px-10 ">
                                     <button
                                         class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
-                                        Activo
+                                        Por Vencer
                                     </button>
                                 </div>
                             </td>
                             <td class="px-3 py-3 text-xs text-center">
-                                27/12/2300
+                                {{$expire->expiration}}
                             <td class="px-3 py-3 text-center">
                                 <div class="space-x-4 text-sm">
                                     <button
@@ -161,6 +158,7 @@
                                 </div>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
