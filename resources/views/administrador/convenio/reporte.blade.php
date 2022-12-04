@@ -11,9 +11,9 @@
         <div class="grid grid-rows-1 gap-4 justify-center md:grid-cols-7 ">
 
             <div
-                class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+                class="md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-center">
                 <span class="text-xs font-semibold tracking-wide">RESPONSABLE</span>
-                <div class="form-control">
+                <div class="form-control px-2 grid justify-items-start">
                     @foreach ($responsibles as $responsible)
                         <label class="cursor-pointer label">
                             <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-warning" />
@@ -23,27 +23,27 @@
                 </div>
             </div>
             <div
-                class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+                class="md:basis-1/3 max-w-sm  py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-center">
                 <span class="text-xs font-semibold tracking-wide ">LOCALIZACIÓN</span>
-                <div class="form-control">
+                <div class="form-control px-2 grid justify-items-start">
                     <label class="cursor-pointer label">
                         <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                        <span class="label-text px-2">INTERNACIONAL</span>
+                        <span class="label-text px-2 ">INTERNACIONAL</span>
                     </label>
                     <label class="cursor-pointer label">
                         <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                        <span class="label-text px-2">NACIONAL</span>
+                        <span class="label-text px-2 ">NACIONAL</span>
                     </label>
                     <label class="cursor-pointer label">
                         <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                        <span class="label-text px-2">LOCALIZACIÓN</span>
+                        <span class="label-text px-2 ">LOCAL</span>
                     </label>
                 </div>
             </div>
             <div
-                class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+                class="md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-center">
                 <span class="text-xs font-semibold tracking-wide">PAIS</span>
-                <div class="form-control">
+                <div class="form-control px-2 justify-items-start">
                     @foreach ($countries as $country)
                         <label class="cursor-pointer label">
                             <input type="checkbox" class="checkbox checkbox-xs checkbox-success" />
@@ -53,12 +53,12 @@
                 </div>
             </div>
             <div
-                class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+                class="md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-center">
                 <span class="text-xs font-semibold tracking-wide">SECTOR</span>
-                <div class="form-control">
+                <div class="form-control px-2 justify-items-start">
                     <label class="cursor-pointer label">
                         <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                        <span class="label-text px-2">PUBLICO</span>
+                        <span class="label-text px-2  ">PUBLICO</span>
                     </label>
                     <label class="cursor-pointer label">
                         <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
@@ -67,39 +67,39 @@
                 </div>
             </div>
             <div
-                class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+                class="md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-center">
                 <span class="text-xs font-semibold tracking-wide">COBERTURA</span>
-                <div class="form-control">
+                <div class="form-control px-2 justify-self-start ">
                     @foreach ($coverages as $coverage)
                         <label class="cursor-pointer label">
                             <input type="checkbox" class="checkbox checkbox-xs checkbox-accent" />
-                            <span class="label-text px-2">{{ $coverage->name }}</span>
+                            <span class="label-text px-2 " >{{ $coverage->name }}</span>
                         </label>
                     @endforeach
                 </div>
             </div>
             <div
-                class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+                class="md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-center">
                 <span class="text-xs font-semibold tracking-wide">CONVENIO CON:</span>
-                <div class="form-control">
+                <div class="form-control px-2 justify-self-start ">
                     @foreach ($organizations as $organization)
                         <label class="cursor-pointer label">
                             <input type="checkbox" class="checkbox checkbox-xs checkbox-secondary" />
-                            <span class="label-text px-2">{{ $organization->name }}</span>
+                            <span class="label-text px-2 ">{{ $organization->name }}</span>
                         </label>
                     @endforeach
                 </div>
             </div>
             <div
-                class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                class="md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-center">
                 <span class="text-xs font-semibold tracking-wide">FECHAS</span>
                 <label class="input-group input-group-vertical">
-                    <span class="text-sm">desde</span>
-                    <input type="date" class="input input-bordered input-xs" />
+                    <span class="text-sm mx-2">desde</span>
+                    <input type="date" class="input input-bordered input-xs mx-2" />
                 </label>
                 <label class="input-group input-group-vertical">
-                    <span class="text-sm">hasta</span>
-                    <input type="date" class="input input-bordered input-xs" />
+                    <span class="text-sm mx-2">hasta</span>
+                    <input type="date" class="input input-bordered input-xs mx-2" />
                 </label>
             </div>
 
