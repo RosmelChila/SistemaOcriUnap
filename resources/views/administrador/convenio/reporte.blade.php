@@ -1,12 +1,65 @@
 <x-app-layout>
-    <div class="container grid grid-cols-2 gap-4 mx-auto px-6">
-        <div class="flex justify-start">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 13.5l3 3m0 0l3-3m-3 3v-6m1.06-4.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
-              </svg>
-              <span class="px-5">Reporte de convenio</span>
+    <div
+        class="grid grid-rows-1 gap-4 justify-center md:grid-cols-7 ">
+        <div class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+            <span class="text-xs font-semibold tracking-wide">RESPONSABLE</span>
+            <div class="form-control">
+                <label class="cursor-pointer label">
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <span class="label-text px-2">FIMEES</span>
+                </label>
+            </div>
+        </div>
+        <div class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+            <span class="text-xs font-semibold tracking-wide ">LOCALIZACIÓN</span>
+            <div class="form-control">
+                <label class="cursor-pointer label">
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <span class="label-text px-2">Internacional</span>
+                </label>
+            </div>
+        </div>
+        <div class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+            <span class="text-xs font-semibold tracking-wide">PAIS</span>
+            <div class="form-control">
+                <label class="cursor-pointer label">
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <span class="label-text px-2">Argentina</span>
+                </label>
+            </div>
+        </div>
+        <div class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+            <span class="text-xs font-semibold tracking-wide">SECTOR</span>
+
+        </div>
+        <div class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+            <span class="text-xs font-semibold tracking-wide">COBERTURA</span>
+            <div class="form-control">
+                <label class="cursor-pointer label">
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <span class="label-text px-2">Marco</span>
+                </label>
+            </div>
+        </div>
+        <div class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
+            <span class="text-xs font-semibold tracking-wide">CONVENIO CON:</span>
+            <div class="form-control">
+                <label class="cursor-pointer label">
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <span class="label-text px-2">Hospitales</span>
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="cursor-pointer label">
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <span class="label-text px-2">Mineras</span>
+                </label>
+            </div>
+        </div>
+        <div class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+            <span class="text-xs font-semibold tracking-wide">FECHAS</span>
         </div>
 
-
+    </div>
 
 </x-app-layout>
