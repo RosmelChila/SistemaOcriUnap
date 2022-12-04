@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,9 +34,10 @@ Route::middleware([
     //controlador solo para prueba
     Route::view('/agregar', 'administrador.convenio.agregar')->name('agregar');
     Route::view('/reporte', 'administrador.convenio.reporte')->name('reporte');
-    Route::view('/internacional', 'administrador.filtro.internacional')->name('internacional');
-    Route::view('/nacional', 'administrador.filtro.nacional')->name('nacional');
-    Route::view('/local', 'administrador.filtro.local')->name('local');
+    Route::get('/internacional',[LocationController::class,'international'])->name('internacional');
+    Route::get('/internacional/{country}',[LocationController::class,'countries'])->name('internacional.pais');
+    Route::get('/nacional',[LocationController::class,'national'])->name('nacional');
+    Route::get('/local',[LocationController::class,'local'])->name('local');
 
 
 });
