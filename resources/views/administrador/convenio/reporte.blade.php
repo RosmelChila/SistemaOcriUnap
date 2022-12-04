@@ -13,10 +13,12 @@
                 class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
                 <span class="text-xs font-semibold tracking-wide">RESPONSABLE</span>
                 <div class="form-control">
+                    @foreach ($responsibles as $responsible)
                     <label class="cursor-pointer label">
-                        <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-warning" />
-                        <span class="label-text px-2">FIMEES</span>
+                        <input type="checkbox" class="checkbox checkbox-xs checkbox-warning" />
+                        <span class="label-text px-2">{{$responsible->name}}</span>
                     </label>
+                    @endforeach
                 </div>
             </div>
             <div
@@ -24,8 +26,16 @@
                 <span class="text-xs font-semibold tracking-wide ">LOCALIZACIÓN</span>
                 <div class="form-control">
                     <label class="cursor-pointer label">
-                        <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-checkbox-info" />
-                        <span class="label-text px-2">Internacional</span>
+                        <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
+                        <span class="label-text px-2">INTERNACIONAL</span>
+                    </label>
+                    <label class="cursor-pointer label">
+                        <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
+                        <span class="label-text px-2">NACIONAL</span>
+                    </label>
+                    <label class="cursor-pointer label">
+                        <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
+                        <span class="label-text px-2">LOCALIZACIÓN</span>
                     </label>
                 </div>
             </div>
@@ -33,10 +43,12 @@
                 class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
                 <span class="text-xs font-semibold tracking-wide">PAIS</span>
                 <div class="form-control">
+                    @foreach ($countries as $country)
                     <label class="cursor-pointer label">
-                        <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-success" />
-                        <span class="label-text px-2">Argentina</span>
+                        <input type="checkbox" class="checkbox checkbox-xs checkbox-success" />
+                        <span class="label-text px-2">{{$country->name}}</span>
                     </label>
+                    @endforeach
                 </div>
             </div>
             <div
@@ -48,26 +60,24 @@
                 class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
                 <span class="text-xs font-semibold tracking-wide">COBERTURA</span>
                 <div class="form-control">
+                    @foreach ($coverages as $coverage)
                     <label class="cursor-pointer label">
-                        <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-accent" />
-                        <span class="label-text px-2">Marco</span>
+                        <input type="checkbox" class="checkbox checkbox-xs checkbox-accent" />
+                        <span class="label-text px-2">{{$coverage->name}}</span>
                     </label>
+                    @endforeach
                 </div>
             </div>
             <div
                 class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
                 <span class="text-xs font-semibold tracking-wide">CONVENIO CON:</span>
                 <div class="form-control">
+                @foreach ($organizations as $organization)
                     <label class="cursor-pointer label">
-                        <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-secondary" />
-                        <span class="label-text px-2">Hospitales y Centros de Salud</span>
+                        <input type="checkbox" class="checkbox checkbox-xs checkbox-secondary" />
+                        <span class="label-text px-2">{{$organization->name}}</span>
                     </label>
-                </div>
-                <div class="form-control ch">
-                    <label class="cursor-pointer label ">
-                        <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-secondary" />
-                        <span class="label-text px-2">Mineras</span>
-                    </label>
+                @endforeach
                 </div>
             </div>
             <div
