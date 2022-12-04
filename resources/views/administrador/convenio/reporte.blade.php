@@ -5,7 +5,7 @@
             <span class="text-xs font-semibold tracking-wide">RESPONSABLE</span>
             <div class="form-control">
                 <label class="cursor-pointer label">
-                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-warning" />
                     <span class="label-text px-2">FIMEES</span>
                 </label>
             </div>
@@ -14,7 +14,7 @@
             <span class="text-xs font-semibold tracking-wide ">LOCALIZACIÓN</span>
             <div class="form-control">
                 <label class="cursor-pointer label">
-                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-checkbox-info" />
                     <span class="label-text px-2">Internacional</span>
                 </label>
             </div>
@@ -23,7 +23,7 @@
             <span class="text-xs font-semibold tracking-wide">PAIS</span>
             <div class="form-control">
                 <label class="cursor-pointer label">
-                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-success" />
                     <span class="label-text px-2">Argentina</span>
                 </label>
             </div>
@@ -36,7 +36,7 @@
             <span class="text-xs font-semibold tracking-wide">COBERTURA</span>
             <div class="form-control">
                 <label class="cursor-pointer label">
-                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-accent" />
                     <span class="label-text px-2">Marco</span>
                 </label>
             </div>
@@ -45,13 +45,13 @@
             <span class="text-xs font-semibold tracking-wide">CONVENIO CON:</span>
             <div class="form-control">
                 <label class="cursor-pointer label">
-                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-secondary" />
                     <span class="label-text px-2">Hospitales</span>
                 </label>
             </div>
-            <div class="form-control">
-                <label class="cursor-pointer label">
-                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+            <div class="form-control ch">
+                <label class="cursor-pointer label ">
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-secondary" />
                     <span class="label-text px-2">Mineras</span>
                 </label>
             </div>
