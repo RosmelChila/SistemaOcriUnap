@@ -46,7 +46,7 @@
             <div class="form-control">
                 <label class="cursor-pointer label">
                     <input type="checkbox" checked="checked" class="checkbox checkbox-xs checkbox-secondary" />
-                    <span class="label-text px-2">Hospitales</span>
+                    <span class="label-text px-2">Hospitales y Centros de Salud</span>
                 </label>
             </div>
             <div class="form-control ch">
