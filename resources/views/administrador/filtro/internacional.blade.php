@@ -5,8 +5,9 @@
                 <div class="overflow-y-auto py-4 px-3 bg-gray-50 dark:bg-gray-900 rounded-lg grid justify-center">
                     {{-- esta lista es para filtro de paises --}}
                     <ul class="space-y-2">
+                        @foreach ($countries as $country)
                         <li class="">
-                            <a href="#"
+                            <a href="{{route('internacional.pais',$country->name)}}"
                                 class="flex items-center p-2 text-base font-normal text-gray-500 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-sky-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                     class="w-5 h-5">
@@ -15,9 +16,10 @@
                                     <path
                                         d="M11.603 7.963a.75.75 0 00-.977 1.138 2.5 2.5 0 01.142 3.667l-3 3a2.5 2.5 0 01-3.536-3.536l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a4 4 0 105.656 5.656l3-3a4 4 0 00-.225-5.865z" />
                                 </svg>
-                                <span class="ml-1 text-center">ARGENTINA</span>
+                                <span class="ml-1 text-center">{{$country->name}}</span>
                             </a>
                         </li>
+                        @endforeach
                     </ul>
                 </div>
             </aside>
@@ -41,34 +43,30 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+                                @foreach ($agreements as $agreement)
+                                @php $i=1; @endphp
                                 <tr class="text-gray-700 dark:text-gray-400">
                                     <td class="px-2 py-2 text-xs">
-                                        1
+                                        @php echo $i; @endphp
                                     </td>
                                     <td class="px-2 py-2 text-xs">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis officia
-                                        excepturi saepe,
-                                        delectus quis ipsam cum modi dicta neque laudantium sint optio laboriosam,
-                                        dolor,
-                                        eligendi quos minima dignissimos id earum.
+                                        {{$agreement->title}}
                                     </td>
                                     <td class="px-2 py-2 text-xs">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde fugit hic tempora
-                                        nobis
-                                        quos magnam quaerat aliquid voluptas. Quas velit beatae incidunt nisi ut qui
-                                        sint
-                                        commodi possimus, praesentium aut.
+                                        {{$agreement->resolution}}
                                     </td>
                                     <td class="px-2 py-2 text-xs">
+                                        {{-- Estados --}}
                                         <div class="grid justify-items-center px-10 ">
                                             <button
                                                 class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
                                                 Activo
                                             </button>
                                         </div>
+                                        {{-- Estados Fin --}}
                                     </td>
                                     <td class="px-3 py-3 text-xs text-center">
-                                        27/12/2300
+                                        {{$agreement->expiration}}
                                     <td class="px-3 py-3">
                                         <div class="flex items-center space-x-4 text-sm">
                                             <button
@@ -105,6 +103,8 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php $i++; @endphp
+                                @endforeach
                                 <tr class="text-gray-700 dark:text-gray-400">
                                     <td class="px-2 py-2 text-xs">
                                         1

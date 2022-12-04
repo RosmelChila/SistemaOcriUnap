@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     use HasFactory;
+    protected $fillable=['name'];
+    public function agreements(){
+        return $this->hasMany(Agreement::class);
+    }
+    public function regions(){
+        return $this->hasMany(Region::class);
+    }
 }
