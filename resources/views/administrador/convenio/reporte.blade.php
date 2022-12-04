@@ -54,7 +54,16 @@
             <div
                 class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
                 <span class="text-xs font-semibold tracking-wide">SECTOR</span>
-
+                <div class="form-control">
+                <label class="cursor-pointer label">
+                    <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
+                    <span class="label-text px-2">PUBLICO</span>
+                </label>
+                <label class="cursor-pointer label">
+                    <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
+                    <span class="label-text px-2">PRIVADO</span>
+                </label>
+                </div>
             </div>
             <div
                 class="md:basis-1/3 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-start">
