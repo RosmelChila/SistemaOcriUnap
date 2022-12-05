@@ -24,7 +24,7 @@ class UpdateAgreementRequest extends FormRequest
     public function rules()
     {
         return [
-            'resolution'=>'required',
+            'resolution'=>'required|unique:agreements,resolution,'.$this->route('agreement')->id,
             'title'=>'required',
             'objetive'=>'required',
             'approbation'=>'required',

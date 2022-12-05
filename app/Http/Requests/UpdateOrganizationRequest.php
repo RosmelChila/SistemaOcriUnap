@@ -24,7 +24,7 @@ class UpdateOrganizationRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required'
+            'name'=>'required|unique:organizations,name,'.$this->route('organization')->id
         ];
     }
 }

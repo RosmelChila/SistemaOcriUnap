@@ -24,8 +24,8 @@ class UpdateResponsibleRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required',
-            'description'=>'required'
+            'name'=>'required|unique:responsibles,name,'.$this->route('responsible')->id,
+            'description'=>'required|unique:responsibles,description,'.$this->route('responsible')->id
         ];
     }
 }

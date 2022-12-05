@@ -24,7 +24,7 @@ class StoreOrganizationRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required'
+            'name'=>'required|unique:organizations,name'
         ];
     }
 }

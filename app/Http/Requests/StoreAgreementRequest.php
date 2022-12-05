@@ -24,7 +24,7 @@ class StoreAgreementRequest extends FormRequest
     public function rules()
     {
         return [
-            'resolution'=>'required',
+            'resolution'=>'required|unique:agreements,resolution',
             'title'=>'required',
             'objetive'=>'required',
             'approbation'=>'required',

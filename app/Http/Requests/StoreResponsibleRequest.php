@@ -24,8 +24,8 @@ class StoreResponsibleRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required',
-            'description'=>'required'
+            'name'=>'required|unique:responsibles,name',
+            'description'=>'required|unique:responsibles,description'
         ];
     }
 }

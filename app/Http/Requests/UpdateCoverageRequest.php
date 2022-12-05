@@ -24,7 +24,7 @@ class UpdateCoverageRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required'
+            'name'=>'required|unique:coverages,name,'.$this->route('country')->id
         ];
     }
 }

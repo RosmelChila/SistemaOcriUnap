@@ -24,7 +24,7 @@ class StoreCoverageRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required'
+            'name'=>'required|unique:coverages,name'
         ];
     }
 }
