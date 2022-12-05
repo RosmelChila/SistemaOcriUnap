@@ -27,7 +27,7 @@
             </div>
             <div>
                 <div
-                    class="h-full h-full md:basis-1/3 max-w-sm  py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class="h-full md:basis-1/3 max-w-sm  py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">LOCALIZACIÓN</span>
                     <div class="form-control px-2 grid justify-items-start">
                         <label class="cursor-pointer label">
@@ -47,7 +47,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class= md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">PAIS</span>
                     <div class="form-control px-2 grid justify-items-start">
                         @foreach ($countries as $country)
@@ -61,7 +61,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class= md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">SECTOR</span>
                     <div class="form-control px-2 grid justify-items-start">
                         <label class="cursor-pointer label">
@@ -77,7 +77,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class= md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">COBERTURA</span>
                     <div class="form-control px-2 grid justify-items-start ">
                         @foreach ($coverages as $coverage)
@@ -91,7 +91,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class= md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">CONVENIO CON:</span>
                     <div class="form-control px-2 grid justify-items-start ">
                         @foreach ($organizations as $organization)
@@ -105,7 +105,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-center">
+                    class= md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-center">
                     <span class="text-xs font-semibold tracking-wide">FECHAS</span>
                     <label class="input-group input-group-vertical">
                         <span class="text-sm mx-2 grid justify-items-center bg-gray-200 dark:bg-gray-800">desde</span>

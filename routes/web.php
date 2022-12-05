@@ -40,5 +40,9 @@ Route::middleware([
     Route::get('/nacional',[LocationController::class,'national'])->name('nacional');
     Route::get('/local',[LocationController::class,'local'])->name('local');
 
+    //para ver convenios edicion
+    Route::view('/editar', 'administrador.convenio.editar')->name('editar');
+    Route::view('/ver', 'administrador.convenio.verconvenio')->name('ver');
+
 
 });
