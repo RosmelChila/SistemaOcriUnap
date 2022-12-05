@@ -77,10 +77,11 @@
                           <div class="modal" id="my-modal-2">
                             <div class="modal-box bg-white dark:bg-gray-800">
                                 <h3 class="font-bold text-lg">Agregar Pais</h3>
-                                <input type="text" value="Pais" placeholder="RESOLUCION 123-XX"
+                                <input type="text" placeholder="RESOLUCION 123-XX"
                                 class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
                                 <div class="modal-action">
                                 <a href="" class="btn-success px-4 rounded-lg">AGREGAR</a>
+                                
                                 </div>
                             </div>
                           </div>
