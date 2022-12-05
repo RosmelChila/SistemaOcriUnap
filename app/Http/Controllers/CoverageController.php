@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Coverage;
 use App\Http\Requests\StoreCoverageRequest;
 use App\Http\Requests\UpdateCoverageRequest;
+use App\Http\Resources\CoverageResource;
 
 class CoverageController extends Controller
 {
@@ -15,7 +16,7 @@ class CoverageController extends Controller
      */
     public function index()
     {
-        //
+        return CoverageResource::collection(Coverage::all());
     }
 
     /**
@@ -36,7 +37,7 @@ class CoverageController extends Controller
      */
     public function store(StoreCoverageRequest $request)
     {
-        //
+        return new CoverageResource(Coverage::create($request->all()));
     }
 
     /**
@@ -47,7 +48,7 @@ class CoverageController extends Controller
      */
     public function show(Coverage $coverage)
     {
-        //
+        return new CoverageResource($coverage);
     }
 
     /**
@@ -70,7 +71,8 @@ class CoverageController extends Controller
      */
     public function update(UpdateCoverageRequest $request, Coverage $coverage)
     {
-        //
+        $coverage->update($request->all());
+        return new CoverageResource($coverage);
     }
 
     /**
@@ -81,6 +83,6 @@ class CoverageController extends Controller
      */
     public function destroy(Coverage $coverage)
     {
-        //
+        return new CoverageResource($coverage);
     }
 }

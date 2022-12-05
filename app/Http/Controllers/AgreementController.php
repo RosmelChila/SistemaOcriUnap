@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Agreement;
 use App\Http\Requests\StoreAgreementRequest;
 use App\Http\Requests\UpdateAgreementRequest;
+use App\Http\Resources\AgreementResource;
+use Carbon\Carbon;
 
 class AgreementController extends Controller
 {
@@ -15,7 +17,7 @@ class AgreementController extends Controller
      */
     public function index()
     {
-        //
+        return AgreementResource::collection(Agreement::all());
     }
 
     /**
@@ -36,7 +38,13 @@ class AgreementController extends Controller
      */
     public function store(StoreAgreementRequest $request)
     {
-        //
+        $date=Carbon::parse($request['subscription']);
+        $endDate = $date->addYears($request['years']);
+        $endDate = $date->addMonths($request['months']);
+        $endDate = $date->addDay($request['days']);
+        $agreement=Agreement::create($request->all()+['expiration'=>$endDate->toDateString()]);
+        $agreement->responsibles()->sync($request->responsibles);
+        return new Agreement($agreement);
     }
 
     /**
@@ -47,7 +55,7 @@ class AgreementController extends Controller
      */
     public function show(Agreement $agreement)
     {
-        //
+        return new AgreementResource($agreement);
     }
 
     /**
@@ -70,7 +78,9 @@ class AgreementController extends Controller
      */
     public function update(UpdateAgreementRequest $request, Agreement $agreement)
     {
-        //
+        $agreement->update($request->all());
+        $agreement->responsibles()->sync($request->responsibles);
+        return new AgreementResource($agreement);
     }
 
     /**
@@ -81,6 +91,7 @@ class AgreementController extends Controller
      */
     public function destroy(Agreement $agreement)
     {
-        //
+        $agreement->delete();
+        return new AgreementResource($agreement);
     }
 }

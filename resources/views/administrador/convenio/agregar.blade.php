@@ -46,7 +46,7 @@
                         <label class="label">
                             <span class="label-text text-gray-900 dark:text-gray-100">Cobertura</span>
                         </label>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select value="{{old('id')}}" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>..</option>
                             @foreach ($coverages as $id=>$name)
                             <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
@@ -57,9 +57,11 @@
                         <label class="label">
                             <span class="label-text text-gray-900 dark:text-gray-100">Convenio con:</span>
                         </label>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select value="{{old('id')}}" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>..</option>
-                            <option>Ministerios</option>
+                            @foreach ($organizations as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
 
@@ -75,17 +77,19 @@
                           <div class="modal" id="my-modal-2">
                             <div class="modal-box bg-white dark:bg-gray-800">
                                 <h3 class="font-bold text-lg">Agregar Pais</h3>
-                                <input type="text" placeholder="RESOLUCION 123-XX"
+                                <input type="text" value="Pais" placeholder="RESOLUCION 123-XX"
                                 class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
                                 <div class="modal-action">
-                                <a href="#" class="btn-success px-4 rounded-lg">AGREGAR</a>
+                                <a href="" class="btn-success px-4 rounded-lg">AGREGAR</a>
                                 </div>
                             </div>
-                            </div>
+                          </div>
                             {{-- fin de modal --}}
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select value="{{old('id')}}"  class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
-                            <option>Peru</option>
+                            @foreach ($countries as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="px-4 grid content-center">
@@ -97,9 +101,11 @@
                             </svg> <label class="label">
                                 <span class="label-text text-gray-900 dark:text-gray-100">Región</span>
                             </label></button>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select value="{{old('id')}}" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
-                            <option>Puno</option>
+                            @foreach ($regions as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="px-4 grid content-center">
@@ -111,9 +117,11 @@
                             </svg> <label class="label">
                                 <span class="label-text text-gray-900 dark:text-gray-100">provincia</span>
                             </label></button>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select value="{{old('id')}}" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
-                            <option>Melgar</option>
+                            @foreach ($provinces as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="px-4 grid content-center">
@@ -125,9 +133,11 @@
                             </svg> <label class="label">
                                 <span class="label-text text-gray-900 dark:text-gray-100">Distrito</span>
                             </label></button>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select value="{{old('id')}}" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
-                            <option>ayaviri</option>
+                            @foreach ($districts as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="px-4 grid content-center">
@@ -195,10 +205,14 @@
                     <div x-show="show"
                         class=" px-4 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-200 grid justify-items-start">
                         <div class="form-control px-2 grid grid-cols-10">
-                            <label class="cursor-pointer label">
-                                <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                                <span class="label-text px-2  ">FIMMES</span>
-                            </label>
+                            @if (sizeof($responsibles)>0)
+                                @foreach ($responsibles as $id=>$name)
+                                <label class="cursor-pointer label">
+                                    <input type="checkbox" value="{{$id}}" class="checkbox checkbox-xs checkbox-checkbox-info" />
+                                    <span class="label-text px-2  ">{{$name}}</span>
+                                </label>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>

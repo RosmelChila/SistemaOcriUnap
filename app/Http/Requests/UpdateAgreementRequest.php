@@ -24,7 +24,24 @@ class UpdateAgreementRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'resolution'=>'required',
+            'title'=>'required',
+            'objetive'=>'required',
+            'approbation'=>'required',
+            'subscription'=>'required',
+            'years'=>'required',
+            'months'=>'required',
+            'days'=>'required',
+            // 'expiration'=>'required',
+            'sector'=>'required',
+            'organization'=>'required',
+            'location'=>'required',
+            'country_id'=>'required',
+            'region_id'=>'required',
+            'province_id'=>'required',
+            'coverage_id'=>'required',
+            'type_id'=>'required',
+            'path'=>'required'
         ];
     }
 }

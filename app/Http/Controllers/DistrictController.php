@@ -1,10 +1,11 @@
 <?php
-
+//decano de FIMEES O FINES
 namespace App\Http\Controllers;
 
 use App\Models\District;
 use App\Http\Requests\StoreDistrictRequest;
 use App\Http\Requests\UpdateDistrictRequest;
+use App\Http\Resources\DistrictResource;
 
 class DistrictController extends Controller
 {
@@ -15,7 +16,7 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        //
+        return DistrictResource::collection(District::all());
     }
 
     /**
@@ -36,7 +37,7 @@ class DistrictController extends Controller
      */
     public function store(StoreDistrictRequest $request)
     {
-        //
+        return new DistrictResource(District::create($request->all()));
     }
 
     /**
@@ -47,7 +48,7 @@ class DistrictController extends Controller
      */
     public function show(District $district)
     {
-        //
+        return new DistrictResource($district);
     }
 
     /**
@@ -70,7 +71,8 @@ class DistrictController extends Controller
      */
     public function update(UpdateDistrictRequest $request, District $district)
     {
-        //
+        $district->update($request->all());
+        return new DistrictResource($district);
     }
 
     /**
@@ -81,6 +83,7 @@ class DistrictController extends Controller
      */
     public function destroy(District $district)
     {
-        //
+        $district->delete();
+        return new DistrictResource($district);
     }
 }

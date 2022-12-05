@@ -24,7 +24,7 @@ class UpdateOrganizationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required'
         ];
     }
 }

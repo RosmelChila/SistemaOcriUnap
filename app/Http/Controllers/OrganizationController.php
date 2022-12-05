@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Organization;
 use App\Http\Requests\StoreOrganizationRequest;
 use App\Http\Requests\UpdateOrganizationRequest;
+use App\Http\Resources\OrganizationResource;
 
 class OrganizationController extends Controller
 {
@@ -15,7 +16,7 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        //
+        return OrganizationResource::collection(Organization::all());
     }
 
     /**
@@ -36,7 +37,7 @@ class OrganizationController extends Controller
      */
     public function store(StoreOrganizationRequest $request)
     {
-        //
+        return new OrganizationResource(Organization::create($request->all()));
     }
 
     /**
@@ -47,7 +48,7 @@ class OrganizationController extends Controller
      */
     public function show(Organization $organization)
     {
-        //
+        return new OrganizationResource($organization);
     }
 
     /**
@@ -70,7 +71,8 @@ class OrganizationController extends Controller
      */
     public function update(UpdateOrganizationRequest $request, Organization $organization)
     {
-        //
+        $organization->update($request->all());
+        return new OrganizationResource($organization);
     }
 
     /**
@@ -81,6 +83,7 @@ class OrganizationController extends Controller
      */
     public function destroy(Organization $organization)
     {
-        //
+        $organization->delete();
+        return new OrganizationResource($organization);
     }
 }

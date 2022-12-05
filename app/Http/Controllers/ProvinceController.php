@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Province;
 use App\Http\Requests\StoreProvinceRequest;
 use App\Http\Requests\UpdateProvinceRequest;
+use App\Http\Resources\ProvinceResource;
 
 class ProvinceController extends Controller
 {
@@ -15,7 +16,7 @@ class ProvinceController extends Controller
      */
     public function index()
     {
-        //
+        return ProvinceResource::collection(Province::all());
     }
 
     /**
@@ -36,7 +37,7 @@ class ProvinceController extends Controller
      */
     public function store(StoreProvinceRequest $request)
     {
-        //
+        return new ProvinceResource(Province::create($request->all()));
     }
 
     /**
@@ -47,7 +48,7 @@ class ProvinceController extends Controller
      */
     public function show(Province $province)
     {
-        //
+        return new ProvinceResource($province);
     }
 
     /**
@@ -70,7 +71,8 @@ class ProvinceController extends Controller
      */
     public function update(UpdateProvinceRequest $request, Province $province)
     {
-        //
+        $province->update($request->all());
+        return new ProvinceResource($province);
     }
 
     /**
@@ -81,6 +83,7 @@ class ProvinceController extends Controller
      */
     public function destroy(Province $province)
     {
-        //
+        $province->delete();
+        return new ProvinceResource($province);
     }
 }

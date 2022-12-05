@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Country;
 use App\Http\Requests\StoreCountryRequest;
 use App\Http\Requests\UpdateCountryRequest;
+use App\Http\Resources\CountryResource;
+use Illuminate\Http\Request;
 
 class CountryController extends Controller
 {
@@ -15,7 +17,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        //
+        return CountryResource::collection(Country::all());
     }
 
     /**
@@ -36,7 +38,7 @@ class CountryController extends Controller
      */
     public function store(StoreCountryRequest $request)
     {
-        //
+        return new CountryResource(Country::create($request->all()));
     }
 
     /**
@@ -47,7 +49,7 @@ class CountryController extends Controller
      */
     public function show(Country $country)
     {
-        //
+        return new CountryResource($country);
     }
 
     /**
@@ -70,7 +72,8 @@ class CountryController extends Controller
      */
     public function update(UpdateCountryRequest $request, Country $country)
     {
-        //
+        $country->update($request->all());
+        return new CountryResource($country);
     }
 
     /**
@@ -81,6 +84,7 @@ class CountryController extends Controller
      */
     public function destroy(Country $country)
     {
-        //
+        $country->delete();
+        return new CountryResource($country);
     }
 }

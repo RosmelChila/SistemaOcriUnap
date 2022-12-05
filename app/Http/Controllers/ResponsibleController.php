@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Responsible;
 use App\Http\Requests\StoreResponsibleRequest;
 use App\Http\Requests\UpdateResponsibleRequest;
+use App\Http\Resources\ResponsibleResource;
 
 class ResponsibleController extends Controller
 {
@@ -15,7 +16,7 @@ class ResponsibleController extends Controller
      */
     public function index()
     {
-        //
+        return ResponsibleResource::collection(Responsible::all());
     }
 
     /**
@@ -36,7 +37,7 @@ class ResponsibleController extends Controller
      */
     public function store(StoreResponsibleRequest $request)
     {
-        //
+        return new ResponsibleResource(Responsible::create($request->all()));
     }
 
     /**
@@ -47,7 +48,7 @@ class ResponsibleController extends Controller
      */
     public function show(Responsible $responsible)
     {
-        //
+        return new ResponsibleResource($responsible);
     }
 
     /**
@@ -70,7 +71,8 @@ class ResponsibleController extends Controller
      */
     public function update(UpdateResponsibleRequest $request, Responsible $responsible)
     {
-        //
+        $responsible->update($request->all());
+        return new ResponsibleResource($responsible);
     }
 
     /**
@@ -81,6 +83,7 @@ class ResponsibleController extends Controller
      */
     public function destroy(Responsible $responsible)
     {
-        //
+        $responsible->delete();
+        return new ResponsibleResource($responsible);
     }
 }
