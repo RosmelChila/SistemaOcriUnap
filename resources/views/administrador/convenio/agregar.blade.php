@@ -48,7 +48,9 @@
                         </label>
                         <select class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>..</option>
-                            <option>Convenio marco</option>
+                            @foreach ($coverages as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="px-4 grid content-center col-span-2">

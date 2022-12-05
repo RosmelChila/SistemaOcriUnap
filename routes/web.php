@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgregarController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ReporteController;
@@ -33,7 +34,7 @@ Route::middleware([
     Route::get('/usuarios',[UsuariosController::class,'index'])->name('usuarios');
 
     //controlador solo para prueba
-    Route::view('/agregar', 'administrador.convenio.agregar')->name('agregar');
+    Route::get('/agregar', [AgregarController::class,'index'])->name('agregar');
     Route::get('/reporte',[ReporteController::class,'reporte'])->name('reporte');
     Route::get('/internacional',[LocationController::class,'international'])->name('internacional');
     Route::get('/internacional/{country}',[LocationController::class,'countries'])->name('internacional.pais');
