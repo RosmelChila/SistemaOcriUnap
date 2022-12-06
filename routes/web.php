@@ -36,6 +36,7 @@ Route::middleware([
     //controlador solo para prueba
     Route::get('/agregar', [AgregarController::class,'index'])->name('agregar');
     Route::get('/reporte',[ReporteController::class,'reporte'])->name('reporte');
+    Route::get('/reportes',[ReporteController::class,'consulta'])->name('consultar');
     Route::get('/internacional',[LocationController::class,'international'])->name('internacional');
     Route::get('/internacional/{pais}',[LocationController::class,'countries'])->name('internacional.pais');
 

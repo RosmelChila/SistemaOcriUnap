@@ -9,17 +9,17 @@
     </div>
 
 
-    <form action="">
+    <form method="GET" action="{{route('consultar')}}">
         <div class="grid sm:grid-cols-1 w-full  gap-1 md:grid-cols-7 ">
             <div>
                 <div
                     class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">RESPONSABLE</span>
                     <div class="form-control px-2 grid justify-items-start">
-                        @foreach ($responsibles as $responsible)
+                        @foreach ($responsibles as $id => $name)
                             <label class="cursor-pointer label">
-                                <input type="checkbox" class="checkbox checkbox-xs checkbox-warning" />
-                                <span class="label-text px-2">{{ $responsible->name }}</span>
+                                <input type="checkbox" value="{{ $name }}" name="responsibles[]"{{ is_array(old('responsibles')) && in_array($id, old('responsibles')) ? 'checked' : '' }} class="checkbox checkbox-xs checkbox-warning" />
+                                <span class="label-text px-2">{{ $name }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -31,15 +31,15 @@
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">LOCALIZACIÓN</span>
                     <div class="form-control px-2 grid justify-items-start">
                         <label class="cursor-pointer label">
-                            <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
+                            <input type="checkbox" name="locations[]" value="INTERNACIONAL" class="checkbox checkbox-xs checkbox-checkbox-info" />
                             <span class="label-text px-2 ">INTERNACIONAL</span>
                         </label>
                         <label class="cursor-pointer label">
-                            <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
+                            <input type="checkbox" name="locations[]" value="NACIONAL" class="checkbox checkbox-xs checkbox-checkbox-info" />
                             <span class="label-text px-2 ">NACIONAL</span>
                         </label>
                         <label class="cursor-pointer label">
-                            <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
+                            <input type="checkbox" name="locations[]" value="LOCAL" class="checkbox checkbox-xs checkbox-checkbox-info" />
                             <span class="label-text px-2 ">LOCAL</span>
                         </label>
                     </div>
@@ -50,10 +50,10 @@
                     class= "h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">PAIS</span>
                     <div class="form-control px-2 grid justify-items-start">
-                        @foreach ($countries as $country)
+                        @foreach ($countries as $id => $name )
                             <label class="cursor-pointer label">
-                                <input type="checkbox" class="checkbox checkbox-xs checkbox-success" />
-                                <span class="label-text px-2">{{ $country->name }}</span>
+                                <input type="checkbox" name="countries[]" value="{{$name}}" class="checkbox checkbox-xs checkbox-success" />
+                                <span class="label-text px-2">{{ $name }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -65,11 +65,11 @@
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">SECTOR</span>
                     <div class="form-control px-2 grid justify-items-start">
                         <label class="cursor-pointer label">
-                            <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
+                            <input type="checkbox" name="sector[]" value="PUBLICO" class="checkbox checkbox-xs checkbox-checkbox-info" />
                             <span class="label-text px-2  ">PUBLICO</span>
                         </label>
                         <label class="cursor-pointer label">
-                            <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
+                            <input type="checkbox" name="sector[]" value="PRIVADO" class="checkbox checkbox-xs checkbox-checkbox-info" />
                             <span class="label-text px-2">PRIVADO</span>
                         </label>
                     </div>
@@ -80,10 +80,10 @@
                     class= " h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">COBERTURA</span>
                     <div class="form-control px-2 grid justify-items-start ">
-                        @foreach ($coverages as $coverage)
+                        @foreach ($coverages as $id => $name)
                             <label class="cursor-pointer label">
-                                <input type="checkbox" class="checkbox checkbox-xs checkbox-accent" />
-                                <span class="label-text px-2 ">{{ $coverage->name }}</span>
+                                <input type="checkbox" name="coverage[]" value="{{$name}}" class="checkbox checkbox-xs checkbox-accent" />
+                                <span class="label-text px-2 ">{{ $name }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -94,10 +94,10 @@
                     class= "h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">CONVENIO CON:</span>
                     <div class="form-control px-2 grid justify-items-start ">
-                        @foreach ($organizations as $organization)
+                        @foreach ($organizations as $id => $name)
                             <label class="cursor-pointer label">
-                                <input type="checkbox" class="checkbox checkbox-xs checkbox-secondary" />
-                                <span class="label-text px-2 ">{{ $organization->name }}</span>
+                                <input type="checkbox" name="organizations[]" value="{{$name}}" class="checkbox checkbox-xs checkbox-secondary" />
+                                <span class="label-text px-2 ">{{ $name }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -109,12 +109,12 @@
                     <span class="text-xs font-semibold tracking-wide">FECHAS</span>
                     <label class="input-group input-group-vertical">
                         <span class="text-sm mx-2 grid justify-items-center bg-gray-200 dark:bg-gray-800">desde</span>
-                        <input type="date"
+                        <input type="date" name="date1"
                             class="input input-bordered input-xs mx-2 bg-gray-100 dark:bg-gray-900  " />
                     </label>
                     <label class="input-group input-group-vertical">
                         <span class="text-sm mx-2 grid justify-items-center bg-gray-200 dark:bg-gray-800">hasta</span>
-                        <input type="date"
+                        <input type="date" name="date2"
                             class="input input-bordered input-xs mx-2 bg-gray-100 dark:bg-gray-900 " />
                     </label>
                 </div>
