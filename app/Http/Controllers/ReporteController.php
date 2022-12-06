@@ -80,6 +80,12 @@ class ReporteController extends Controller
         if($request->sector){
             $agreements->whereIn('sector',$request->sector);
         }
+        if($request->date1 && $request->date1!='null'){
+            $agreements->where('subscription','>=',$request->date1);
+        }
+        if($request->date2 && $request->date2!='null'){
+            $agreements->where('subscription','<=',$request->date2);
+        }
         return $agreements->get();
     }
 }
