@@ -1,9 +1,6 @@
 <x-app-layout>
-    <div class="container" id="ejecutar">
-        @livewire('datos.crearpais')
-   </div>
-    <form>
-        <button for="ejecutar">hola</button>
+    <form method="POST" action="{{'api/agreement'}}" class="">
+        @csrf
         <div class="grid grid-cols-1 gap-3">
             {{-- para datos 1 --}}
             <div class="grid grid-rows-2 grid-flow-col dark:bg-gray-900 rounded-lg py-4">
@@ -11,21 +8,21 @@
                     <label class="label">
                         <span class="label-text text-gray-900 dark:text-gray-100">Resolución</span>
                     </label>
-                    <input type="text" placeholder="RESOLUCION 123-XX"
+                    <input type="text" name="resolution" placeholder="RESOLUCION 123-XX"
                         class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
                 </div>
                 <div class="px-4  grid content-center row-span-1 col-span-1">
                     <label class="label">
                         <span class="label-text text-gray-900 dark:text-gray-100">Título</span>
                     </label>
-                    <input type="text" placeholder="CONVENIO ......"
+                    <input type="text" name="title" placeholder="CONVENIO ......"
                         class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
                 </div>
                 <div class=" px-4 row-span-2">
                     <label class="label">
                         <span class="label-text text-gray-900 dark:text-gray-100">Objetivos</span>
                     </label>
-                    <textarea class="textarea textarea-success w-full bg-white dark:bg-gray-900 dark:textarea h-24" placeholder="OBJETIVOS"></textarea>
+                    <textarea name="objetive" class="textarea textarea-success w-full bg-white dark:bg-gray-900 dark:textarea h-24" placeholder="OBJETIVOS"></textarea>
                 </div>
             </div>
             {{--para los dotos 2--}}
@@ -35,14 +32,14 @@
                         <label class="label">
                             <span class="label-text text-gray-900 dark:text-gray-100">Fecha de suscripción</span>
                         </label>
-                        <input type="date" placeholder=""
+                        <input name="subscription" type="date" placeholder=""
                             class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-gray-800 w-full" />
                     </div>
                     <div class="px-4 grid content-center col-span-2">
                         <label class="label">
                             <span class="label-text text-gray-900 dark:text-gray-100">Fecha aprobación C.U.</span>
                         </label>
-                        <input type="date" placeholder=""
+                        <input name="approbation" type="date" placeholder=""
                             class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-gray-800 w-full" />
                     </div>
 
@@ -50,18 +47,22 @@
                         <label class="label">
                             <span class="label-text text-gray-900 dark:text-gray-100">Cobertura</span>
                         </label>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select name="coverage_id" value="{{old('id')}}" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>..</option>
-                            <option>Convenio marco</option>
+                            @foreach ($coverages as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="px-4 grid content-center col-span-2">
                         <label class="label">
                             <span class="label-text text-gray-900 dark:text-gray-100">Convenio con:</span>
                         </label>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select name="organization_id" value="{{old('id')}}" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>..</option>
-                            <option>Ministerios</option>
+                            @foreach ($organizations as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
 
@@ -72,20 +73,23 @@
                                  </svg><span class="label-text text-gray-900 dark:text-gray-100">Pais</span>
                             </a>
                             {{-- contenido del modal --}}
-                          <div class="modal" id="my-modal-2">
+                          {{-- <div class="modal" id="my-modal-2">
                             <div class="modal-box bg-white dark:bg-gray-800">
                                 <h3 class="font-bold text-lg">Agregar Pais</h3>
                                 <input type="text" placeholder="RESOLUCION 123-XX"
                                 class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
                                 <div class="modal-action">
-                                <a href="#" class="btn-success px-4 rounded-lg">AGREGAR</a>
+                                <a href="" class="btn-success px-4 rounded-lg">AGREGAR</a>
+
                                 </div>
                             </div>
-                            </div>
+                          </div> --}}
                             {{-- fin de modal --}}
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select name="country_id" value="{{old('id')}}"  class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
-                            <option>Peru</option>
+                            @foreach ($countries as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="px-4 grid content-center">
@@ -97,9 +101,11 @@
                             </svg> <label class="label">
                                 <span class="label-text text-gray-900 dark:text-gray-100">Región</span>
                             </label></button>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select name="region_id" value="{{old('id')}}" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
-                            <option>Puno</option>
+                            @foreach ($regions as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="px-4 grid content-center">
@@ -111,9 +117,11 @@
                             </svg> <label class="label">
                                 <span class="label-text text-gray-900 dark:text-gray-100">provincia</span>
                             </label></button>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select name="province_id" value="{{old('id')}}" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
-                            <option>Melgar</option>
+                            @foreach ($provinces as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="px-4 grid content-center">
@@ -125,9 +133,11 @@
                             </svg> <label class="label">
                                 <span class="label-text text-gray-900 dark:text-gray-100">Distrito</span>
                             </label></button>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select name="district_id" value="{{old('id')}}" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
-                            <option>ayaviri</option>
+                            @foreach ($districts as $id=>$name)
+                            <option value="{{$id}}"{{old('id')==$id ?'selected':''}}>{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="px-4 grid content-center">
@@ -139,7 +149,7 @@
                             </svg> <label class="label">
                                 <span class="label-text text-gray-900 dark:text-gray-100">Localización</span>
                             </label></button>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select name="location" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
                             <option>INTERNACIONAL</option>
                             <option>NACIONAL</option>
@@ -155,7 +165,7 @@
                             </svg> <label class="label">
                                 <span class="label-text text-gray-900 dark:text-gray-100">Sector</span>
                             </label></button>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select name="sector" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
                             <option>PUBLICO</option>
                             <option>PRIVADO</option>
@@ -170,7 +180,7 @@
                             </svg> <label class="label">
                                 <span class="label-text text-gray-900 dark:text-gray-100">Organización</span>
                             </label></button>
-                        <select class="select select-success select-sm bg-white dark:select dark:select-sm">
+                        <select name="organization" class="select select-success select-sm bg-white dark:select dark:select-sm">
                             <option disabled selected>...</option>
                             <option>UNIVERSIDAD</option>
                             <option>EMPRESA</option>
@@ -179,6 +189,28 @@
                     <div class="px-4 grid content-center">
                     </div>
                 </div>
+            </div>
+            {{-- vigencia --}}
+            <div class="px-4  grid content-center row-span-1 col-span-1">
+                <label class="label">
+                    <span class="label-text text-gray-900 dark:text-gray-100">AÑOS</span>
+                </label>
+                <input type="number" name="years" value="0"
+                    class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
+            </div>
+            <div class="px-4  grid content-center row-span-1 col-span-1">
+                <label class="label">
+                    <span class="label-text text-gray-900 dark:text-gray-100">MESES</span>
+                </label>
+                <input type="number" name="months" value="0"
+                    class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
+            </div>
+            <div class="px-4  grid content-center row-span-1 col-span-1">
+                <label class="label">
+                    <span class="label-text text-gray-900 dark:text-gray-100">DIAS</span>
+                </label>
+                <input type="number" name="days" value="0"
+                    class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
             </div>
             {{-- para los responsables --}}
             <div class="p-4 dark:bg-gray-900 rounded-lg py-4">
@@ -195,10 +227,14 @@
                     <div x-show="show"
                         class=" px-4 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-200 grid justify-items-start">
                         <div class="form-control px-2 grid grid-cols-10">
-                            <label class="cursor-pointer label">
-                                <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                                <span class="label-text px-2  ">FIMMES</span>
-                            </label>
+                            @if (sizeof($responsibles)>0)
+                                @foreach ($responsibles as $id=>$name)
+                                <label class="cursor-pointer label">
+                                    <input type="checkbox" value="{{$id}}" class="checkbox checkbox-xs checkbox-checkbox-info" name="responsibles[]"{{(is_array(old('responsibles'))&& in_array($id,old('responsibles'))) ? 'checked':''}}/>
+                                    <span class="label-text px-2  ">{{$name}}</span>
+                                </label>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -207,7 +243,7 @@
             {{-- para cargar el pdf --}}
             <div class="grid content-center p-4 dark:bg-gray-900 rounded-lg py-4">
                 <span class="label-text text-gray-900 dark:text-gray-100 py-2 ">Convenio Escaneado (PDF)</span>
-                <input type="file"
+                <input name="path" type="file"
                     class="file-input file-input-xs file-input-bordered file-input-accent w-full max-w-xs bg-gray-200 dark:bg-gray-900" />
             </div>
         </div>

@@ -13,7 +13,7 @@ class StoreAgreementRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,24 @@ class StoreAgreementRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'resolution'=>'required|unique:agreements,resolution',
+            'title'=>'required',
+            'objetive'=>'required',
+            'approbation'=>'required',
+            'subscription'=>'required',
+            'years'=>'required',
+            'months'=>'required',
+            'days'=>'required',
+            // 'expiration'=>'required',
+            'sector'=>'required',
+            'organization'=>'required',
+            'location'=>'required',
+            'country_id'=>'required',
+            'region_id'=>'required',
+            'province_id'=>'required',
+            'coverage_id'=>'required',
+            'organization_id'=>'required',
+            'path'=>'required'
         ];
     }
 }

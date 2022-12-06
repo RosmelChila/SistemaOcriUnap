@@ -13,7 +13,7 @@ class UpdateResponsibleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class UpdateResponsibleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required|unique:responsibles,name,'.$this->route('responsible')->id,
+            'description'=>'required|unique:responsibles,description,'.$this->route('responsible')->id
         ];
     }
 }

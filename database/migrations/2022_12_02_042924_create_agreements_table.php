@@ -24,6 +24,8 @@ return new class extends Migration
             $table->integer('months');
             $table->integer('days');
             $table->date('expiration');
+            $table->date('notification');
+            $table->string('status');
             $table->string('sector');
             $table->string('organization');
             $table->string('location');
