@@ -50,14 +50,16 @@ class AgreementController extends Controller
                 $status='VIGENTE';
                 $notification=$date->addYears('1000');
             }
-            if($request->years>0 && $request->years<=3){
+            if($request->years>=0 && $request->years<=3){
                 $notification=Carbon::parse($expiration)->subMonths(6)->toDateString();
                 $fechanotificacion=Carbon::parse($notification);
                 $diferencia=$fechanotificacion->diffInMonths($today);
-                if($diferencia>6){
-                    $status='VIGENTE';
-                }if($diferencia<=6){
+
+                if($today>=$fechanotificacion){
                     $status='POR VENCER';
+                }
+                if($today<$fechanotificacion){
+                    $status='VIGENTE';
                 }
             }
             if($request->years>3){
@@ -89,7 +91,7 @@ class AgreementController extends Controller
         }
         $agreement=Agreement::create($request->all()+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
         $agreement->responsibles()->sync($request->responsibles);
-        return new Agreement($agreement);
+        return new Agreement($agreement->get());
     }
 
     /**
