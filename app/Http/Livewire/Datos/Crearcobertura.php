@@ -2,24 +2,21 @@
 
 namespace App\Http\Livewire\Datos;
 
-use App\Models\Country;
+use App\Models\Coverage;
 use Livewire\Component;
 
-class Crearpais extends Component
+class Crearcobertura extends Component
 {
     public $open = false;
     public $name;
 
     public function save(){
-        Country::create([
+        Coverage::create([
             'name' => $this->name
         ]);
     }
     public function render()
     {
-
-        // return view('livewire.datos.crearpais');
-        return view('components.crearpais');
-
+        return view('livewire.datos.crearcobertura');
     }
 }

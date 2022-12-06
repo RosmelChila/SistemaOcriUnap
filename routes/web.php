@@ -45,5 +45,7 @@ Route::middleware([
     Route::view('/editar', 'administrador.convenio.editar')->name('editar');
     Route::view('/ver', 'administrador.convenio.verconvenio')->name('ver');
 
-    
+    //agregar etiquetas
+    Route::get('/etiquetas', App\Http\Livewire\Datos\Etiquetas::class)->name("etiquetas");  // crear
+
 });
