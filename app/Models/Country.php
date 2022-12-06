@@ -10,9 +10,9 @@ class Country extends Model
     use HasFactory;
     protected $fillable=['name'];
     public function agreements(){
-        return $this->hasMany(Agreement::class);
+        return $this->hasMany(Agreement::class,'id','country_id');
     }
     public function regions(){
-        return $this->hasMany(Region::class);
+        return $this->hasMany(Region::class,'id','country_id');
     }
 }

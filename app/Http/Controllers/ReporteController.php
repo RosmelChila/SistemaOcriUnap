@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agreement;
 use App\Models\Country;
 use App\Models\Coverage;
 use App\Models\Organization;
@@ -22,5 +23,9 @@ class ReporteController extends Controller
             'organizations'=>$organizations
         ];
         return view('administrador.convenio.reporte',$dates);
+    }
+    public function ver(Request $request){
+        $agreement=Agreement::where('id',$request->id)->get();
+        return view('administrador.convenio.verconvenio',['agreement'=>$agreement]);
     }
 }

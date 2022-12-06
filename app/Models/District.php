@@ -10,9 +10,9 @@ class District extends Model
     use HasFactory;
     protected $fillable=['name'];
     public function agreements(){
-        return $this->hasMany(Agreement::class);
+        return $this->hasMany(Agreement::class,'id','district_id');
     }
     public function provinces(){
-        return $this->belongsTo(Province::class);
+        return $this->belongsTo(Province::class,'province_id','id');
     }
 }

@@ -133,18 +133,44 @@
                                 {{$expire->resolution}}
                             </td>
                             <td class="px-2 py-2 text-xs">
-                                <div class="grid justify-items-center px-10 ">
-                                    <button
-                                        class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
-                                        Por Vencer
-                                    </button>
-                                </div>
+                                <?php
+                                if($expire->status=='VIGENTE'){
+                            ?>
+                                    <div class="grid justify-items-center px-10 ">
+                                        <button
+                                           class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
+                                            Activo
+                                        </button>
+                                    </div>
+                            <?php
+                                }
+                                if($expire->status=='POR VENCER'){
+                            ?>
+                                    <div class="px-5 grid justify-items-center">
+                                        <button
+                                            class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-gray-100">
+                                                Por vencer
+                                        </button>
+                                    </div>
+                            <?php
+                                }
+                                if($expire->status=='VENCIDO'){  
+                            ?> 
+                                    <div class="grid justify-items-center px-10 ">
+                                        <button
+                                            class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-gray-500 shadow-lg shadow-gray-500/50 text-gray-100">
+                                                Vencido
+                                        </button>
+                                    </div>
+                            <?php
+                                }
+                            ?>
                             </td>
                             <td class="px-3 py-3 text-xs text-center">
                                 {{$expire->expiration}}
                             <td class="px-3 py-3 text-center">
                                 <div class="space-x-4 text-sm">
-                                    <button
+                                    <a href="{{route('ver.id',$expire->id)}}"
                                         class="px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                         aria-label="Delete">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -154,7 +180,7 @@
                                                 d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
                                                 clip-rule="evenodd" />
                                         </svg>
-                                    </button>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
