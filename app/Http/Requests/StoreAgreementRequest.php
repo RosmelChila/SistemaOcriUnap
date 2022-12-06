@@ -37,8 +37,8 @@ class StoreAgreementRequest extends FormRequest
             'organization'=>'required',
             'location'=>'required',
             'country_id'=>'required',
-            'region_id'=>'required',
-            'province_id'=>'required',
+            // 'region_id'=>'required',
+            // 'province_id'=>'required',
             'coverage_id'=>'required',
             'organization_id'=>'required',
             'path'=>'required'
