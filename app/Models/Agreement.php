@@ -27,7 +27,9 @@ class Agreement extends Model
         'coverage_id',
         'organization_id',
         'district_id',
-        'path'
+        'path',
+        'status',
+        'notification'
     ];
     public function countries(){
         return $this->belongsTo(Country::class);

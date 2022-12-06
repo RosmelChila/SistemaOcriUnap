@@ -1,5 +1,6 @@
 <x-app-layout>
     <form method="POST" action="{{'api/agreement'}}" class="">
+        @csrf
         <div class="grid grid-cols-1 gap-3">
             {{-- para datos 1 --}}
             <div class="grid grid-rows-2 grid-flow-col dark:bg-gray-900 rounded-lg py-4">
@@ -190,6 +191,28 @@
                     <div class="px-4 grid content-center">
                     </div>
                 </div>
+            </div>
+            {{-- vigencia --}}
+            <div class="px-4  grid content-center row-span-1 col-span-1">
+                <label class="label">
+                    <span class="label-text text-gray-900 dark:text-gray-100">AÑOS</span>
+                </label>
+                <input type="number" name="years" value="0"
+                    class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
+            </div>
+            <div class="px-4  grid content-center row-span-1 col-span-1">
+                <label class="label">
+                    <span class="label-text text-gray-900 dark:text-gray-100">MESES</span>
+                </label>
+                <input type="number" name="months" value="0"
+                    class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
+            </div>
+            <div class="px-4  grid content-center row-span-1 col-span-1">
+                <label class="label">
+                    <span class="label-text text-gray-900 dark:text-gray-100">DIAS</span>
+                </label>
+                <input type="number" name="days" value="0"
+                    class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
             </div>
             {{-- para los responsables --}}
             <div class="p-4 dark:bg-gray-900 rounded-lg py-4">
