@@ -39,19 +39,55 @@ class AgreementController extends Controller
     public function store(StoreAgreementRequest $request)
     {
         $date=Carbon::parse($request['subscription']);
+        $today=Carbon::now();
         $endDate = $date->addYears($request['years']);
         $endDate = $date->addMonths($request['months']);
         $endDate = $date->addDay($request['days']);
         $expiration=$endDate->toDateString();
-
-        // if($expiration >= $date){
-            
-        // }
-
-        // $notification=
-        // $status=
-
-        $agreement=Agreement::create($request->all()+['expiration'=>$expiration]);
+        //Si expiracion es mayor que hoy
+        if($endDate >= $today){        
+            if($request->years==0 && $request->months==0 && $request->days==0){
+                $status='VIGENTE';
+                $notification=$date->addYears('1000');
+            }
+            if($request->years>0 && $request->years<=3){
+                $notification=Carbon::parse($expiration)->subMonths(6)->toDateString();
+                $fechanotificacion=Carbon::parse($notification);
+                $diferencia=$fechanotificacion->diffInMonths($today);
+                if($diferencia>6){
+                    $status='VIGENTE';
+                }if($diferencia<=6){
+                    $status='POR VENCER';
+                }
+            }
+            if($request->years>3){
+                $notification=Carbon::parse($expiration)->subMonths(9)->toDateString();
+                $fechanotificacion=Carbon::parse($notification);
+                $diferencia=$fechanotificacion->diffInMonths($today);
+                if($diferencia>9){
+                    $status='VIGENTE';
+                }if($diferencia<=9){
+                    $status='POR VENCER';
+                }
+            }
+        }
+        //Si es Menor que hoy
+        else
+        {
+            if($request->years==0 && $request->months==0 && $request->days==0){
+                $status='VIGENTE';
+                $notification=$date->addYears('1000');
+            }
+            if($request->years>0 && $request->years<=3){
+                $notification=Carbon::parse($expiration)->subMonths(6)->toDateString();
+                $status='VENCIDO';
+            }
+            if($request->years>3){
+                $notification=Carbon::parse($expiration)->subMonths(9)->toDateString();
+                $status='VENCIDO';
+            }
+        }
+        $agreement=Agreement::create($request->all()+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
         $agreement->responsibles()->sync($request->responsibles);
         return new Agreement($agreement);
     }
