@@ -42,7 +42,16 @@ class AgreementController extends Controller
         $endDate = $date->addYears($request['years']);
         $endDate = $date->addMonths($request['months']);
         $endDate = $date->addDay($request['days']);
-        $agreement=Agreement::create($request->all()+['expiration'=>$endDate->toDateString()]);
+        $expiration=$endDate->toDateString();
+
+        // if($expiration >= $date){
+            
+        // }
+
+        // $notification=
+        // $status=
+
+        $agreement=Agreement::create($request->all()+['expiration'=>$expiration]);
         $agreement->responsibles()->sync($request->responsibles);
         return new Agreement($agreement);
     }
