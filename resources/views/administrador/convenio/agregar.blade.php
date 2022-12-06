@@ -1,5 +1,9 @@
 <x-app-layout>
-    <form action="" class="">
+    <div class="container" id="ejecutar">
+        @livewire('datos.crearpais')
+   </div>
+    <form>
+        <button for="ejecutar">hola</button>
         <div class="grid grid-cols-1 gap-3">
             {{-- para datos 1 --}}
             <div class="grid grid-rows-2 grid-flow-col dark:bg-gray-900 rounded-lg py-4">
@@ -60,8 +64,6 @@
                             <option>Ministerios</option>
                         </select>
                     </div>
-
-
 
                     <div class="px-4 grid content-center">
                         {{-- con modal --}}
@@ -220,4 +222,6 @@
             </div>
         </div>
     </form>
+
+
 </x-app-layout>
