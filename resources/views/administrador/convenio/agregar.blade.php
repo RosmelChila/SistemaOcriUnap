@@ -36,6 +36,7 @@
                         placeholder="OBJETIVOS"></textarea>
                 </div>
             </div>
+
             {{-- para los dotos 2 --}}
             <div>
                 <div class="grid grid-row md:grid-cols-4 dark:bg-gray-900 rounded-lg py-4">

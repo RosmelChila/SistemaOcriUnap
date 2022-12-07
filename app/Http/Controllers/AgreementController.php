@@ -43,9 +43,10 @@ class AgreementController extends Controller
         $endDate = $date->addYears($request['years']);
         $endDate = $date->addMonths($request['months']);
         $endDate = $date->addDay($request['days']);
+
         $expiration=$endDate->toDateString();
         //Si expiracion es mayor que hoy
-        if($endDate >= $today){        
+        if($endDate >= $today){
             if($request->years==0 && $request->months==0 && $request->days==0){
                 $status='VIGENTE';
                 $notification=$date->addYears('1000');

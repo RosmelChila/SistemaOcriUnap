@@ -28,8 +28,8 @@
                 class="flex max-w-lg mx-auto my-16 overflow-hidden bg-white rounded-lg lg:space-x-8 dark:bg-gray-900 lg:max-w-5xl">
 
                 <div class="items-center hidden lg:flex lg:w-1/2">
-                    <img src="\img\login-office.png"
-                        alt="">
+                    {{-- <img src="\img\login-office.png"
+                        alt=""> --}}
                 </div>
 
                 <div class="w-full px-6 py-8 md:px-8 lg:w-1/2 bg-gray-200 dark:bg-gray-900 ">
@@ -66,7 +66,7 @@
                         <div class="mt-4 bg-white"></div>
                         <div class="mt-8">
                             <button
-                                class=" bg-sky-400  hover:bg-sky-700 w-full px-4 py-2 tracking-wide text-white rounded-md bg-primary">
+                                class=" bg-sky-400  hover:bg-sky-700 w-full px-4 py-2 tracking-wide text-white rounded-md">
                                 {{ __('Ingresar') }}
                             </button>
                         </div>

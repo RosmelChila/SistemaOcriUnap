@@ -19,7 +19,7 @@
                         @foreach ($responsibles as $responsible)
                             <label class="cursor-pointer label">
                                 <input type="checkbox" class="checkbox checkbox-xs checkbox-warning" />
-                                <span class="label-text px-2">{{ $responsible->name }}</span>
+                                <span class="label-text px-2 text-gray-800 dark:text-gray-200">{{ $responsible->name }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -32,15 +32,15 @@
                     <div class="form-control px-2 grid justify-items-start">
                         <label class="cursor-pointer label">
                             <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                            <span class="label-text px-2 ">INTERNACIONAL</span>
+                            <span class="label-text px-2 text-gray-800 dark:text-gray-200 ">INTERNACIONAL</span>
                         </label>
                         <label class="cursor-pointer label">
                             <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                            <span class="label-text px-2 ">NACIONAL</span>
+                            <span class="label-text px-2  text-gray-800 dark:text-gray-200">NACIONAL</span>
                         </label>
                         <label class="cursor-pointer label">
                             <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                            <span class="label-text px-2 ">LOCAL</span>
+                            <span class="label-text px-2  text-gray-800 dark:text-gray-200">LOCAL</span>
                         </label>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                         @foreach ($countries as $country)
                             <label class="cursor-pointer label">
                                 <input type="checkbox" class="checkbox checkbox-xs checkbox-success" />
-                                <span class="label-text px-2">{{ $country->name }}</span>
+                                <span class="label-text px-2 text-gray-800 dark:text-gray-200">{{ $country->name }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -66,11 +66,11 @@
                     <div class="form-control px-2 grid justify-items-start">
                         <label class="cursor-pointer label">
                             <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                            <span class="label-text px-2  ">PUBLICO</span>
+                            <span class="label-text px-2  text-gray-800 dark:text-gray-200">PUBLICO</span>
                         </label>
                         <label class="cursor-pointer label">
                             <input type="checkbox"class="checkbox checkbox-xs checkbox-checkbox-info" />
-                            <span class="label-text px-2">PRIVADO</span>
+                            <span class="label-text px-2 text-gray-800 dark:text-gray-200">PRIVADO</span>
                         </label>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                         @foreach ($coverages as $coverage)
                             <label class="cursor-pointer label">
                                 <input type="checkbox" class="checkbox checkbox-xs checkbox-accent" />
-                                <span class="label-text px-2 ">{{ $coverage->name }}</span>
+                                <span class="label-text px-2 text-gray-800 dark:text-gray-200">{{ $coverage->name }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -97,7 +97,7 @@
                         @foreach ($organizations as $organization)
                             <label class="cursor-pointer label">
                                 <input type="checkbox" class="checkbox checkbox-xs checkbox-secondary" />
-                                <span class="label-text px-2 ">{{ $organization->name }}</span>
+                                <span class="label-text px-2 text-gray-800 dark:text-gray-200 ">{{ $organization->name }}</span>
                             </label>
                         @endforeach
                     </div>
