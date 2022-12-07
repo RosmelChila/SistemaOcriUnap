@@ -95,7 +95,10 @@ class AgreementController extends Controller
                 $status='VENCIDO';
             }
         }
-        $agreement=Agreement::create($request->all()+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
+        $path=$request->file('paths')->getClientOriginalName();
+        $path=$request->file('paths')->store('public/files');
+        $array=explode('public',$path);
+        $agreement=Agreement::create($request->all()+['path'=>'storage'.$array[1]]+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
         $agreement->responsibles()->sync($request->responsibles);
 
         if($agreement->status=='POR VENCER'){
