@@ -48,8 +48,13 @@ Route::middleware([
     //para ver convenios edicion
     Route::view('/editar', 'administrador.convenio.editar')->name('editar');
     Route::get('/ver/{id}',[ReporteController::class,'ver'])->name('ver.id');
-    
+
     //agregar etiquetas
     Route::get('/etiquetas', App\Http\Livewire\Datos\Etiquetas::class)->name("etiquetas");  // crear
+
+    //ruta redireccion para el busacador
+    Route::view('/filtrado','administrador/convenio/buscar')->name("filtrado");  // crear
+
+
 
 });
