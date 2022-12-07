@@ -6,7 +6,12 @@ use App\Models\Agreement;
 use App\Http\Requests\StoreAgreementRequest;
 use App\Http\Requests\UpdateAgreementRequest;
 use App\Http\Resources\AgreementResource;
+use App\Models\User;
+use App\Notifications\AgreementExpiration;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Notification;
+
+use function GuzzleHttp\Promise\all;
 
 class AgreementController extends Controller
 {
@@ -38,6 +43,7 @@ class AgreementController extends Controller
      */
     public function store(StoreAgreementRequest $request)
     {
+        $users=User::all();
         $date=Carbon::parse($request['subscription']);
         $today=Carbon::now();
         $endDate = $date->addYears($request['years']);
@@ -54,9 +60,8 @@ class AgreementController extends Controller
             if($request->years>=0 && $request->years<=3){
                 $notification=Carbon::parse($expiration)->subMonths(6)->toDateString();
                 $fechanotificacion=Carbon::parse($notification);
-                $diferencia=$fechanotificacion->diffInMonths($today);
-
                 if($today>=$fechanotificacion){
+                    $notification=$today->toDateString();
                     $status='POR VENCER';
                 }
                 if($today<$fechanotificacion){
@@ -66,11 +71,12 @@ class AgreementController extends Controller
             if($request->years>3){
                 $notification=Carbon::parse($expiration)->subMonths(9)->toDateString();
                 $fechanotificacion=Carbon::parse($notification);
-                $diferencia=$fechanotificacion->diffInMonths($today);
-                if($diferencia>9){
-                    $status='VIGENTE';
-                }if($diferencia<=9){
+                if($today>=$fechanotificacion){
+                    $notification=$today->toDateString();
                     $status='POR VENCER';
+                }
+                if($today<$fechanotificacion){
+                    $status='VIGENTE';
                 }
             }
         }
@@ -90,9 +96,16 @@ class AgreementController extends Controller
                 $status='VENCIDO';
             }
         }
-        $agreement=Agreement::create($request->all()+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
+        $path=$request->file('paths')->getClientOriginalName();
+        $path=$request->file('paths')->store('public/files');
+        $array=explode('public',$path);
+        $agreement=Agreement::create($request->all()+['path'=>'storage'.$array[1]]+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
         $agreement->responsibles()->sync($request->responsibles);
-        return new Agreement($agreement->get());
+
+        if($agreement->status=='POR VENCER'){
+            Notification::send($users,new AgreementExpiration ($agreement->id,$agreement->status));
+        }
+        return $agreement;
     }
 
     /**

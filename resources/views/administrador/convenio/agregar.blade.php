@@ -9,7 +9,7 @@
         </div>
 
     </table>
-    <form method="POST" action="{{ 'api/agreement' }}" class="">
+    <form method="POST" action="{{ 'api/agreement' }}" enctype="multipart/form-data" class="">
         @csrf
         <div class="grid grid-cols-1 gap-3">
             {{-- para datos 1 --}}
@@ -291,7 +291,7 @@
                 {{-- para cargar el pdf --}}
                 <div class="grid content-center p-4 dark:bg-gray-900 rounded-lg py-4">
                     <span class="label-text text-gray-900 dark:text-gray-100 py-2 ">Convenio Escaneado (PDF)</span>
-                    <input name="path" type="file"
+                    <input name="paths" id="paths" type="file"
                         class="file-input file-input-xs file-input-bordered file-input-accent w-full max-w-xs bg-gray-200 dark:bg-gray-900" />
                 </div>
             </div>

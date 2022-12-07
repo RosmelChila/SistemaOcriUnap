@@ -16,9 +16,10 @@ class AgreementExpiration extends Notification
      *
      * @return void
      */
-    public function __construct($id)
+    public function __construct($id,$status)
     {
         $this->id = $id;
+        $this->status = $status;
     }
 
     /**
@@ -55,7 +56,8 @@ class AgreementExpiration extends Notification
     public function toArray($notifiable)
     {
         return [
-            'agreement_id'=>$this->id
+            'id'=>$this->id,
+            'status'=>$this->status
         ];
     }
 }

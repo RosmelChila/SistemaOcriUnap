@@ -10,6 +10,6 @@ class Organization extends Model
     use HasFactory;
     protected $fillable=['name'];
     public function agreements(){
-        return $this->hasMany(Agreement::class);
+        return $this->hasMany(Agreement::class,'id','organization_id');
     }
 }

@@ -10,12 +10,12 @@ class Region extends Model
     use HasFactory;
     protected $fillable=['name'];
     public function agreements(){
-        return $this->hasMany(Agreement::class);
+        return $this->hasMany(Agreement::class,'id','region_id');
     }
     public function countries(){
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Country::class,'country_id','id');
     }
     public function provinces(){
-        return $this->hasMany(Province::class);
+        return $this->hasMany(Province::class,'id','region_id');
     }
 }

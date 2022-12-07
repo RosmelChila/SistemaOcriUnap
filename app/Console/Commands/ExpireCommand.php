@@ -44,42 +44,42 @@ class ExpireCommand extends Command
 
         $record=Record::first();
         $last=$record->last_verification;
-        if($today==$last||$today==$last->addDay('1')){
+        $lastlast=Carbon::parse($last)->addDay()->toDateString();
+        if($today==$last||$today==$lastlast){
 
             $agreements=Agreement::where('notification',$today)->get();
             if(sizeof($agreements)>0){
                 foreach($agreements as $agreement){
-                    Notification::send($users,new AgreementExpiration ($agreement->id));
                     Agreement::where('id',$agreement->id)->update(['status'=>'POR VENCER']);
-                    // $convenio->update(['status'=>'POR VENCER']);
+                    Notification::send($users,new AgreementExpiration ($agreement->id,'POR VENCER'));
                 }
             }
             $agreements=Agreement::where('expiration','<=',$today)->where('status','!=','VENCIDO')->get();
             if(sizeof($agreements)>0){
                 foreach($agreements as $agreement){
-                    Notification::send($users,new AgreementExpiration ($agreement->id));
                     Agreement::where('id',$agreement->id)->update(['status'=>'VENCIDO']);
+                    Notification::send($users,new AgreementExpiration ($agreement->id,'VENCIDO'));
                 }
             }
-        }else{
-            while($today==$last){
-
+        }
+        else{
+             while($today!=$last){
                     $agreements=Agreement::where('notification',$last)->get();
                     if(sizeof($agreements)>0){
                         foreach($agreements as $agreement){
-                            Notification::send($users,new AgreementExpiration ($agreement->id));
                             Agreement::where('id',$agreement->id)->update(['status'=>'POR VENCER']);
-                            // $convenio->update(['status'=>'POR VENCER']);
+                            Notification::send($users,new AgreementExpiration ($agreement->id,'POR VENCER'));
                         }
                     }
-                    $agreements=Agreement::where('expiration','<',$last)->where('status','!=','VENCIDO')->get();
+                    $agreements=Agreement::where('expiration','<=',$last)->where('status','!=','VENCIDO')->get();
                     if(sizeof($agreements)>0){
-                        foreach($agreements as $agreement){
-                            Notification::send($users,new AgreementExpiration ($agreement->id));
+                         foreach($agreements as $agreement){
                             Agreement::where('id',$agreement->id)->update(['status'=>'VENCIDO']);
-                        }
+                            Notification::send($users,new AgreementExpiration ($agreement->id,'VENCIDO'));
+                          }
                     }
-                    $last = $last->addDay('1');
+                    $lastlast=Carbon::parse($last)->addDay()->toDateString();
+                    $last = $lastlast ;
             }
         }
         Record::where('id','1')->update(['last_verification'=>$today]);
