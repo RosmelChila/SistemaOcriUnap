@@ -53,7 +53,7 @@ Route::middleware([
     Route::get('/etiquetas', App\Http\Livewire\Datos\Etiquetas::class)->name("etiquetas");  // crear
 
     //ruta redireccion para el busacador
-    Route::view('/filtrado','administrador/convenio/buscar')->name("filtrado");  // crear
+    Route::get('/resultados',[ReporteController::class,'search'])->name('buscar');
 
 
 

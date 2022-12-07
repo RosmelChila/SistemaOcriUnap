@@ -14,30 +14,61 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+                    @php
+                        $i=1;
+                    @endphp
+                    @forelse ($resultados as $resultado)
                     <tr class="text-gray-700 dark:text-gray-400">
                         <td class="px-2 py-2 text-xs">
-                            1
+                            @php
+                                echo $i;
+                            @endphp
                         </td>
                         <td class="px-2 py-2 text-xs">
-                            titulo
+                            {{$resultado->title}}
                         </td>
                         <td class="px-2 py-2 text-xs">
-                            resolucion
+                            {{$resultado->resolution}}
                         </td>
                         <td class="px-2 py-2 text-xs">
-
-                            <div class="grid justify-items-center px-10 ">
-                                <button
-                                    class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
-                                    Activo
-                                </button>
-                            </div>
+                            <?php
+                            if($resultado->status=='VIGENTE'){
+                        ?>
+                                <div class="grid justify-items-center px-10 ">
+                                    <button
+                                       class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
+                                        Activo
+                                    </button>
+                                </div>
+                        <?php
+                            }
+                            if($resultado->status=='POR VENCER'){
+                        ?>
+                                <div class="px-5 grid justify-items-center">
+                                    <button
+                                        class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-gray-100">
+                                            Por vencer
+                                    </button>
+                                </div>
+                        <?php
+                            }
+                            if($resultado->status=='VENCIDO'){  
+                        ?> 
+                                <div class="grid justify-items-center px-10 ">
+                                    <button
+                                        class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-gray-500 shadow-lg shadow-gray-500/50 text-gray-100">
+                                            Vencido
+                                    </button>
+                                </div>
+                        <?php
+                            }
+                        ?>
                         </td>
                         <td class="px-3 py-3 text-xs text-center">
-                            27/23/1312
+                            {{$resultado->expiration}}
                         <td class="px-3 py-3 text-center">
                             <div class="space-x-4 text-sm flex justify-center">
-                                <a href=""
+                                <a href="{{route('ver.id',$resultado->id)}}"
                                     class="px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                     aria-label="Delete">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
@@ -51,6 +82,14 @@
                             </div>
                         </td>
                     </tr>
+                    @php
+                        $i++;
+                    @endphp
+                    @empty
+                    <tr>
+                        <td colspan="6" style="height: 100px" align="center">No hay Resultados</td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
