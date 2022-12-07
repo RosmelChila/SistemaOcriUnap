@@ -22,6 +22,7 @@ class ReporteController extends Controller
         $coverages=Coverage::pluck('name','id');
         $organizations=Organization::pluck('name','id');
         $responsibles=Responsible::pluck('name','id');
+        $agreements=Agreement::where('id','0');
 
         $dates=[
             'countries'=>$countries,
@@ -30,7 +31,8 @@ class ReporteController extends Controller
             'districts'=>$districts,
             'coverages'=>$coverages,
             'organizations'=>$organizations,
-            'responsibles'=>$responsibles
+            'responsibles'=>$responsibles,
+            'agreements'=>$agreements
         ];
         return view('administrador.convenio.reporte',$dates);
     }
@@ -40,6 +42,14 @@ class ReporteController extends Controller
     }
     public function consulta(Request $request){
         $agreements=Agreement::query();
+        $countries=Country::pluck('name','id');
+        $regions=Region::pluck('name','id');
+        $provinces=Province::pluck('name','id');
+        $districts=District::pluck('name','id');
+        $coverages=Coverage::pluck('name','id');
+        $organizations=Organization::pluck('name','id');
+        $responsibles=Responsible::pluck('name','id');
+        
         // if($request->local){
         //     $agreements=$agreements->where('location','=',$request->local);
         // }
@@ -61,18 +71,16 @@ class ReporteController extends Controller
             }
         }
         if($request->organizations){
-            foreach($request->organizations as $organization){
+            $organization=$request->organizations;
                 $agreements->whereHas('organizations',function($agreements) use($organization){
-                    $agreements->where('name',$organization);
+                    $agreements->whereIn('name',$organization);
                 });
-            }
         }
         if($request->countries){
-            foreach($request->countries as $country){
+                $country=$request->countries;
                 $agreements->whereHas('countries',function($agreements) use($country){
-                    $agreements->where('name',$country);
+                    $agreements->whereIn('name',$country);
                 });
-            }
         }
         if($request->locations){
             $agreements->whereIn('location',$request->locations);
@@ -86,6 +94,17 @@ class ReporteController extends Controller
         if($request->date2 && $request->date2!='null'){
             $agreements->where('subscription','<=',$request->date2);
         }
-        return $agreements->get();
+        $dates=[
+            'countries'=>$countries,
+            'regions'=>$regions,
+            'provinces'=>$provinces,
+            'districts'=>$districts,
+            'coverages'=>$coverages,
+            'organizations'=>$organizations,
+            'responsibles'=>$responsibles,
+            'agreements'=>$agreements->get()
+        ];
+        
+        return view('administrador.convenio.reporte',$dates);
     }
 }
