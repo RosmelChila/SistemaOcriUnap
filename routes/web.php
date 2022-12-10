@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('usuario/index');
 });
 
 Route::middleware([
@@ -54,7 +54,5 @@ Route::middleware([
 
     //ruta redireccion para el busacador
     Route::view('/filtrado','administrador/convenio/buscar')->name("filtrado");  // crear
-
-
 
 });
