@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="mt-8 flex justify-end">
-                            <button class="btn btn-info dark:btn text-zinc-100">INGRESAR</button>
+                            <button class="btn btn-accent dark:btn-warning text-zinc-100">INGRESAR</button>
                         </div>
                     </form>
             </div>
