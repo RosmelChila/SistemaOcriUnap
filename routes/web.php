@@ -55,4 +55,9 @@ Route::middleware([
     //ruta redireccion para el busacador
     Route::get('/resultados',[ReporteController::class,'search'])->name('buscar');
 
+
+
 });
+    //para usuarios
+
+Route::view('/resultado', 'usuario.busqueda')->name('resultado');

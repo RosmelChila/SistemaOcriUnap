@@ -139,65 +139,7 @@
       <!-- End right nav -->
 
     </nav>
-
-    <div class="flex flex-col min-h-screen font-bunny bg-[url('https://radioondaazul.com/wp-content/uploads/2022/08/Universidad-Nacional-del-Altiplano-Puno.jpg')]" >
-      {{-- para el contenido de login --}}
-      <main class="flex-1 mt-20">
-        <div class="grid grid-cols-3gap-4">
-          <div class="col-span-3 grid justify-center h-96">
-            <div>
-            </div>
-            <div>
-              <input type="text" placeholder="Ingrese Nombre de Convenio" class="input w-96 bg-white dark:bg-zinc-900 h-14"/>
-              <a href="{{ route('resultado') }}"><button class="btn btn-accent dark:btn-warning">Buscar</button></a>
-            </div>
-
-
-
-          </div>
-          <div class=" grid justify-center px-20">
-           <div class="p-10 bg-zinc-100 hover:bg-yellow-100 rounded-md dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-800 dark:text-white">
-            <div class="grid justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-20 h-20">
-                <path d="M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.754 9.754 0 016.116-3.985z" />
-              </svg>
-            </div>
-            <div class="text-center">
-              <h1 class="text-sky-500 dark:text-yellow-500 py-4">CONVENIOS INTERNACIONALES</h1>
-              <span class="text-zinc-800 dark:text-white text-sm">Convenios firmados internacionalmente con la universidad nacional del altiplano puno</span>
-            </div>
-           </div>
-          </div>
-          <div class="grid justify-center px-20">
-            <div class="p-10 bg-zinc-100 hover:bg-yellow-100 rounded-md dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-800 dark:text-white">
-             <div class="grid justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-20 h-20">
-                <path fill-rule="evenodd" d="M3 2.25a.75.75 0 01.75.75v.54l1.838-.46a9.75 9.75 0 016.725.738l.108.054a8.25 8.25 0 005.58.652l3.109-.732a.75.75 0 01.917.81 47.784 47.784 0 00.005 10.337.75.75 0 01-.574.812l-3.114.733a9.75 9.75 0 01-6.594-.77l-.108-.054a8.25 8.25 0 00-5.69-.625l-2.202.55V21a.75.75 0 01-1.5 0V3A.75.75 0 013 2.25z" clip-rule="evenodd" />
-              </svg>
-             </div>
-             <div class="text-center">
-               <h1 class="text-sky-500 dark:text-yellow-500 py-4">CONVENIOS NACIONALES</h1>
-               <span class="text-zinc-800 dark:text-white text-sm">Convenios firmados internacionalmente con la universidad nacional del altiplano puno</span>
-             </div>
-            </div>
-           </div>
-           <div class=" grid justify-center px-20">
-            <div class="p-10 bg-zinc-100 hover:bg-yellow-100 rounded-md dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-800 dark:text-white">
-             <div class="grid justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-20 h-20">
-                <path d="M11.584 2.376a.75.75 0 01.832 0l9 6a.75.75 0 11-.832 1.248L12 3.901 3.416 9.624a.75.75 0 01-.832-1.248l9-6z" />
-                <path fill-rule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 010 1.5H3a.75.75 0 010-1.5h.75v-9.918a.75.75 0 01.634-.74A49.109 49.109 0 0112 9c2.59 0 5.134.202 7.616.592a.75.75 0 01.634.74zm-7.5 2.418a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75zm3-.75a.75.75 0 01.75.75v6.75a.75.75 0 01-1.5 0v-6.75a.75.75 0 01.75-.75zM9 12.75a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75z" clip-rule="evenodd" />
-                <path d="M12 7.875a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
-              </svg>
-
-             </div>
-             <div class="text-center">
-               <h1 class="text-sky-500 dark:text-yellow-500 py-4">CONVENIOS LOCALES</h1>
-               <span class="text-zinc-800 dark:text-white text-sm">Convenios firmados internacionalmente con la universidad nacional del altiplano puno</span>
-             </div>
-            </div>
-           </div>
-        </div>
+    {{ $slot }}
 
       </main>
 
