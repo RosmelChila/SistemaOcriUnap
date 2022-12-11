@@ -107,7 +107,6 @@ class AgreementController extends Controller
         }
         return $agreement;
     }
-
     /**
      * Display the specified resource.
      *
