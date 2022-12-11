@@ -3,7 +3,7 @@
         <!-- cartas de convenio -->
         <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
             {{-- total de convenios --}}
-            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-900">
+            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-zinc-900">
                 <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path
@@ -12,20 +12,20 @@
 
                 </div>
                 <div>
-                    <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+                    <p class="mb-2 text-sm font-medium text-zinc-600 dark:text-zinc-400">
                         Total De Convenios
                     </p>
-                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                    <p class="text-lg font-semibold text-zinc-700 dark:text-zinc-200">
                         {{$total}}
                         {{-- {{$total}} --}}
                     </p>
-                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                    <p class="text-lg font-semibold text-zinc-700 dark:text-zinc-200">
                         {{-- {{$inicio->subscription}} --}}
                     </p>
                 </div>
             </div>
             {{-- convenios internacionales --}}
-            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-900">
+            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-zinc-900">
                 <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path
@@ -33,20 +33,20 @@
                     </svg>
                 </div>
                 <div>
-                    <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+                    <p class="mb-2 text-sm font-medium text-zinc-600 dark:text-zinc-400">
                         Convenios Internacionales
                     </p>
-                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                    <p class="text-lg font-semibold text-zinc-700 dark:text-zinc-200">
                         {{$international}}
                         {{-- {{$international}} --}}
                     </p>
-                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                    <p class="text-lg font-semibold text-zinc-700 dark:text-zinc-200">
                         {{-- {{$fin->subscription}} --}}
                     </p>
                 </div>
             </div>
             {{-- convenios nacionales --}}
-            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-900">
+            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-zinc-900">
                 <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path
@@ -55,17 +55,17 @@
 
                 </div>
                 <div>
-                    <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+                    <p class="mb-2 text-sm font-medium text-zinc-600 dark:text-zinc-400">
                         Convenios Nacionales
                     </p>
-                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                    <p class="text-lg font-semibold text-zinc-700 dark:text-zinc-200">
                         {{$national}}
                         {{-- {{ $national }} --}}
                     </p>
                 </div>
             </div>
             {{-- convenios locales --}}
-            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-900">
+            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-zinc-900">
                 <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path
@@ -73,10 +73,10 @@
                     </svg>
                 </div>
                 <div>
-                    <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+                    <p class="mb-2 text-sm font-medium text-zinc-600 dark:text-zinc-400">
                         Convenios Locales
                     </p>
-                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                    <p class="text-lg font-semibold text-zinc-700 dark:text-zinc-200">
                         {{$local}}
                         {{-- {{ $local }} --}}
                     </p>
@@ -92,10 +92,10 @@
               </svg>
               <span class="px-5">Convenios (Dentro de 6 meses)</span>
         </div>
-        {{-- <div class="mb-4 text-sm font-semibold text-gray-400 dark:text-gray-300 flex justify-start">Usuarios registrados</div> --}}
+        {{-- <div class="mb-4 text-sm font-semibold text-zinc-400 dark:text-zinc-300 flex justify-start">Usuarios registrados</div> --}}
         <div class="flex justify-end">
             <button
-            class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+            class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
             aria-label="Edit"><span class="px-5">Imprimir </span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                 <path d="M10 2a.75.75 0 01.75.75v5.59l1.95-2.1a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0L6.2 7.26a.75.75 0 111.1-1.02l1.95 2.1V2.75A.75.75 0 0110 2z" />
@@ -111,7 +111,7 @@
                 <table class="table-fixed ">
                     <thead>
                         <tr
-                            class=" text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-900">
+                            class=" text-xs font-semibold tracking-wide text-left text-zinc-500 uppercase border-b dark:border-zinc-700 bg-zinc-50 dark:text-zinc-400 dark:bg-zinc-900">
                             <th class="px-2 py-2">N°</th>
                             <th class="px-2 py-2 w-1/3 text-center">TÍTULO</th>
                             <th class="px-2 py-2 w-1/5 text-center">RESOLUCIÓN</th>
@@ -120,9 +120,9 @@
                             <th class="px-2 py-2 w-1/6 text-center">VER CONVENIO</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+                    <tbody class="bg-white divide-y dark:divide-zinc-700 dark:bg-zinc-900">
                         @foreach ($expirate as $expire)
-                        <tr class="text-gray-700 dark:text-gray-400">
+                        <tr class="text-zinc-700 dark:text-zinc-400">
                             <td class="px-2 py-2 text-xs">
                                 1
                             </td>
@@ -138,7 +138,7 @@
                             ?>
                                     <div class="grid justify-items-center px-10 ">
                                         <button
-                                           class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
+                                           class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-zinc-100">
                                             Activo
                                         </button>
                                     </div>
@@ -148,17 +148,17 @@
                             ?>
                                     <div class="px-5 grid justify-items-center">
                                         <button
-                                            class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-gray-100">
+                                            class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-zinc-100">
                                                 Por vencer
                                         </button>
                                     </div>
                             <?php
                                 }
-                                if($expire->status=='VENCIDO'){  
-                            ?> 
+                                if($expire->status=='VENCIDO'){
+                            ?>
                                     <div class="grid justify-items-center px-10 ">
                                         <button
-                                            class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-gray-500 shadow-lg shadow-gray-500/50 text-gray-100">
+                                            class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-zinc-500 shadow-lg shadow-zinc-500/50 text-zinc-100">
                                                 Vencido
                                         </button>
                                     </div>
@@ -171,7 +171,7 @@
                             <td class="px-3 py-3 text-center">
                                 <div class="space-x-4 text-sm">
                                     <a href="{{route('ver.id',$expire->id)}}"
-                                        class="px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                        class="px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                         aria-label="Delete">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                             fill="currentColor" class="w-5 h-5">
@@ -190,7 +190,7 @@
             </div>
             {{-- para paginación --}}
             <div
-                class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-900">
+                class="grid px-4 py-3 text-xs font-semibold tracking-wide text-zinc-500 uppercase border-t dark:border-zinc-700 bg-zinc-50 sm:grid-cols-9 dark:text-zinc-400 dark:bg-zinc-900">
                 <span class="flex items-center col-span-3">
                     Paginas 21-30 of 100
                 </span>

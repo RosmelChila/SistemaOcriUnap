@@ -24,9 +24,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased text-gray-900 dark:text-gray-200">
+<body class="font-sans antialiased text-zinc-900 dark:text-zinc-200">
     <div x-data="mainState" :class="{dark: isDarkMode}" x-cloak>
-        <div class="flex flex-col min-h-screen text-gray-900 bg-gray-100 dark:bg-dark-eval-0 dark:text-gray-200">
+        <div class="flex flex-col min-h-screen text-zinc-900 bg-zinc-100 dark:bg-dark-eval-0 dark:text-zinc-200">
             {{ $slot }}
 
             {{-- <x-footer /> --}}

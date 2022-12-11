@@ -10,13 +10,13 @@
     <div class="grid grid-rows gap-4 md:gap-4 md:grid-cols-5 ">
         <div class="col-span-1">
             <aside class="rounded-lg bg-dark-eval-1" aria-label="Sidebar">
-                <div class="overflow-y-auto py-4 px-3 bg-gray-50 dark:bg-gray-900 rounded-lg grid justify-center">
+                <div class="overflow-y-auto py-4 px-3 bg-zinc-50 dark:bg-zinc-900 rounded-lg grid justify-center">
                     {{-- esta lista es para filtro de paises --}}
                     <ul class="space-y-2">
                         @foreach ($provinces as $province)
                         <li class="">
                             <a href="{{route('local.province',$province->name)}}"
-                                class="flex items-center p-2 text-base font-normal text-gray-500 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-sky-800">
+                                class="flex items-center p-2 text-base font-normal text-zinc-500 rounded-lg dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-sky-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                     class="w-5 h-5">
                                     <path
@@ -41,7 +41,7 @@
                         <table class="table-fixed ">
                             <thead>
                                 <tr
-                                    class=" text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-900">
+                                    class=" text-xs font-semibold tracking-wide text-left text-zinc-500 uppercase border-b dark:border-zinc-700 bg-zinc-50 dark:text-zinc-400 dark:bg-zinc-900">
                                     <th class="px-2 py-2 ">N°</th>
                                     <th class="px-2 py-2 w-1/3 text-center">TÍTULO</th>
                                     <th class="px-2 py-2 w-1/5 text-center">RESOLUCIÓN</th>
@@ -50,10 +50,10 @@
                                     <th class="px-2 py-2 w-1/6 text-center">ACCIONES</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+                            <tbody class="bg-white divide-y dark:divide-zinc-700 dark:bg-zinc-900">
                                 @foreach ($agreements as $agreement)
                                 @php $i=1; @endphp
-                                <tr class="text-gray-700 dark:text-gray-400">
+                                <tr class="text-zinc-700 dark:text-zinc-400">
                                     <td class="px-2 py-2 text-xs">
                                         @php echo $i; @endphp
                                     </td>
@@ -67,7 +67,7 @@
                                         {{-- Estados --}}
                                         <div class="grid justify-items-center px-10 ">
                                             <button
-                                                class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
+                                                class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-zinc-100">
                                                 Activo
                                             </button>
                                         </div>
@@ -78,7 +78,7 @@
                                     <td class="px-3 py-3">
                                         <div class="flex items-center space-x-4 text-sm">
                                             <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                                 aria-label="Edit">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
@@ -88,7 +88,7 @@
                                                 </svg>
                                             </button>
                                             <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                                 aria-label="Delete">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
@@ -98,7 +98,7 @@
                                                 </svg>
                                             </button>
                                             <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                                 aria-label="Delete">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                                     fill="currentColor" class="w-5 h-5">
@@ -113,7 +113,7 @@
                                 </tr>
                                 @php $i++; @endphp
                                 @endforeach
-                                <tr class="text-gray-700 dark:text-gray-400">
+                                <tr class="text-zinc-700 dark:text-zinc-400">
                                     <td class="px-2 py-2 text-xs">
                                         1
                                     </td>
@@ -134,7 +134,7 @@
                                     <td class="px-2 py-2 text-xs">
                                         <div class="px-5 grid justify-items-center">
                                             <button
-                                                class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-gray-100">
+                                                class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-zinc-100">
                                                 Por vencer
                                             </button>
                                         </div>
@@ -144,7 +144,7 @@
                                     <td class="px-3 py-3">
                                         <div class="flex items-center space-x-4 text-sm">
                                             <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                                 aria-label="Edit">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
@@ -154,7 +154,7 @@
                                                 </svg>
                                             </button>
                                             <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                                 aria-label="Delete">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
@@ -164,7 +164,7 @@
                                                 </svg>
                                             </button>
                                             <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                                 aria-label="Delete">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                                     fill="currentColor" class="w-5 h-5">
@@ -176,7 +176,7 @@
                                             </button>
                                         </div>
                                     </td>
-                                </tr>                                <tr class="text-gray-700 dark:text-gray-400">
+                                </tr>                                <tr class="text-zinc-700 dark:text-zinc-400">
                                     <td class="px-2 py-2 text-xs">
                                         1
                                     </td>
@@ -197,7 +197,7 @@
                                     <td class="px-2 py-2 text-xs">
                                         <div class="grid justify-items-center px-10 ">
                                             <button
-                                                class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-gray-500 shadow-lg shadow-gray-500/50 text-gray-100">
+                                                class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-zinc-500 shadow-lg shadow-zinc-500/50 text-zinc-100">
                                                 Vencido
                                             </button>
                                         </div>
@@ -207,7 +207,7 @@
                                     <td class="px-3 py-3">
                                         <div class="flex items-center space-x-4 text-sm">
                                             <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                                 aria-label="Edit">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
@@ -217,7 +217,7 @@
                                                 </svg>
                                             </button>
                                             <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                                 aria-label="Delete">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
@@ -227,7 +227,7 @@
                                                 </svg>
                                             </button>
                                             <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                                 aria-label="Delete">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                                     fill="currentColor" class="w-5 h-5">
@@ -245,7 +245,7 @@
                     </div>
                     {{-- para paginación --}}
                     <div
-                        class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-900">
+                        class="grid px-4 py-3 text-xs font-semibold tracking-wide text-zinc-500 uppercase border-t dark:border-zinc-700 bg-zinc-50 sm:grid-cols-9 dark:text-zinc-400 dark:bg-zinc-900">
                         <span class="flex items-center col-span-3">
                             Paginas 21-30 of 100
                         </span>

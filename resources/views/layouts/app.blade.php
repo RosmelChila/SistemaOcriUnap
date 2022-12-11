@@ -27,12 +27,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased text-gray-900 dark:text-gray-200">
+<body class="font-sans antialiased text-zinc-900 dark:text-zinc-200">
 
     <div x-data="mainState" :class="{ dark: isDarkMode }" @resize.window="handleWindowResize" x-cloak>
         <x-banner />
 
-        <div class="min-h-screen text-gray-900 bg-gray-100 dark:bg-gray-800 dark:text-gray-200">
+        <div class="min-h-screen text-zinc-900 bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-200">
             <!-- Sidebar -->
             <x-sidebar.sidebar />
 

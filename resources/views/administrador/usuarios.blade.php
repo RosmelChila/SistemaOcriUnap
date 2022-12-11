@@ -4,20 +4,20 @@
     <div class="grid grid-rows-1 gap-4 justify-center md:grid-cols-4">
         @foreach ($users as $user)
         {{-- para foto y datos de usuario --}}
-        <div class="md:basis-1/3 mx-4 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+        <div class="md:basis-1/3 mx-4 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
             <div class="flex space-x-4">
                 {{-- esta imagen cambia aletriamente icono si no logras filtrar img eso no mas queda --}}
-                <img alt="" src="https://source.unsplash.com/100x100/?portrait" class="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500">
+                <img alt="" src="https://source.unsplash.com/100x100/?portrait" class="object-cover w-12 h-12 rounded-full shadow dark:bg-zinc-500">
                 <div class="flex flex-col space-y-1">
                     <a rel="noopener noreferrer" href="#" class="text-sm font-semibold">{{$user->name}}</a>
-                    <span class="text-xs dark:text-gray-400">{{$user->email}}</span>
+                    <span class="text-xs dark:text-zinc-400">{{$user->email}}</span>
                 </div>
             </div>
             {{-- botones para eliminar y editar --}}
             <div class="flex flex-wrap justify-between">
                 <div class="space-x-2">
                 </div>
-                <div class="flex space-x-2 text-sm dark:text-gray-400">
+                <div class="flex space-x-2 text-sm dark:text-zinc-400">
                     <button type="button" class="flex items-center p-1 space-x-1.5">
                         <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                             <path

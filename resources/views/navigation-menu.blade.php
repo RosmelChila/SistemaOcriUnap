@@ -1,8 +1,8 @@
 <nav aria-label="secondary" x-data="{ open: false }"
-    class="sticky top-0 z-10 flex items-center justify-between px-4 py-4 sm:px-6 transition-transform duration-500 bg-white dark:bg-gray-900"
+    class="sticky top-0 z-10 flex items-center justify-between px-4 py-4 sm:px-6 transition-transform duration-500 bg-white dark:bg-zinc-900"
     :class="{
-        '-translate-y-full': scrollingDown,
-        'translate-y-0': scrollingUp,
+        '-tranzinc-y-full': scrollingDown,
+        'tranzinc-y-0': scrollingUp,
     }"
 >
 
@@ -20,10 +20,10 @@
     <form method="GET" action="{{route('buscar')}}">
         <div class="relative">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <svg aria-hidden="true" class="w-5 h-5 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
-            <input type="search" name="search" id="default-search" class="h-8 w-96 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-800 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-sky-300 focus:outline-none focus:shadow-outline-sky form-input" placeholder=" Nombre convenio...." required>
-            <button type="submit" class="px-2 bg-gray-100 dark:bg-gray-800 rounded-lg">Buscar</button>
+            <input type="search" name="search" id="default-search" class="h-8 w-96 pl-8 pr-2 text-sm text-zinc-700 placeholder-zinc-600 bg-zinc-100 border-0 rounded-md dark:placeholder-zinc-500 dark:focus:shadow-outline-zinc dark:focus:placeholder-zinc-600 dark:bg-zinc-800 dark:text-zinc-200 focus:placeholder-zinc-500 focus:bg-white focus:border-sky-300 focus:outline-none focus:shadow-outline-sky form-input" placeholder=" Nombre convenio...." required>
+            <button type="submit" class="px-2 bg-zinc-100 dark:bg-zinc-800 rounded-lg">Buscar</button>
         </div>
     </form>
 
@@ -35,7 +35,7 @@
             <x-heroicon-o-sun x-show="isDarkMode" aria-hidden="true" class="w-6 h-6" />
         </x-button>
         <div class="dropdown dropdown-end">
-            <label tabindex="0" class="btn m-1 btn-sm bg-slate-100 dark:bg-slate-800"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <label tabindex="0" class="btn m-1 btn-sm bg-zinc-100 dark:bg-zinc-800"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
               </svg></label>
 
@@ -57,12 +57,12 @@
                         </path>
                     </svg>
                     <!-- Notification badge -->
-                    <span aria-hidden="true" class="absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-600 border-2 border-white rounded-full dark:border-gray-800"></span>
+                    <span aria-hidden="true" class="absolute top-0 right-0 inline-block w-3 h-3 transform tranzinc-x-1 -tranzinc-y-1 bg-red-600 border-2 border-white rounded-full dark:border-zinc-800"></span>
                 </button>
                 <template x-if="isNotificationsMenuOpen">
-                    <ul x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click.away="closeNotificationsMenu" @keydown.escape="closeNotificationsMenu" class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700">
+                    <ul x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click.away="closeNotificationsMenu" @keydown.escape="closeNotificationsMenu" class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-zinc-600 bg-white border border-zinc-100 rounded-md shadow-md dark:text-zinc-300 dark:border-zinc-700 dark:bg-zinc-700">
                         <li class="flex">
-                            <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200" href="#">
+                            <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-zinc-100 hover:text-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-200" href="#">
                                 <span>Por vencer</span>
                                 <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-600 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-600">
                                     1
@@ -79,7 +79,7 @@
         @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
             <x-dropdown align="right" width="60">
                 <x-slot name="trigger">
-                    <button type="button" class="inline-flex items-center rounded-md p-2 text-sm font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none focus:ring focus:ring-sky-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:bg-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
+                    <button type="button" class="inline-flex items-center rounded-md p-2 text-sm font-medium text-zinc-500 transition duration-150 ease-in-out hover:text-zinc-700 focus:outline-none focus:ring focus:ring-sky-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:bg-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200">
                         {{ Auth::user()->currentTeam->name }}
 
                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -91,7 +91,7 @@
                 <x-slot name="content">
                     <div class="w-60">
                         <!-- Team Management -->
-                        <div class="block px-4 py-2 text-xs text-gray-400">
+                        <div class="block px-4 py-2 text-xs text-zinc-400">
                             {{ __('Manage Team') }}
                         </div>
 
@@ -106,10 +106,10 @@
                             </x-dropdown-link>
                         @endcan
 
-                        <div class="border-t border-gray-100 dark:border-gray-700"></div>
+                        <div class="border-t border-zinc-100 dark:border-zinc-700"></div>
 
                         <!-- Team Switcher -->
-                        <div class="block px-4 py-2 text-xs text-gray-400">
+                        <div class="block px-4 py-2 text-xs text-zinc-400">
                             {{ __('Switch Teams') }}
                         </div>
 
@@ -130,7 +130,7 @@
                     </button>
                 @else
                     <button
-                        class="flex items-center p-2 rounded-md text-sm font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none focus:ring focus:ring-sky-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200">
+                        class="flex items-center p-2 rounded-md text-sm font-medium text-zinc-500 transition duration-150 ease-in-out hover:text-zinc-700 focus:outline-none focus:ring focus:ring-sky-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:text-zinc-400 dark:hover:text-zinc-200">
                         <div>{{ Auth::user()->name }}</div>
 
                         <div class="ml-1">
@@ -146,7 +146,7 @@
 
             <x-slot name="content">
                  <!-- Account Management -->
-                 <div class="block px-4 py-2 text-xs text-gray-400">
+                 <div class="block px-4 py-2 text-xs text-zinc-400">
                     {{ __('Administrar cuenta') }}
                 </div>
 
@@ -160,7 +160,7 @@
                     </x-dropdown-link>
                 @endif
 
-                <div class="border-t border-gray-100 dark:border-gray-700"></div>
+                <div class="border-t border-zinc-100 dark:border-zinc-700"></div>
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">

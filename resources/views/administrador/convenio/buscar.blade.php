@@ -4,7 +4,7 @@
             <table class="table-fixed ">
                 <thead>
                     <tr
-                        class=" text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-900">
+                        class=" text-xs font-semibold tracking-wide text-left text-zinc-500 uppercase border-b dark:border-zinc-700 bg-zinc-50 dark:text-zinc-400 dark:bg-zinc-900">
                         <th class="px-2 py-2">N°</th>
                         <th class="px-2 py-2 w-1/3 text-center">TÍTULO</th>
                         <th class="px-2 py-2 w-1/5 text-center">RESOLUCIÓN</th>
@@ -13,12 +13,12 @@
                         <th class="px-2 py-2 w-1/6 text-center">VER CONVENIO</th>
                     </tr>
                 </thead>
-                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+                <tbody class="bg-white divide-y dark:divide-zinc-700 dark:bg-zinc-900">
                     @php
                         $i=1;
                     @endphp
                     @forelse ($resultados as $resultado)
-                    <tr class="text-gray-700 dark:text-gray-400">
+                    <tr class="text-zinc-700 dark:text-zinc-400">
                         <td class="px-2 py-2 text-xs">
                             @php
                                 echo $i;
@@ -36,7 +36,7 @@
                         ?>
                                 <div class="grid justify-items-center px-10 ">
                                     <button
-                                       class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
+                                       class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-zinc-100">
                                         Activo
                                     </button>
                                 </div>
@@ -46,17 +46,17 @@
                         ?>
                                 <div class="px-5 grid justify-items-center">
                                     <button
-                                        class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-gray-100">
+                                        class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-zinc-100">
                                             Por vencer
                                     </button>
                                 </div>
                         <?php
                             }
-                            if($resultado->status=='VENCIDO'){  
-                        ?> 
+                            if($resultado->status=='VENCIDO'){
+                        ?>
                                 <div class="grid justify-items-center px-10 ">
                                     <button
-                                        class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-gray-500 shadow-lg shadow-gray-500/50 text-gray-100">
+                                        class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-zinc-500 shadow-lg shadow-zinc-500/50 text-zinc-100">
                                             Vencido
                                     </button>
                                 </div>
@@ -69,7 +69,7 @@
                         <td class="px-3 py-3 text-center">
                             <div class="space-x-4 text-sm flex justify-center">
                                 <a href="{{route('ver.id',$resultado->id)}}"
-                                    class="px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                    class="px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                     aria-label="Delete">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                         class="w-5 h-5">

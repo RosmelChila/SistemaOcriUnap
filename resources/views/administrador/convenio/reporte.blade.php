@@ -13,7 +13,7 @@
         <div class="grid sm:grid-cols-1 w-full  gap-1 md:grid-cols-7 ">
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">RESPONSABLE</span>
                     <div class="form-control px-2 grid justify-items-start">
                         @foreach ($responsibles as $id => $name)
@@ -29,7 +29,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm  py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class="h-full md:basis-1/3 max-w-sm  py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">LOCALIZACIÓN</span>
                     <div class="form-control px-2 grid justify-items-start">
                         <label class="cursor-pointer label">
@@ -52,7 +52,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">PAIS</span>
                     <div class="form-control px-2 grid justify-items-start">
                         @foreach ($countries as $id => $name)
@@ -67,7 +67,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">SECTOR</span>
                     <div class="form-control px-2 grid justify-items-start">
                         <label class="cursor-pointer label">
@@ -85,7 +85,7 @@
             </div>
             <div>
                 <div
-                    class=" h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class=" h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">COBERTURA</span>
                     <div class="form-control px-2 grid justify-items-start ">
                         @foreach ($coverages as $id => $name)
@@ -100,7 +100,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">CONVENIO CON:</span>
                     <div class="form-control px-2 grid justify-items-start ">
                         @foreach ($organizations as $id => $name)
@@ -115,17 +115,17 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100 grid justify-items-center">
+                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100 grid justify-items-center">
                     <span class="text-xs font-semibold tracking-wide">FECHAS</span>
                     <label class="input-group input-group-vertical">
-                        <span class="text-sm mx-2 grid justify-items-center bg-gray-200 dark:bg-gray-800">desde</span>
+                        <span class="text-sm mx-2 grid justify-items-center bg-zinc-200 dark:bg-zinc-800">desde</span>
                         <input type="date" name="date1"
-                            class="input input-bordered input-xs mx-2 bg-gray-100 dark:bg-gray-900  " />
+                            class="input input-bordered input-xs mx-2 bg-zinc-100 dark:bg-zinc-900  " />
                     </label>
                     <label class="input-group input-group-vertical">
-                        <span class="text-sm mx-2 grid justify-items-center bg-gray-200 dark:bg-gray-800">hasta</span>
+                        <span class="text-sm mx-2 grid justify-items-center bg-zinc-200 dark:bg-zinc-800">hasta</span>
                         <input type="date" name="date2"
-                            class="input input-bordered input-xs mx-2 bg-gray-100 dark:bg-gray-900 " />
+                            class="input input-bordered input-xs mx-2 bg-zinc-100 dark:bg-zinc-900 " />
                     </label>
                 </div>
             </div>
@@ -145,7 +145,7 @@
         <table class="table-fixed ">
             <thead>
                 <tr
-                    class=" text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-900">
+                    class=" text-xs font-semibold tracking-wide text-left text-zinc-500 uppercase border-b dark:border-zinc-700 bg-zinc-50 dark:text-zinc-400 dark:bg-zinc-900">
                     <th class="px-2 py-2">N°</th>
                     <th class="px-2 py-2 w-1/3 text-center">TÍTULO</th>
                     <th class="px-2 py-2 w-1/5 text-center">RESOLUCIÓN</th>
@@ -154,12 +154,12 @@
                     <th class="px-2 py-2 w-1/6 text-center">VER CONVENIO</th>
                 </tr>
             </thead>
-            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+            <tbody class="bg-white divide-y dark:divide-zinc-700 dark:bg-zinc-900">
                 @php
                     $i=1;
                 @endphp
                 @forelse ($agreements as $agreement)
-                <tr class="text-gray-700 dark:text-gray-400">
+                <tr class="text-zinc-700 dark:text-zinc-400">
                     <td class="px-2 py-2 text-xs">
                         @php
                             echo $i;
@@ -177,7 +177,7 @@
                                     ?>
                                             <div class="grid justify-items-center px-10 ">
                                                 <button
-                                                   class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-gray-100">
+                                                   class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-zinc-100">
                                                     Activo
                                                 </button>
                                             </div>
@@ -187,17 +187,17 @@
                                     ?>
                                             <div class="px-5 grid justify-items-center">
                                                 <button
-                                                    class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-gray-100">
+                                                    class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-zinc-100">
                                                         Por vencer
                                                 </button>
                                             </div>
                                     <?php
                                         }
-                                        if($agreement->status=='VENCIDO'){  
-                                    ?> 
+                                        if($agreement->status=='VENCIDO'){
+                                    ?>
                                             <div class="grid justify-items-center px-10 ">
                                                 <button
-                                                    class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-gray-500 shadow-lg shadow-gray-500/50 text-gray-100">
+                                                    class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-zinc-500 shadow-lg shadow-zinc-500/50 text-zinc-100">
                                                         Vencido
                                                 </button>
                                             </div>
@@ -210,7 +210,7 @@
                     <td class="px-3 py-3 text-center">
                         <div class="space-x-4 text-sm flex justify-center">
                             <a href="{{route('ver.id',$agreement->id)}}"
-                                class="px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                class="px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                 aria-label="Delete">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                     class="w-5 h-5">

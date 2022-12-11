@@ -5,7 +5,7 @@
         </a>
     </div>
 
-    <div class="w-full px-6 py-4 my-6 overflow-hidden bg-white rounded-md shadow-md sm:max-w-md dark:bg-gray-900">
+    <div class="w-full px-6 py-4 my-6 overflow-hidden bg-white rounded-md shadow-md sm:max-w-md dark:bg-zinc-900">
         {{ $slot }}
     </div>
 </main>

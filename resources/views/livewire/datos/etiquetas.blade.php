@@ -1,4 +1,4 @@
-<div class="grid grid-cols-2 gird justify-center bg-gray-900 py-4 rounded-lg ">
+<div class="grid grid-cols-2 gird justify-center bg-zinc-900 py-4 rounded-lg ">
     <div>@livewire('datos.crearpais')</div>
     @livewire('datos.crearcobertura')
 

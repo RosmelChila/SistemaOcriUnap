@@ -13,13 +13,13 @@
         </x-slot>
         <x-slot name="content">
             <form action="">
-                <div class="grid grid-rows-2 grid-flow-col dark:bg-gray-900 rounded-lg py-4">
+                <div class="grid grid-rows-2 grid-flow-col dark:bg-zinc-900 rounded-lg py-4">
                     <div class="px-4 grid content-center col-span-1">
                         <label class="label">
-                            <span class="label-text text-gray-900 dark:text-gray-100">Nombre de cobertura</span>
+                            <span class="label-text text-zinc-900 dark:text-zinc-100">Nombre de cobertura</span>
                         </label>
                         <input type="text" placeholder="RESOLUCION 123-XX"
-                            class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm"
+                            class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-zinc-800 dark:input dark:input-sm"
                             wire:model.defer="name" />
                         {{-- {{ $name }} --}}
                     </div>

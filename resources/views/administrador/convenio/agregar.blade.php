@@ -1,10 +1,10 @@
 <x-app-layout>
     <table class="">
-        <div class="flex-1 bg-gray-900 py-4 rounded-lg  grid justify-center">
+        <div class="flex-1 bg-zinc-900 py-4 rounded-lg  grid justify-center">
             @livewire('datos.crearcobertura')
 
         </div>
-        <div class="flex-1 bg-gray-900 rounded-lg  grid justify-center">
+        <div class="flex-1 bg-zinc-900 rounded-lg  grid justify-center">
             @livewire('datos.crearpais')
         </div>
 
@@ -13,98 +13,98 @@
         @csrf
         <div class="grid grid-cols-1 gap-3">
             {{-- para datos 1 --}}
-            <div class="grid grid-rows-2 grid-flow-col dark:bg-gray-900 rounded-lg py-4">
+            <div class="grid grid-rows-2 grid-flow-col dark:bg-zinc-900 rounded-lg py-4">
                 <div class="px-4 grid content-center col-span-1">
                     <label class="label">
-                        <span class="label-text text-gray-900 dark:text-gray-100">Resolución</span>
+                        <span class="label-text text-zinc-900 dark:text-zinc-100">Resolución</span>
                     </label>
                     <input type="text" name="resolution" placeholder="RESOLUCION 123-XX"
-                        class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
+                        class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-zinc-800 dark:input dark:input-sm" />
                 </div>
                 <div class="px-4  grid content-center row-span-1 col-span-1">
                     <label class="label">
-                        <span class="label-text text-gray-900 dark:text-gray-100">Título</span>
+                        <span class="label-text text-zinc-900 dark:text-zinc-100">Título</span>
                     </label>
                     <input type="text" name="title" placeholder="CONVENIO ......"
-                        class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-gray-800 dark:input dark:input-sm" />
+                        class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-zinc-800 dark:input dark:input-sm" />
                 </div>
                 <div class=" px-4 row-span-2">
                     <label class="label">
-                        <span class="label-text text-gray-900 dark:text-gray-100">Objetivos</span>
+                        <span class="label-text text-zinc-900 dark:text-zinc-100">Objetivos</span>
                     </label>
-                    <textarea name="objetive" class="textarea textarea-success w-full bg-white dark:bg-gray-900 dark:textarea h-24"
+                    <textarea name="objetive" class="textarea textarea-success w-full bg-white dark:bg-zinc-900 dark:textarea h-24"
                         placeholder="OBJETIVOS"></textarea>
                 </div>
             </div>
 
             {{-- para los dotos 2 --}}
             <div>
-                <div class="grid grid-row md:grid-cols-4 dark:bg-gray-900 rounded-lg py-4">
+                <div class="grid grid-row md:grid-cols-4 dark:bg-zinc-900 rounded-lg py-4">
                     <div class="px-4 grid content-center col-span-2">
                         <label class="label">
-                            <span class="label-text text-gray-900 dark:text-gray-100">Fecha de
+                            <span class="label-text text-zinc-900 dark:text-zinc-100">Fecha de
                                 suscripción</span>
                         </label>
                         <input name="subscription" type="date" placeholder=""
-                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-gray-800 w-full" />
+                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                     </div>
                     {{-- años vencimiento --}}
                     <div class="px-4 grid content-center">
                         <label class="label">
-                            <span class="label-text text-gray-900 dark:text-gray-100">Vencimiento en años</span>
+                            <span class="label-text text-zinc-900 dark:text-zinc-100">Vencimiento en años</span>
                         </label>
                         <input type="number" name="years" value="0"
-                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-gray-800 w-full" />
+                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                     </div>
                     <div class="px-4 grid content-center">
                         <label class="label">
-                            <span class="label-text text-gray-900 dark:text-gray-100">Vencimiento en mes</span>
+                            <span class="label-text text-zinc-900 dark:text-zinc-100">Vencimiento en mes</span>
                         </label>
                         <input type="number" name="months" value="0"
-                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-gray-800 w-full" />
+                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                     </div>
 
                     <div class="px-4 grid content-center col-span-2">
                         <label class="label">
-                            <span class="label-text text-gray-900 dark:text-gray-100">Fecha aprobación
+                            <span class="label-text text-zinc-900 dark:text-zinc-100">Fecha aprobación
                                 C.U.</span>
                         </label>
                         <input name="approbation" type="date" placeholder=""
-                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-gray-800 w-full" />
+                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                     </div>
 
                     <div class="px-4 grid content-center">
                         <label class="label">
-                            <span class="label-text text-gray-900 dark:text-gray-100">Vencimiento en años</span>
+                            <span class="label-text text-zinc-900 dark:text-zinc-100">Vencimiento en años</span>
                         </label>
                         <input type="number" name="days" value="0"
-                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-gray-800 w-full" />
+                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                     </div>
                 </div>
 
 
                 <div>
-                    <div class="grid grid-row md:grid-cols-4 dark:bg-gray-900 rounded-lg py-4">
+                    <div class="grid grid-row md:grid-cols-4 dark:bg-zinc-900 rounded-lg py-4">
                         {{-- <div class="px-4 grid content-center col-span-2">
                         <label class="label">
-                            <span class="label-text text-gray-900 dark:text-gray-100">Fecha de
+                            <span class="label-text text-zinc-900 dark:text-zinc-100">Fecha de
                                 suscripción</span>
                         </label>
                         <input name="subscription" type="date" placeholder=""
-                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-gray-800 w-full" />
+                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                     </div>
                     <div class="px-4 grid content-center col-span-2">
                         <label class="label">
-                            <span class="label-text text-gray-900 dark:text-gray-100">Fecha aprobación
+                            <span class="label-text text-zinc-900 dark:text-zinc-100">Fecha aprobación
                                 C.U.</span>
                         </label>
                         <input name="approbation" type="date" placeholder=""
-                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-gray-800 w-full" />
+                            class="input input-bordered input-success input-sm bg-white dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                     </div> --}}
 
                         <div class="px-4 grid content-center col-span-2">
                             <label class="label">
-                                <span class="label-text text-gray-900 dark:text-gray-100">Cobertura</span>
+                                <span class="label-text text-zinc-900 dark:text-zinc-100">Cobertura</span>
                             </label>
                             <select name="coverage_id" value="{{ old('id') }}"
                                 class="select select-success select-sm bg-white dark:select dark:select-sm">
@@ -117,7 +117,7 @@
                         </div>
                         <div class="px-4 grid content-center col-span-2">
                             <label class="label">
-                                <span class="label-text text-gray-900 dark:text-gray-100">Convenio con:</span>
+                                <span class="label-text text-zinc-900 dark:text-zinc-100">Convenio con:</span>
                             </label>
                             <select name="organization_id" value="{{ old('id') }}"
                                 class="select select-success select-sm bg-white dark:select dark:select-sm">
@@ -138,7 +138,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg> <label class="label">
-                                    <span class="label-text text-gray-900 dark:text-gray-100">Pais</span>
+                                    <span class="label-text text-zinc-900 dark:text-zinc-100">Pais</span>
                                 </label></button>
                             <select name="country_id" value="{{ old('id') }}"
                                 class="select select-success select-sm bg-white dark:select dark:select-sm">
@@ -156,7 +156,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg> <label class="label">
-                                    <span class="label-text text-gray-900 dark:text-gray-100">Región</span>
+                                    <span class="label-text text-zinc-900 dark:text-zinc-100">Región</span>
                                 </label></button>
                             <select name="region_id" value="{{ old('id') }}"
                                 class="select select-success select-sm bg-white dark:select dark:select-sm">
@@ -174,7 +174,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg> <label class="label">
-                                    <span class="label-text text-gray-900 dark:text-gray-100">provincia</span>
+                                    <span class="label-text text-zinc-900 dark:text-zinc-100">provincia</span>
                                 </label></button>
                             <select name="province_id" value="{{ old('id') }}"
                                 class="select select-success select-sm bg-white dark:select dark:select-sm">
@@ -192,7 +192,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg> <label class="label">
-                                    <span class="label-text text-gray-900 dark:text-gray-100">Distrito</span>
+                                    <span class="label-text text-zinc-900 dark:text-zinc-100">Distrito</span>
                                 </label></button>
                             <select name="district_id" value="{{ old('id') }}"
                                 class="select select-success select-sm bg-white dark:select dark:select-sm">
@@ -210,7 +210,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg> <label class="label">
-                                    <span class="label-text text-gray-900 dark:text-gray-100">Localización</span>
+                                    <span class="label-text text-zinc-900 dark:text-zinc-100">Localización</span>
                                 </label></button>
                             <select name="location"
                                 class="select select-success select-sm bg-white dark:select dark:select-sm">
@@ -227,7 +227,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg> <label class="label">
-                                    <span class="label-text text-gray-900 dark:text-gray-100">Sector</span>
+                                    <span class="label-text text-zinc-900 dark:text-zinc-100">Sector</span>
                                 </label></button>
                             <select name="sector"
                                 class="select select-success select-sm bg-white dark:select dark:select-sm">
@@ -243,7 +243,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg> <label class="label">
-                                    <span class="label-text text-gray-900 dark:text-gray-100">Organización</span>
+                                    <span class="label-text text-zinc-900 dark:text-zinc-100">Organización</span>
                                 </label></button>
                             <select name="organization"
                                 class="select select-success select-sm bg-white dark:select dark:select-sm">
@@ -258,11 +258,11 @@
                 </div>
 
                 {{-- para los responsables --}}
-                <div class="p-4 dark:bg-gray-900 rounded-lg py-4">
+                <div class="p-4 dark:bg-zinc-900 rounded-lg py-4">
                     <div x-data="{ show: true }" class="w-full ">
                         <label for="check-menu" class="flex flex-row  align-middle cursor-pointer w-70px">
                             <input type="checkbox" id="check-menu" class="hidden" x-model="show" />
-                            <span class="duration-[400ms] label-text text-gray-900 dark:text-gray-200">Seleccionar
+                            <span class="duration-[400ms] label-text text-zinc-900 dark:text-zinc-200">Seleccionar
                                 Responsables</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="#1FB2A6" class="w-5 h-5">
@@ -271,7 +271,7 @@
                             </svg>
                         </label>
                         <div x-show="show"
-                            class=" px-4 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-200 grid justify-items-start">
+                            class=" px-4 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-200 grid justify-items-start">
                             <div class="form-control px-2 grid grid-cols-10">
                                 @if (sizeof($responsibles) > 0)
                                     @foreach ($responsibles as $id => $name)
@@ -289,10 +289,10 @@
                 </div>
 
                 {{-- para cargar el pdf --}}
-                <div class="grid content-center p-4 dark:bg-gray-900 rounded-lg py-4">
-                    <span class="label-text text-gray-900 dark:text-gray-100 py-2 ">Convenio Escaneado (PDF)</span>
+                <div class="grid content-center p-4 dark:bg-zinc-900 rounded-lg py-4">
+                    <span class="label-text text-zinc-900 dark:text-zinc-100 py-2 ">Convenio Escaneado (PDF)</span>
                     <input name="paths" id="paths" type="file"
-                        class="file-input file-input-xs file-input-bordered file-input-accent w-full max-w-xs bg-gray-200 dark:bg-gray-900" />
+                        class="file-input file-input-xs file-input-bordered file-input-accent w-full max-w-xs bg-zinc-200 dark:bg-zinc-900" />
                 </div>
             </div>
 
