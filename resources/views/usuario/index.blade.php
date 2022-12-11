@@ -118,7 +118,7 @@
               @auth
                   <a href="{{ url('/dashboard') }}"><button class="btn btn-sm">Iniciado</button></a>
               @else
-                  <a href="{{ route('login') }}"><button class="btn btn-sm">Admin</button></a>
+                  <a href="{{ route('login') }}"><button class="btn btn-accent btn-sm dark:btn-warning">Admin</button></a>
               @endauth
 
           @endif
@@ -149,7 +149,7 @@
             </div>
             <div>
               <input type="text" placeholder="Ingrese Nombre de Convenio" class="input w-96 bg-white dark:bg-zinc-900 h-14"/>
-              <button class="btn btn-info dark:btn-warning">Buscar</button>
+              <button class="btn btn-accent dark:btn-warning">Buscar</button>
             </div>
 
 
