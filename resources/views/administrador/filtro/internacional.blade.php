@@ -1,16 +1,14 @@
 <x-app-layout>
-    <div class="flex justify-start py-5">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
-        </svg>
-        <span class="px-5">Convenios internacionales</span>
-    </div>
+        <div class="flex justify-start py-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM6.262 6.072a8.25 8.25 0 1010.562-.766 4.5 4.5 0 01-1.318 1.357L14.25 7.5l.165.33a.809.809 0 01-1.086 1.085l-.604-.302a1.125 1.125 0 00-1.298.21l-.132.131c-.439.44-.439 1.152 0 1.591l.296.296c.256.257.622.374.98.314l1.17-.195c.323-.054.654.036.905.245l1.33 1.108c.32.267.46.694.358 1.1a8.7 8.7 0 01-2.288 4.04l-.723.724a1.125 1.125 0 01-1.298.21l-.153-.076a1.125 1.125 0 01-.622-1.006v-1.089c0-.298-.119-.585-.33-.796l-1.347-1.347a1.125 1.125 0 01-.21-1.298L9.75 12l-1.64-1.64a6 6 0 01-1.676-3.257l-.172-1.03z" clip-rule="evenodd" />
+              </svg>
+              <span class="px-5 text-sm">CONVENIOS INTERNACIONALES</span>
+        </div>
     <div class="grid grid-rows gap-4 md:gap-4 md:grid-cols-5 ">
-        <div class="col-span-1">
+        <div class="col-span-1 ">
             <aside class="rounded-lg bg-dark-eval-1" aria-label="Sidebar">
-                <div class="overflow-y-auto py-4 px-3 bg-zinc-50 dark:bg-zinc-900 rounded-lg grid justify-center">
+                <div class="overflow-y-auto py-4 px-3 bg-zinc-50 dark:bg-zinc-900 rounded-lg grid justify-center shadow-lg">
                     {{-- esta lista es para filtro de paises --}}
                     <ul class="space-y-2">
                         @foreach ($countries as $country)
@@ -35,7 +33,7 @@
         </div>
         <div class="col-span-4">
             <div class="container grid mx-auto ">
-                <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                <div class="w-full overflow-hidden rounded-lg shadow-lg">
                     <div class="w-full overflow-x-auto ">
                         {{-- esta tabla es para el contenido --}}
                         <table class="table-fixed ">
@@ -69,30 +67,22 @@
                                         if($agreement->status=='VIGENTE'){
                                     ?>
                                             <div class="grid justify-items-center px-10 ">
-                                                <button
-                                                   class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-zinc-100">
-                                                    Activo
-                                                </button>
+                                                <span class="bg-green-600 text-zinc-100 px-4 py-1 rounded-lg shadow-lg">vigente</span>
+
                                             </div>
                                     <?php
                                         }
                                         if($agreement->status=='POR VENCER'){
                                     ?>
                                             <div class="px-5 grid justify-items-center">
-                                                <button
-                                                    class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-zinc-100">
-                                                        Por vencer
-                                                </button>
+                                                <span class="bg-red-500 text-zinc-100 px-4 py-1 rounded-lg shadow-lg">Por vencer</span>
                                             </div>
                                     <?php
                                         }
                                         if($agreement->status=='VENCIDO'){
                                     ?>
                                             <div class="grid justify-items-center px-10 ">
-                                                <button
-                                                    class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-zinc-500 shadow-lg shadow-zinc-500/50 text-zinc-100">
-                                                        Vencido
-                                                </button>
+                                                <span class="bg-zinc-600 text-zinc-100 px-4 py-1 rounded-lg shadow-lg">Vencido</span>
                                             </div>
                                     <?php
                                         }
