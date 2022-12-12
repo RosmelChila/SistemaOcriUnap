@@ -1,6 +1,50 @@
 <x-guest-layout>
-    <div class="flex flex-col min-h-screen font-bunny bg-[url('https://radioondaazul.com/wp-content/uploads/2022/08/Universidad-Nacional-del-Altiplano-Puno.jpg')]" >
-        {{-- para el contenido de login --}}
+    <div class="hero min-h-screen bg-zinc-900">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div class="text-center lg:text-left">
+            <h1 class="text-5xl font-bold">Ocri - Una</h1>
+            <p class="py-6">Oficina de Cooperación y Relaciones Internacionales</p>
+          </div>
+          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-zinc-800 p-10">
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="mt-4">
+                    <label class="block" for="email" value="{{ __('Email') }}">
+                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-zinc-800 dark:text-zinc-200 py-1">
+                            Correo
+                          </span>
+                        <input type="email" id="email" name="email" placeholder="Email"  :value="" class="input input-info dark:input w-full bg-zinc-100 dark:bg-zinc-800" />
+                      </label>
+                </div>
+                <div class="mt-4">
+                    <label class="block" for="password" value="{{ __('password') }}">
+                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-zinc-800 dark:text-zinc-200 py-1">
+                            Contraseña
+                          </span>
+                        <input type="password" id="password" name="password" placeholder="password"  :value="" class="input input-info dark:input w-full bg-zinc-100 dark:bg-zinc-800" />
+                      </label>
+                </div>
+                <div class="mt-4 flex items-center  ">
+                    <div class="form-control">
+                        <label for="remember_me" class="label cursor-pointer">
+                          <input id="remember_me" type="checkbox" class="checkbox checkbox-info checkbox-sm dark:checkbox dark:checkbox-sm " name="remember" />
+                          <span class="label-text px-5">Recordame</span>
+                        </label>
+                      </div>
+                </div>
+
+                <div class="mt-8 flex justify-end">
+                    <button class="btn btn-accent dark:btn-warning text-zinc-100">INGRESAR</button>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    {{-- <div class="flex flex-col min-h-screen font-bunny" style="background-image: url('https://radioondaazul.com/wp-content/uploads/2022/08/Universidad-Nacional-del-Altiplano-Puno.jpg');" >
+
         <main class="flex-1 lg:mt-20">
             <div
                 class="flex max-w-lg mx-auto my-16 overflow-hidden bg-white rounded-lg lg:space-x-8 dark:bg-zinc-800 lg:max-w-5xl">
@@ -53,22 +97,22 @@
                         </div>
                     </form>
             </div>
-        </main>
+        </main> --}}
 
         {{-- para footer --}}
-            <div class="bg-zinc-100 dark:bg-zinc-900">
+            {{-- <div class="bg-zinc-100 dark:bg-zinc-900">
                 <div
                     class="container flex flex-col items-center px-4 py-6 mx-auto space-y-6 lg:space-y-0 lg:flex-row lg:justify-between">
                     <div class="w-48 text-zinc-700 dark:text-zinc-200">
                         <div class="flex items-center">
                             <img src="https://ocri.unap.edu.pe/sites/default/files/OCRI%20copia%203%20%281%29.png" alt="" class="h-10">
-                            {{-- <p class="ml-2 text-lg 2xl:text-xl">Oficina de cooperación y relaciones internacionales <strong>Convenios</strong></p> --}}
+                            <p class="ml-2 text-lg 2xl:text-xl">Oficina de cooperación y relaciones internacionales <strong>Convenios</strong></p>
                         </div>
                     </div>
                     <p class="text-sm text-center text-zinc-500 dark:text-zinc-300">© 2022 Derechos reservados. Oficina de
                         cooperacion y relaciones internacionales UNA - PUNO</p>
                     <div class="flex items-center space-x-6">
-                        {{-- <a href="/privacy"
+                        <a href="/privacy"
                             class="text-sm text-zinc-500 transition-colors duration-300 dark:text-zinc-300 hover:underline hover:text-primary dark:hover:text-primary">Privacidad</a>
                         <a href="/legal"
                             class="text-sm text-zinc-500 transition-colors duration-300 dark:text-zinc-300 hover:underline hover:text-primary dark:hover:text-primary">Legal</a>
@@ -87,10 +131,10 @@
                                 <path
                                     d="M15 1.875C7.75195 1.875 1.875 7.9043 1.875 15.334C1.875 21.2812 5.63672 26.3203 10.8516 28.1016C10.9247 28.1175 10.9994 28.1253 11.0742 28.125C11.5605 28.125 11.748 27.7676 11.748 27.457C11.748 27.1348 11.7363 26.291 11.7305 25.166C11.2963 25.2678 10.8522 25.3209 10.4062 25.3242C7.88086 25.3242 7.30664 23.3613 7.30664 23.3613C6.70898 21.8086 5.84766 21.3926 5.84766 21.3926C4.70508 20.5898 5.8418 20.5664 5.92969 20.5664H5.93555C7.25391 20.6836 7.94531 21.9609 7.94531 21.9609C8.60156 23.1094 9.48047 23.4316 10.2656 23.4316C10.7848 23.4213 11.2959 23.3015 11.7656 23.0801C11.8828 22.2129 12.2227 21.6211 12.5977 21.2812C9.68555 20.9414 6.62109 19.7871 6.62109 14.6309C6.62109 13.1602 7.13086 11.959 7.96875 11.0215C7.83398 10.6816 7.38281 9.31055 8.09766 7.45898C8.19354 7.43604 8.29209 7.42619 8.39062 7.42969C8.86523 7.42969 9.9375 7.61133 11.707 8.8418C13.8572 8.24022 16.1311 8.24022 18.2812 8.8418C20.0508 7.61133 21.123 7.42969 21.5977 7.42969C21.6962 7.42619 21.7947 7.43604 21.8906 7.45898C22.6055 9.31055 22.1543 10.6816 22.0195 11.0215C22.8574 11.9648 23.3672 13.166 23.3672 14.6309C23.3672 19.7988 20.2969 20.9355 17.373 21.2695C17.8418 21.6855 18.2637 22.5059 18.2637 23.7598C18.2637 25.5586 18.2461 27.0117 18.2461 27.4512C18.2461 27.7676 18.4277 28.125 18.9141 28.125C18.9928 28.1253 19.0713 28.1175 19.1484 28.1016C24.3691 26.3203 28.125 21.2754 28.125 15.334C28.125 7.9043 22.248 1.875 15 1.875Z">
                                 </path>
-                            </svg></a> --}}
+                            </svg></a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
     </div>
 
