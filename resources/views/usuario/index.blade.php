@@ -70,8 +70,7 @@
                 class="relative w-full overflow-hidden transition-all duration-700 lg:hidden max-h-0">
                 <div class="flex flex-col my-3 space-y-2 text-sm hover:font-b text-zinc-600 dark:text-zinc-100">
                     <a href="#" class="hover:text-zinc-900 dark:hover:text-zinc-400"><span>Inicio</span></a>
-                    <a href="#" class="hover:text-zinc-900 dark:hover:text-zinc-400"><span>Ver
-                            Convenios</span></a>
+                    <a href="#" class="hover:text-zinc-900 dark:hover:text-zinc-400"><span>Convenio</span></a>
                     <a href="#" class="hover:text-zinc-900 dark:hover:text-zinc-400"><span>Contacto</span></a>
                 </div>
                 <div>
@@ -95,7 +94,7 @@
                         </a>
                     </div>
 
-                    <!-- Dropdown 1 -->
+                    {{-- <!-- Dropdown 1 -->
                     <div x-data="{ open: false }" @mouseleave="open = false" class="relative inline-block"
                         :class="{ 'text-zinc-900 dark:text-zinc-400': open, 'text-zinc-600 dark:text-zinc-100': !open }">
                         <!-- Dropdown Toggle Button -->
@@ -129,7 +128,13 @@
                         </div>
                         <!-- End Dropdown Menu -->
                     </div>
-                    <!-- End Dropdown 1 -->
+                    <!-- End Dropdown 1 --> --}}
+                    <div class="mr-3">
+                        <a href="#"
+                            class="inline-block px-4 py-2 no-underline hover:text-zinc-900 dark:hover:text-zinc-400 text-zinc-600 dark:text-zinc-100">
+                            Convenio
+                        </a>
+                    </div>
                     <div class="mr-3">
                         <a href="#"
                             class="inline-block px-4 py-2 no-underline hover:text-zinc-900 dark:hover:text-zinc-400 text-zinc-600 dark:text-zinc-100">
@@ -175,27 +180,24 @@
 
         </nav>
 
-        <div
-            class="flex flex-col min-h-screen font-bunny bg-[url('https://radioondaazul.com/wp-content/uploads/2022/08/Universidad-Nacional-del-Altiplano-Puno.jpg')]">
+        <div>
             {{-- para el contenido de login --}}
-            <main class="flex-1 mt-52 h-full">
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="col-span-3 grid justify-center h-96">
-                        <div>
-                        </div>
-                        <div>
-                            <input type="text" placeholder="Ingrese Nombre de Convenio"
-                                class="input w-96 bg-white dark:bg-zinc-900 h-14" />
-                            <a href="{{ route('resultado') }}"><button
-                                    class="btn btn-primary dark:btn-warning">Buscar</button></a>
-                        </div>
+            <main class="flex-">
+                  <div class="hero min-h-screen" style="background-image: url('https://radioondaazul.com/wp-content/uploads/2022/08/Universidad-Nacional-del-Altiplano-Puno.jpg');">
+                    <div class="hero-overlay bg-opacity-60"></div>
+                    <div class="hero-content text-center text-neutral-content">
+                      <div class="max-w-md">
+                    <h1 class="mb-5 text-5xl font-bold text-white">!Bienvenidos¡</h1>
+                        <p class="mb-5 text-white">Oficina de Cooperación y Relaciones Internacionales Universidad Nacional del Altiplano Puno</p>
+                        <a href="{{ route('resultado') }}"><button class="btn btn-primary">Ver Convenios</button></a>
+                      </div>
                     </div>
+                  </div>
 
-                </div>
-                <div class=" bg-white dark:bg-zinc-900 grid grid-cols-3 py-10">
+                {{-- <div class=" bg-white dark:bg-zinc-900 grid grid-cols-3 min-h-screen">
                   <div class=" grid justify-center px-20 ">
                     <div
-                        class="shadow-lg p-10 bg-zinc-100 hover:bg-violet-600 hover:text-white rounded-md dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-800 dark:text-white">
+                        class="shadow-lg h-60 p-10 bg-zinc-100 hover:bg-violet-600 hover:text-white rounded-md dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-800 dark:text-white">
                         <div class="grid justify-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                 class="w-20 h-20">
@@ -250,7 +252,7 @@
                         </div>
                     </div>
                 </div>
-                </div>
+                </div> --}}
 
                 <!-- ====== Contact Section Start -->
                 <section class="relative z-10 overflow-hidden bg-white dark:bg-zinc-900 py-20 lg:py-[120px]">
