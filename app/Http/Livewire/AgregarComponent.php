@@ -143,8 +143,8 @@ class AgregarComponent extends Component
             $status='VENCIDO';
         }
     }
-
-    $agreement=Agreement::create($validatedDate+['country_id'=>$this->countryid]+['region_id'=>$this->regionid]+['province_id'=>$this->provinceid]+['district_id'=>$this->districtid]+['path'=>$this->paths]+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
+    $path=$this->paths->store('files');
+    $agreement=Agreement::create($validatedDate+['country_id'=>$this->countryid]+['region_id'=>$this->regionid]+['province_id'=>$this->provinceid]+['district_id'=>$this->districtid]+['path'=>$path]+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
     $agreement->responsibles()->sync($this->responsible);
     if($agreement->status=='POR VENCER'){
         Notification::send($users,new AgreementExpiration ($agreement->id,$agreement->status));
