@@ -16,7 +16,7 @@
             <x-icons.empty-circle class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         @endif
 
-        <span class="text-base font-medium whitespace-nowrap" x-show="isSidebarOpen || isSidebarHovered">
+        <span class="text-base font-medium whitespace-nowrap text-zinc-800 dark:text-zinc-500 mx-4" x-show="isSidebarOpen || isSidebarHovered">
             {{ $title }}
         </span>
 
@@ -33,7 +33,7 @@
             <x-icons.empty-circle class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         @endif
 
-        <span class="text-base font-medium" x-show="isSidebarOpen || isSidebarHovered">
+        <span class="text-base font-medium whitespace-nowrap mx-4" x-show="isSidebarOpen || isSidebarHovered">
             {{ $title }}
         </span>
     </a>
