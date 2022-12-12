@@ -16,8 +16,7 @@
                     <div class="form-control px-2 grid justify-items-start">
                         @foreach ($responsibles as $id => $name)
                             <label class="cursor-pointer label">
-                                <input wire:model='responsible' type="checkbox" value="{{ $name }}"
-                                    name="responsibles[]"{{ is_array(old('responsibles')) && in_array($id, old('responsibles')) ? 'checked' : '' }}
+                                <input wire:model.defer='responsible' type="checkbox" value="{{ $name }}"
                                     class="checkbox checkbox-xs checkbox-warning" />
                                 <span class="label-text px-2">{{ $name }}</span>
                             </label>
@@ -31,17 +30,17 @@
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">LOCALIZACIÓN</span>
                     <div class="form-control px-2 grid justify-items-start">
                         <label class="cursor-pointer label">
-                            <input wire:model='location' type="checkbox" name="locations[]" value="INTERNACIONAL"
+                            <input wire:model.defer='location' type="checkbox" name="locations[]" value="INTERNACIONAL"
                                 class="checkbox checkbox-xs checkbox-checkbox-info" />
                             <span class="label-text px-2 ">INTERNACIONAL</span>
                         </label>
                         <label class="cursor-pointer label">
-                            <input wire:model='location' type="checkbox" name="locations[]" value="NACIONAL"
+                            <input wire:model.defer='location' type="checkbox" name="locations[]" value="NACIONAL"
                                 class="checkbox checkbox-xs checkbox-checkbox-info" />
                             <span class="label-text px-2 ">NACIONAL</span>
                         </label>
                         <label class="cursor-pointer label">
-                            <input wire:model='location' type="checkbox" name="locations[]" value="LOCAL"
+                            <input wire:model.defer='location' type="checkbox" name="locations[]" value="LOCAL"
                                 class="checkbox checkbox-xs checkbox-checkbox-info" />
                             <span class="label-text px-2 ">LOCAL</span>
                         </label>
@@ -55,7 +54,7 @@
                     <div class="form-control px-2 grid justify-items-start">
                         @foreach ($countries as $id => $name)
                             <label class="cursor-pointer label">
-                                <input wire:model='country' type="checkbox" name="countries[]" value="{{ $name }}"
+                                <input wire:model.defer='country' type="checkbox" name="countries[]" value="{{ $name }}"
                                     class="checkbox checkbox-xs checkbox-success" />
                                 <span class="label-text px-2">{{ $name }}</span>
                             </label>
@@ -69,12 +68,12 @@
                     <span class="text-xs font-semibold tracking-wide grid justify-items-center">SECTOR</span>
                     <div class="form-control px-2 grid justify-items-start">
                         <label class="cursor-pointer label">
-                            <input wire:model='sector' type="checkbox" name="sector[]" value="PUBLICO"
+                            <input wire:model.defer='sector' type="checkbox" name="sector[]" value="PUBLICO"
                                 class="checkbox checkbox-xs checkbox-checkbox-info" />
                             <span class="label-text px-2  ">PUBLICO</span>
                         </label>
                         <label class="cursor-pointer label">
-                            <input wire:model='sector' type="checkbox" name="sector[]" value="PRIVADO"
+                            <input wire:model.defer='sector' type="checkbox" name="sector[]" value="PRIVADO"
                                 class="checkbox checkbox-xs checkbox-checkbox-info" />
                             <span class="label-text px-2">PRIVADO</span>
                         </label>
@@ -88,7 +87,7 @@
                     <div class="form-control px-2 grid justify-items-start ">
                         @foreach ($coverages as $id => $name)
                             <label class="cursor-pointer label">
-                                <input wire:model='cobertura' type="checkbox" name="coverage[]" value="{{ $name }}"
+                                <input wire:model.defer='cobertura' type="checkbox" name="coverage[]" value="{{ $name }}"
                                     class="checkbox checkbox-xs checkbox-accent" />
                                 <span class="label-text px-2 ">{{ $name }}</span>
                             </label>
@@ -103,7 +102,7 @@
                     <div class="form-control px-2 grid justify-items-start ">
                         @foreach ($organizations as $id => $name)
                             <label class="cursor-pointer label">
-                                <input wire:model='category' type="checkbox" name="organizations[]" value="{{ $name }}"
+                                <input wire:model.defer='category' type="checkbox" name="organizations[]" value="{{ $name }}"
                                     class="checkbox checkbox-xs checkbox-secondary" />
                                 <span class="label-text px-2 ">{{ $name }}</span>
                             </label>
@@ -117,12 +116,12 @@
                     <span class="text-xs font-semibold tracking-wide">FECHAS</span>
                     <label class="input-group input-group-vertical">
                         <span class="text-sm mx-2 grid justify-items-center bg-zinc-200 dark:bg-zinc-800">desde</span>
-                        <input wire:model='inidate' type="date" name="date1"
+                        <input wire:model.defer='inidate' type="date" name="date1"
                             class="input input-bordered input-xs mx-2 bg-zinc-100 dark:bg-zinc-900  " />
                     </label>
                     <label class="input-group input-group-vertical">
                         <span class="text-sm mx-2 grid justify-items-center bg-zinc-200 dark:bg-zinc-800">hasta</span>
-                        <input wire:model='enddate' type="date" name="date2"
+                        <input wire:model.defer='enddate' type="date" name="date2"
                             class="input input-bordered input-xs mx-2 bg-zinc-100 dark:bg-zinc-900 " />
                     </label>
                 </div>
