@@ -11,10 +11,7 @@
                         <input wire:model='searchTerm' type="text" placeholder="Ingrese Nombre de Convenio"
                             class="input w-full text-zinc-900 bg-white dark:text-white dark:bg-zinc-900 shadow-lg my-2" /></label>
                 </div>
-                <div>
-                    <button wire:click="export">
-                        Download File
-                    </button>
+                {{-- <div>
                     <label for="" class="">Responsables
                         <select
                             class="select w-full  text-zinc-900 bg-white dark:text-white dark:bg-zinc-900 shadow-lg my-2">
@@ -25,9 +22,9 @@
                             <option>Lisa</option>
                             <option>Maggie</option>
                         </select></label>
-                </div>
+                </div> --}}
 
-                <div>
+                {{-- <div>
                     <label for="" class="">Localicacion
                         <select
                             class="select w-full text-zinc-900 bg-white dark:text-white dark:bg-zinc-900 shadow-lg my-2 ">
@@ -38,7 +35,7 @@
                             <option>Lisa</option>
                             <option>Maggie</option>
                         </select></label>
-                </div>
+                </div> --}}
             </div>
             <div class="col-span-3 px-10">
                 <span>{{$agreements->count()}} Convenios Encontrados</span>

@@ -41,8 +41,4 @@ class BusquedaComponent extends Component
             $this->sort=$sort;
         }
     }
-    public function export()
-    {
-        return Storage::disk('public')->download('files/ds4EVIkiPSXFeoFnRGmOO5qCk7xZwhWpZa4Vw3T7.pdf');
-    }
 }
