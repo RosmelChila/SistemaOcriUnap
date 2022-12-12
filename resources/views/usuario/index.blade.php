@@ -182,7 +182,6 @@
 
         <div>
             {{-- para el contenido de login --}}
-<<<<<<< Updated upstream
             <main class="flex-">
                   <div class="hero min-h-screen" style="background-image: url('https://radioondaazul.com/wp-content/uploads/2022/08/Universidad-Nacional-del-Altiplano-Puno.jpg');">
                     <div class="hero-overlay bg-opacity-60"></div>
@@ -192,19 +191,6 @@
                         <p class="mb-5 text-white">Oficina de Cooperación y Relaciones Internacionales Universidad Nacional del Altiplano Puno</p>
                         <a href="{{ route('resultado') }}"><button class="btn btn-primary">Ver Convenios</button></a>
                       </div>
-=======
-            <main class="flex-1 mt-52 h-full">
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="col-span-3 grid justify-center h-96">
-                        <div>
-                        </div>
-                        <div>
-                            <input name="search" type="text" placeholder="Ingrese Nombre de Convenio"
-                                class="input w-96 bg-white dark:bg-zinc-900 h-14" />
-                            <a href="{{ route('resultado') }}"><button
-                                    class="btn btn-primary dark:btn-warning">Buscar</button></a>
-                        </div>
->>>>>>> Stashed changes
                     </div>
                   </div>
 
