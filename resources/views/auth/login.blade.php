@@ -18,6 +18,8 @@
                                 :value=""
                                 class="input input-info dark:input w-full bg-zinc-100 dark:bg-zinc-800 dark:border-zinc-900" />
                         </label>
+                    <x-input-error for="email" />
+
                     </div>
                     <div class="mt-4">
                         <label class="block" for="password" value="{{ __('password') }}">
@@ -29,6 +31,8 @@
                                 :value=""
                                 class="input input-info dark:input w-full bg-zinc-100 dark:bg-zinc-800 dark:border-zinc-900" />
                         </label>
+                    <x-input-error for="password" />
+
                     </div>
                     <div class="mt-4 flex items-center  ">
                         <div class="form-control">
