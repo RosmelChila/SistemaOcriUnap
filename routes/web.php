@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Livewire\ReporteComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,3 +61,4 @@ Route::middleware([
 });
     //para usuarios
 Route::view('/resultado', 'usuario.busqueda')->name('resultado');
+Route::get('/descargar-pdf',[ReporteComponent::class,'genpdfcat']);

@@ -11,11 +11,12 @@ use App\Models\Province;
 use App\Models\Region;
 use App\Models\Responsible;
 use Livewire\Component;
+use PDF;
 
 class ReporteComponent extends Component
 {
     public $responsible=[],$country=[],$location=[],$sector=[],$cobertura=[],$category=[],$organization=[],$inidate,$enddate;
-    public $agreements=[];
+    public $agreements=[],$title='hola';
     public function render()
     {
         $countries=Country::pluck('name','id');
@@ -35,6 +36,9 @@ class ReporteComponent extends Component
             'responsibles'=>$responsibles,
         ];
         return view('livewire.reporte-component',$dates);
+    }
+    public function updatedTitle(){
+        $this->title=strtoupper($this->title);
     }
     public function reporte(){
         $agreements=Agreement::query();
@@ -76,5 +80,42 @@ class ReporteComponent extends Component
             $agreements->where('subscription','<=',$this->enddate);
         }
         $this->agreements=$agreements->get();
+    }
+    public function genpdfcat(){
+        $pdf=PDF::loadView('PDFCAT',['agreements'=>$this->agreements,'titulo'=>$this->title])->output();
+        return response()->streamDownload(
+            fn()=>print($pdf),"filename.pdf"
+        );
+    }
+    public function genpdfest(){
+        $estadistico=Agreement::all();
+        if($this->inidate && $this->inidate!='null'){
+            $estadistico=$estadistico->where('subscription','>=',$this->inidate);
+        }
+        if($this->enddate && $this->enddate!='null'){
+            $estadistico=$estadistico->where('subscription','<=',$this->enddate);
+        }
+        $CI=$estadistico->where('location','INTERNACIONAL')->count();
+        $CN=$estadistico->whereIn('location',['NACIONAL','LOCAL'])->count();
+        $CUN=$estadistico->where('organization_id','1')->count();
+        $CHCS=$estadistico->where('organization_id','2')->count();
+        $CM=$estadistico->where('organization_id','3')->count();
+        $CMUN=$estadistico->where('organization_id','4')->count();
+        $CDIP=$estadistico->where('organization_id','5')->count();
+        $CEF=$estadistico->where('organization_id','6')->count();
+        $CEM=$estadistico->where('organization_id','7')->count();
+        $CCC=$estadistico->where('organization_id','8')->count();
+        $CONG=$estadistico->where('organization_id','9')->count();
+        $CDEP=$estadistico->where('organization_id','10')->count();
+        $OTROS=$estadistico->where('organization_id','11')->count();
+        $TOTAL=$estadistico->where('organization_id','12')->count();
+        $dataes=[
+            'CI'=>$CI,'CN'=>$CN
+            // ,$CUN,$CHCS,$CM,$CMUN,$CDIP,$CEF,$CEM,$CCC,$CONG,$CDEP,$OTROS
+        ];
+        $pdf=PDF::loadView('PDFES',$dataes)->output();
+        return response()->streamDownload(
+            fn()=>print($pdf),"estadistico.pdf"
+        );
     }
 }

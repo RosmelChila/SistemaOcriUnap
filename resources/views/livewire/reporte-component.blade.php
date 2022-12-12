@@ -243,8 +243,9 @@
             <span class="text-xs font-semibold tracking-wide grid content-center">Tipo de descarga</span>
         </div>
         <div class="flex justify-end my-5">
-            <button class="mx-4 btn btn-accent btn-sm dark:btn dark:btn-sm">REPORTE ESTADISTICO</button>
-            <button class=" btn btn-accent btn-sm dark:btn dark:btn-sm">REPORTE</button>
+            <button wire:click='genpdfest' class="mx-4 btn btn-accent btn-sm dark:btn dark:btn-sm">REPORTE ESTADISTICO</button>
+            <input type="text"wire:model='title' placeholder="Ingrese su titulo">
+            <button wire:click='genpdfcat' class=" btn btn-accent btn-sm dark:btn dark:btn-sm">REPORTE</button>
         </div>
     </div>
 </div>
