@@ -68,7 +68,7 @@
         <!-- Defina bloques de encabezado y pie de página antes de su contenido -->
         <header>
             <div style="text-align:center;line-height:4;" >
-                <img src="C:\Users\ARIEL\Desktop\larawind.1\larawind\public\img\Header.png" width="auto" height="45" alt="">
+                <img src="https://i.imgur.com/U15mtN2.png" width="auto" height="45" alt="">
                 <p style="font-size:80%;padding:0;border:0;margin:0;line-height: 100%;"><b>RESUMEN DE CONVENIO PARA APROBACION EN CONSEJO UNIVERSITARIO ORDINARIO</b></p>
             </div>
         </header>

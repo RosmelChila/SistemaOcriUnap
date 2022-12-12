@@ -25,7 +25,7 @@ class LocationController extends Controller
     public function countries(Request $request){
         $country=$request->pais;
         // $agreements=Agreement::has('countries','=',$request);
-        $agreements=Agreement::query()->whereHas('countries',function($query) use($country){$query->where('name',$country);})->get();
+        $agreements=Agreement::all()->whereHas('countries',function($query) use($country){$query->where('name',$country);})->get();
         $countries=Country::all();
         return view('administrador.filtro.internacional',['agreements'=>$agreements,'countries'=>$countries]);
     }
