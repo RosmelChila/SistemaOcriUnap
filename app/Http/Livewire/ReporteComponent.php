@@ -40,18 +40,16 @@ class ReporteComponent extends Component
         $agreements=Agreement::query();
 
         if($this->responsible){
-            foreach($this->responsible as $resp){
+            $resp=$this->responsible;
                 $agreements->whereHas('responsibles',function($agreements) use($resp){
-                    $agreements->where('name',$resp);
+                    $agreements->whereIn('name',$resp);
                 });
-            }
         }
         if($this->cobertura){
-            foreach($this->cobertura as $coverage){
-                $agreements->whereHas('coverages',function($agreements) use($coverage){
-                    $agreements->where('name',$coverage);
+                $coberturas=$this->cobertura;
+                $agreements->whereHas('coverages',function($agreements) use($coberturas){
+                    $agreements->whereIn('name',$coberturas);
                 });
-            }
         }
         if($this->category){
             $organization=$this->category;

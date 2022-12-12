@@ -23,7 +23,7 @@ class LocationController extends Controller
         return view('administrador.filtro.internacional',['agreements'=>$agreements,'countries'=>$countries,'date'=>$date]);
     }
     public function countries(Request $request){
-       $country=$request->pais;
+        $country=$request->pais;
         // $agreements=Agreement::has('countries','=',$request);
         $agreements=Agreement::query()->whereHas('countries',function($query) use($country){$query->where('name',$country);})->get();
         $countries=Country::all();

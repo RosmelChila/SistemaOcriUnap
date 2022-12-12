@@ -59,5 +59,4 @@ Route::middleware([
 
 });
     //para usuarios
-
 Route::view('/resultado', 'usuario.busqueda')->name('resultado');

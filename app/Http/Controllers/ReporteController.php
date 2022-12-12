@@ -108,9 +108,12 @@ class ReporteController extends Controller
         return view('administrador.convenio.reporte',$dates);
     }
     public function search(Request $request){
-        $resultados=Agreement::orWhere('title','like','%'.$request->search)
-        ->orWhere('resolution','like','%'.$request->search)
-        ->orWhere('objetive','like','%'.$request->search)->get();
-        return view('administrador/convenio/buscar',['resultados'=>$resultados]);
+        // if (empty($request->search)) {
+        //     $agreements = Agreement::where('title', $request->search)->get();
+        // } else {
+        //     $agreements =Agreement::where('title', 'like', '%'.$request->search.'%')->get();
+        // }
+        $agreements=Agreement::all();
+        return view('usuario.busqueda',['agreements'=>$agreements]);
     }
 }
