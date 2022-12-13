@@ -61,4 +61,5 @@ Route::middleware([
 });
     //para usuarios
 Route::view('/resultado', 'usuario.busqueda')->name('resultado');
+Route::view('/ver', 'livewire.ver-convenio')->name('ver');
 Route::get('/descargar-pdf',[ReporteComponent::class,'genpdfcat']);
