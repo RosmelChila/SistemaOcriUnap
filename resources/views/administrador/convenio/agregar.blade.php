@@ -1,3 +1,3 @@
 <x-app-layout>
-    @livewire('agregar-component')
+ @livewire('agregar-component')
 </x-app-layout>

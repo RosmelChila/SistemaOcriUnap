@@ -1,12 +1,15 @@
-<div class="">
-    <button wire:click="$set('open',true)" class=" btn btn-accent btn-sm dark:btn dark:btn-sm">
+<div class="mt-4">
+    <div wire:click="$set('open',true)"
+        class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2 cursor-pointer grid justify-center">
+        <div class="grid justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+              </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1FB2A6" class="w-5 h-5">
-            <path fill-rule="evenodd"
-                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
-                clip-rule="evenodd" />
-        </svg><span>AGREGAR NUEVO PAIS</span>
-    </button>
+        </div>
+        <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 font-serif text-xs">Pais</span>
+
+    </div>
 
     <x-dialog-modal wire:model="open">
         <x-slot name="title">
@@ -19,7 +22,7 @@
                         <label class="label">
                             <span class="label-text text-zinc-900 dark:text-zinc-100">Nombre de pais</span>
                         </label>
-                        <input type="text" placeholder="RESOLUCION 123-XX"
+                        <input type="text" placeholder=""
                             class="input input-bordered input-success input-sm  w-full input-md bg-white dark:bg-zinc-800 dark:input dark:input-sm"
                             wire:model.defer="name" />
                         {{-- {{ $name }} --}}

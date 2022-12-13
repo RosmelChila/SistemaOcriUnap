@@ -47,7 +47,6 @@
             <div @click="handleClick()" x-data="{ open: false }"
                 class="block text-zinc-900 dark:text-zinc-100 cursor-pointer lg:hidden">
 
-                <button @click="open = ! open" class="w-6 h-6 text-lg">
                     <svg x-show="! open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                         class="w-6 h-6">
                         <path fill-rule="evenodd"
