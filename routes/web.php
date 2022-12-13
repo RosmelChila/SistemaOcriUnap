@@ -47,7 +47,7 @@ Route::middleware([
     Route::get('/local',[LocationController::class,'local'])->name('local');
     Route::get('/local/{province}',[LocationController::class,'provinces'])->name('local.province');
     //para ver convenios edicion
-    Route::view('/editar', 'administrador.convenio.editar')->name('editar');
+    Route::view('/editar/{ide}', 'administrador.convenio.editar')->name('editar.ide');
     Route::get('/ver/{id}',[ReporteController::class,'ver'])->name('ver.id');
 
     //agregar etiquetas
