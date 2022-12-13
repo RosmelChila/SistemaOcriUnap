@@ -1,62 +1,89 @@
-<div>
-    <div class="flex justify-start py-5">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
-        </svg>
-        <span class="px-5">Reporte de convenio</span>
+<div class="font-light">
+
+    <div class="grid grid-cols-4 gap-1 py-1">
+        <div
+            class=" space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 ">
+            <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif py-1">FECHAS</span>
+            <div class="flex">
+            <label class="input-group input-group-vertical">
+                <input wire:model.defer='inidate' type="date" name="date1"
+                    class="input input-bordered input-xs mx-2 bg-zinc-100 dark:bg-zinc-900  " />
+            </label>
+            <span class="text-zinc-700 dark:text-zinc-400 text-xs"> a</span>
+            <label class="input-group input-group-vertical">
+                <input wire:model.defer='enddate' type="date" name="date2"
+                    class="input input-bordered input-xs mx-2 bg-zinc-100 dark:bg-zinc-900 " />
+            </label></div>
+        </div>
+        <div class=" col-span-3">
+            <div class="flex justify-end my-1">
+                <button class="px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        class="stroke-info flex-shrink-0 w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </button>
+                <span class="text-xs font-semibold tracking-wide grid content-center">Tipo de descarga</span>
+            </div>
+            <div class="flex justify-end ">
+                <button wire:click='genpdfest' class="mx-4 btn btn-info text-white btn-sm dark:btn-outline dark:btn-info">REPORTE ESTADISTICO</button>
+                <input type="text"wire:model='title' placeholder="Ingrese su titulo" class="input input-bordered input-sm bg-zinc-200 dark:bg-zinc-900 dark:input dark:input-sm">
+                <button wire:click='genpdfcat' class=" btn btn-info text-white btn-sm dark:btn-outline dark:btn-info">REPORTE</button>
+            </div>
+        </div>
+        <div class="">
+
+        </div>
     </div>
-    <form>
         <div class="grid sm:grid-cols-1 w-full  gap-1 md:grid-cols-7 ">
-            <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
-                    <span class="text-xs font-semibold tracking-wide grid justify-items-center">RESPONSABLE</span>
-                    <div class="form-control px-2 grid justify-items-start">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    <span class="text-xs tracking-wide grid justify-items-center text-zinc-900 dark:text-zinc-100">RESPONSABLE</span>
+                    <div class="form-control grid justify-items-start">
                         @foreach ($responsibles as $id => $name)
                             <label class="cursor-pointer label">
                                 <input wire:model.defer='responsible' type="checkbox" value="{{ $name }}"
-                                    class="checkbox checkbox-xs checkbox-warning" />
-                                <span class="label-text px-2">{{ $name }}</span>
+                                    class="checkbox checkbox-xs checkbox-warning font-serif" />
+                                <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">{{ $name }}</span>
                             </label>
                         @endforeach
                     </div>
                 </div>
-            </div>
+
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm  py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
-                    <span class="text-xs font-semibold tracking-wide grid justify-items-center">LOCALIZACIÓN</span>
-                    <div class="form-control px-2 grid justify-items-start">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">LOCALIZACIÓN</span>
+                    <div class="form-control grid justify-items-start">
                         <label class="cursor-pointer label">
                             <input wire:model.defer='location' type="checkbox" name="locations[]" value="INTERNACIONAL"
-                                class="checkbox checkbox-xs checkbox-checkbox-info" />
-                            <span class="label-text px-2 ">INTERNACIONAL</span>
+                                class="checkbox checkbox-xs checkbox-info" />
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">INTERNACIONAL</span>
                         </label>
                         <label class="cursor-pointer label">
                             <input wire:model.defer='location' type="checkbox" name="locations[]" value="NACIONAL"
-                                class="checkbox checkbox-xs checkbox-checkbox-info" />
-                            <span class="label-text px-2 ">NACIONAL</span>
+                                class="checkbox checkbox-xs checkbox-info" />
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">NACIONAL</span>
                         </label>
                         <label class="cursor-pointer label">
                             <input wire:model.defer='location' type="checkbox" name="locations[]" value="LOCAL"
-                                class="checkbox checkbox-xs checkbox-checkbox-info" />
-                            <span class="label-text px-2 ">LOCAL</span>
+                                class="checkbox checkbox-xs checkbox-info" />
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">LOCAL</span>
                         </label>
                     </div>
                 </div>
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
-                    <span class="text-xs font-semibold tracking-wide grid justify-items-center">PAIS</span>
-                    <div class="form-control px-2 grid justify-items-start">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">PAIS</span>
+                    <div class="form-control grid justify-items-start">
                         @foreach ($countries as $id => $name)
                             <label class="cursor-pointer label">
                                 <input wire:model.defer='country' type="checkbox" name="countries[]" value="{{ $name }}"
-                                    class="checkbox checkbox-xs checkbox-success" />
-                                <span class="label-text px-2">{{ $name }}</span>
+                                    class="checkbox checkbox-xs checkbox-success font-serif" />
+                                <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">{{ $name }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -64,32 +91,33 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
-                    <span class="text-xs font-semibold tracking-wide grid justify-items-center">SECTOR</span>
-                    <div class="form-control px-2 grid justify-items-start">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">SECTOR</span>
+                    <div class="form-control grid justify-items-start">
                         <label class="cursor-pointer label">
                             <input wire:model.defer='sector' type="checkbox" name="sector[]" value="PUBLICO"
-                                class="checkbox checkbox-xs checkbox-checkbox-info" />
-                            <span class="label-text px-2  ">PUBLICO</span>
+                                class="checkbox checkbox-xs checkbox-error" />
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs"">PUBLICO</span>
                         </label>
                         <label class="cursor-pointer label">
                             <input wire:model.defer='sector' type="checkbox" name="sector[]" value="PRIVADO"
-                                class="checkbox checkbox-xs checkbox-checkbox-info" />
-                            <span class="label-text px-2">PRIVADO</span>
+                                class="checkbox checkbox-xs checkbox-error" />
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs"">PRIVADO</span>
                         </label>
                     </div>
                 </div>
             </div>
+
             <div>
                 <div
-                    class=" h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
-                    <span class="text-xs font-semibold tracking-wide grid justify-items-center">COBERTURA</span>
-                    <div class="form-control px-2 grid justify-items-start ">
+                    class=" h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">COBERTURA</span>
+                    <div class="form-control grid justify-items-start ">
                         @foreach ($coverages as $id => $name)
                             <label class="cursor-pointer label">
                                 <input wire:model.defer='cobertura' type="checkbox" name="coverage[]" value="{{ $name }}"
                                     class="checkbox checkbox-xs checkbox-accent" />
-                                <span class="label-text px-2 ">{{ $name }}</span>
+                                <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">{{ $name }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -97,47 +125,43 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100">
-                    <span class="text-xs font-semibold tracking-wide grid justify-items-center">CONVENIO CON:</span>
-                    <div class="form-control px-2 grid justify-items-start ">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">CONVENIO CON:</span>
+                    <div class="form-control grid justify-items-start ">
                         @foreach ($organizations as $id => $name)
                             <label class="cursor-pointer label">
                                 <input wire:model.defer='category' type="checkbox" name="organizations[]" value="{{ $name }}"
                                     class="checkbox checkbox-xs checkbox-secondary" />
-                                <span class="label-text px-2 ">{{ $name }}</span>
+                                <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">{{ $name }}</span>
                             </label>
                         @endforeach
                     </div>
                 </div>
             </div>
+            {{-- filtro por organizacion --}}
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm py-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 dark:text-zinc-100 grid justify-items-center">
-                    <span class="text-xs font-semibold tracking-wide">FECHAS</span>
-                    <label class="input-group input-group-vertical">
-                        <span class="text-sm mx-2 grid justify-items-center bg-zinc-200 dark:bg-zinc-800">desde</span>
-                        <input wire:model.defer='inidate' type="date" name="date1"
-                            class="input input-bordered input-xs mx-2 bg-zinc-100 dark:bg-zinc-900  " />
-                    </label>
-                    <label class="input-group input-group-vertical">
-                        <span class="text-sm mx-2 grid justify-items-center bg-zinc-200 dark:bg-zinc-800">hasta</span>
-                        <input wire:model.defer='enddate' type="date" name="date2"
-                            class="input input-bordered input-xs mx-2 bg-zinc-100 dark:bg-zinc-900 " />
-                    </label>
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">ORGANIZACIÓN</span>
+                    <div class="form-control grid justify-items-start">
+                        <label class="cursor-pointer label">
+                            <input wire:model.defer='sector' type="checkbox" name="sector[]" value="PUBLICO"
+                                class="checkbox checkbox-xs checkbox-error" />
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs"">UNIVERSIDAD</span>
+                        </label>
+                        <label class="cursor-pointer label">
+                            <input wire:model.defer='sector' type="checkbox" name="sector[]" value="PRIVADO"
+                                class="checkbox checkbox-xs checkbox-error" />
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs"">EMPRESA</span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
-        {{-- <div class="grid content-end my-5">
-            <button class="justify-self-end btn btn-accent btn-sm dark:btn dark:btn-sm"
-                type="submit">CONSULTAR</button>
-        </div> --}}
-
-        {{-- para visualizar el reporte solocuando apretas consultar --}}
 
         <div x-data="{ open: false }" class="grid content-end my-5">
-            <button x-on:click="open = !open" wire:click.prevent="reporte()" class="justify-self-end btn btn-accent btn-sm dark:btn dark:btn-sm" type="submit">CONSULTAR</button>
+            <button x-on:click="open = !open" wire:click.prevent="reporte()" class="justify-self-end btn btn-info text-white btn-sm dark:btn-outline dark:btn-info" type="submit">CONSULTAR</button>
         </div>
-    </form>
     <div x-show="open" x-om:click.away="open = false" class="w-full overflow-x-auto">
         <table class="table-fixed ">
             <thead>
@@ -231,21 +255,11 @@
             </tbody>
         </table>
     </div>
-    <div class="">
-        <div class="flex justify-end my-5">
-            <button class="px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    class="stroke-info flex-shrink-0 w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-            </button>
-            <span class="text-xs font-semibold tracking-wide grid content-center">Tipo de descarga</span>
-        </div>
-        <div class="flex justify-end my-5">
-            <button wire:click='genpdfest' class="mx-4 btn btn-accent btn-sm dark:btn dark:btn-sm">REPORTE ESTADISTICO</button>
-            <input type="text"wire:model='title' placeholder="Ingrese su titulo">
-            <button wire:click='genpdfcat' class=" btn btn-accent btn-sm dark:btn dark:btn-sm">REPORTE</button>
-        </div>
-    </div>
 </div>
+
+
+
+
+
+
+
