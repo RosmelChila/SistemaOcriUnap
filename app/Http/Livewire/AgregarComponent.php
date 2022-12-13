@@ -36,7 +36,8 @@ class AgregarComponent extends Component
     }
     public function updatedRegionid($region_id){
         $this->provinces=Province::where('region_id',$region_id)->pluck('name','id');
-
+        $this->districts=[];
+        $this->districtid=null;
     }
     public function updatedProvinceid($province_id){
         $this->districts=District::where('province_id',$province_id)->pluck('name','id');
