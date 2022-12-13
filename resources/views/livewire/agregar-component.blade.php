@@ -16,7 +16,7 @@
     </div>
     <div class="grid grid-cols-1 gap-1 font-light">
         {{-- para datos 1 --}}
-        <div class="shadow-lg grid grid-rows-2 grid-flow-col dark:bg-zinc-900 rounded-lg m-1 p-2">
+        <div class="shadow-lg grid grid-rows-2 grid-flow-col bg-white dark:bg-zinc-900 rounded-lg m-1 p-2">
             <div class="grid content-center col-span-1">
                 <label class="label">
                     <span
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg  dark:bg-zinc-900 rounded-lg p-2 m-1">
+        <div class="shadow-lg bg-white dark:bg-zinc-900 rounded-lg p-2 m-1">
             <div class="grid grid-row md:grid-cols-4 gap-4">
                 <div class="grid content-center">
                     <label class="label">
@@ -114,7 +114,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg  dark:bg-zinc-900 rounded-lg p-2 m-1">
+        <div class="shadow-lg bg-white  dark:bg-zinc-900 rounded-lg p-2 m-1">
             <div class="grid grid-row md:grid-cols-5 gap-4">
                 <div class="grid content-center">
                     <label class="label">
@@ -168,7 +168,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg  dark:bg-zinc-900 rounded-lg p-2 m-1">
+        <div class="shadow-lg bg-white dark:bg-zinc-900 rounded-lg p-2 m-1">
             <div class="grid grid-row md:grid-cols-5 gap-4">
                 <div class="grid content-center">
                     <label class="label">
@@ -252,7 +252,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg dark:bg-zinc-900 rounded-lg m-1 py-2">
+        <div class="shadow-lg bg-white dark:bg-zinc-900 rounded-lg m-1 py-2">
             <div x-data="{ show: true }" class="w-full px-3 ">
                 <div class=" ">
                     <label for="check-menu" class="  align-middle cursor-pointer w-full flex justify-between">
@@ -302,7 +302,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg dark:bg-zinc-900 rounded-lg m-1 py-2 font-light">
+        <div class="shadow-lg bg-white dark:bg-zinc-900 rounded-lg m-1 py-2 font-light">
             <div class="grid content-center px-3 dark:bg-zinc-900 rounded-lg">
                 <span
                     class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500 mb-1">Convenio
