@@ -254,17 +254,18 @@
                 </div> --}}
 
                 <!-- ====== Contact Section Start -->
+                <div class="px-10 bg-white dark:bg-zinc-900 ">
                 <section class="relative z-10 overflow-hidden text-zinc-700 dark:text-zinc-300 bg-white dark:bg-zinc-900 py-20 lg:py-[120px]">
                     <div class="container mx-auto">
                         <div class="-mx-4 flex flex-wrap lg:justify-between">
                             <div class="w-full px-4 lg:w-1/2 xl:w-6/12">
                                 <div class="mb-12 max-w-[570px] lg:mb-0">
                                     <span class="text-primary mb-4 block text-base font-semibold">
-                                        Contacta con nosotros
+                                        Información
                                     </span>
                                     <h2
                                         class="text-dark mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
-                                        PÓNGASE EN CONTACTO CON NOSOTROS
+                                        SOBRE NOSOTROS
                                     </h2>
                                     <p class="text-body-color mb-9 text-base leading-relaxed">
                                         La Oficina de Cooperación y Relaciones Internacionales que jerárquicamente
@@ -325,7 +326,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
+                            {{-- <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
                                 <div class="relative rounded-lg dark:bg-zinc-900 bg-white p-8 shadow-lg sm:p-12">
                                     <form>
                                         <div class="mb-6">
@@ -352,10 +353,11 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </section>
+            </div>
                 <!-- ====== Contact Section End -->
 
 
