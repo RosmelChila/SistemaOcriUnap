@@ -37,12 +37,13 @@
                 <x-input-error for="title" />
 
             </div>
-            <div class="mx-2 row-span-2">
+            {{-- {{ $objetive }} --}}
+            <div class="mx-2 row-span-2" wire:ignore>
                 <label class="label">
                     <span
                         class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Objetivos</span>
                 </label>
-                <textarea wire:model='objetive' name="objetive"
+                <textarea id="editor" wire:model='objetive' name="objetive"
                     class="textarea w-full bg-zinc-200  dark:bg-zinc-800 h-24 dark:textarea-bordered" placeholder=""></textarea>
                 <x-input-error for="objetive" />
 
@@ -324,4 +325,20 @@
             </div>
         </div>
     </div>
+    @push('js')
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .then(function(editor){
+                editor.model.document.on('change:data',() =>{
+                    @this.set('objetive',editor.getData());
+            })
+        })
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+
+    @endpush
 </div>

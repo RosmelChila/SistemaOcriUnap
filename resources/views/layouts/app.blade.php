@@ -22,6 +22,10 @@
         }
     </style>
     @livewireStyles
+    @stack('css')
+
+
+
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Scripts -->
@@ -71,11 +75,12 @@
     @stack('modals')
 
     @livewireScripts
+    @stack('js')
     <script>
         Livewire.on('alert', function() {
             Swal.fire(
-                'Good job!',
-                'You clicked the button!',
+                'Agregado!',
+                'correctamente',
                 'success'
             )
         })

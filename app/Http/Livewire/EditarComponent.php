@@ -65,9 +65,10 @@ class EditarComponent extends Component
             $this->districtid=$agreement->district_id;
             foreach($agreement->responsibles as $resp){
                 $this->responsible[]=$resp->id;
-            }            
+            }
         }
-        
+
+
     }
     public function render()
     {
