@@ -16,7 +16,8 @@ use Livewire\Component;
 class ReporteComponent extends Component
 {
     public $responsible=[],$country=[],$location=[],$sector=[],$cobertura=[],$category=[],$organization=[],$inidate,$enddate;
-    public $agreements=[],$title='hola';
+    public $agreements=[],$title='INGRESE EL TITULO DE SU REPORTE AQUI';
+    public $organizacion=[];
     public function render()
     {
         $countries=Country::pluck('name','id');
@@ -69,6 +70,9 @@ class ReporteComponent extends Component
         }
         if($this->location){
             $agreements->whereIn('location',$this->location);
+        }
+        if($this->organizacion){
+            $agreements->where('organization',$this->organizacion);
         }
         if($this->sector){
             $agreements->whereIn('sector',$this->sector);

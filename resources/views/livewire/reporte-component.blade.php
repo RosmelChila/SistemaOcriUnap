@@ -97,12 +97,12 @@
                         <label class="cursor-pointer label">
                             <input wire:model.defer='sector' type="checkbox" name="sector[]" value="PUBLICO"
                                 class="checkbox checkbox-xs checkbox-error" />
-                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs"">PUBLICO</span>
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">PUBLICO</span>
                         </label>
                         <label class="cursor-pointer label">
                             <input wire:model.defer='sector' type="checkbox" name="sector[]" value="PRIVADO"
                                 class="checkbox checkbox-xs checkbox-error" />
-                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs"">PRIVADO</span>
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">PRIVADO</span>
                         </label>
                     </div>
                 </div>
@@ -137,6 +137,7 @@
                         @endforeach
                     </div>
                 </div>
+                
             </div>
             {{-- filtro por organizacion --}}
             <div>
@@ -145,18 +146,19 @@
                     <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">ORGANIZACIÓN</span>
                     <div class="form-control grid justify-items-start">
                         <label class="cursor-pointer label">
-                            <input wire:model.defer='sector' type="checkbox" name="sector[]" value="PUBLICO"
+                            <input wire:model.defer='organizacion' type="checkbox" name="sector[]" value="UNIVERSIDAD"
                                 class="checkbox checkbox-xs checkbox-error" />
-                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs"">UNIVERSIDAD</span>
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">UNIVERSIDAD</span>
                         </label>
                         <label class="cursor-pointer label">
-                            <input wire:model.defer='sector' type="checkbox" name="sector[]" value="PRIVADO"
-                                class="checkbox checkbox-xs checkbox-error" />
-                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs"">EMPRESA</span>
+                            <input wire:model.defer='organizacion' type="checkbox" name="sector[]" value="EMPRESA"
+                                class="checkbox checkbox-xs checkbox-error"/>
+                            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">EMPRESA</span>
                         </label>
                     </div>
                 </div>
             </div>
+            
         </div>
 
         <div x-data="{ open: false }" class="grid content-end my-5">
