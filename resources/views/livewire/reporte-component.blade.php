@@ -15,7 +15,29 @@
                     class="input input-bordered input-xs mx-2 bg-zinc-100 dark:bg-zinc-900 " />
             </label></div>
         </div>
-        <div class=" col-span-3">
+        <div
+        class=" space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 ">
+        <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif py-1">ESTADOS</span>
+        <div class="flex justify-between">
+            <label class="cursor-pointer label">
+                <input wire:model.defer='responsible' type="checkbox" value=""
+                    class="checkbox checkbox-xs checkbox-warning font-serif" />
+                <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Activo</span>
+            </label>
+            <label class="cursor-pointer label">
+                <input wire:model.defer='responsible' type="checkbox" value=""
+                    class="checkbox checkbox-xs checkbox-warning font-serif" />
+                <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Por vencer</span>
+            </label>
+            <label class="cursor-pointer label">
+                <input wire:model.defer='responsible' type="checkbox" value=""
+                    class="checkbox checkbox-xs checkbox-warning font-serif" />
+                <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Vencidos</span>
+            </label>
+
+        </div>
+    </div>
+        <div class=" col-span-2">
             <div class="flex justify-end my-1">
                 <button class="px-3">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -28,7 +50,7 @@
             </div>
             <div class="flex justify-end ">
                 <button wire:click='genpdfest' class="mx-4 btn btn-info text-white btn-sm dark:btn-outline dark:btn-info">REPORTE ESTADISTICO</button>
-                <input type="text"wire:model='title' placeholder="Ingrese su titulo" class="input input-bordered input-sm bg-zinc-200 dark:bg-zinc-900 dark:input dark:input-sm">
+                <input type="text" wire:model='title' placeholder="" class="input input-bordered input-sm bg-zinc-200 dark:bg-zinc-900 dark:input dark:input-sm text-xs">
                 <button wire:click='genpdfcat' class=" btn btn-info text-white btn-sm dark:btn-outline dark:btn-info">REPORTE</button>
             </div>
         </div>
@@ -38,7 +60,7 @@
     </div>
         <div class="grid sm:grid-cols-1 w-full  gap-1 md:grid-cols-7 ">
                 <div
-                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md bg-white dark:bg-zinc-900 p-2">
                     <span class="text-xs tracking-wide grid justify-items-center text-zinc-900 dark:text-zinc-100">RESPONSABLE</span>
                     <div class="form-control grid justify-items-start">
                         @foreach ($responsibles as $id => $name)
@@ -53,7 +75,7 @@
 
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md bg-white dark:bg-zinc-900 p-2">
                     <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">LOCALIZACIÓN</span>
                     <div class="form-control grid justify-items-start">
                         <label class="cursor-pointer label">
@@ -76,7 +98,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md bg-white dark:bg-zinc-900 p-2">
                     <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">PAIS</span>
                     <div class="form-control grid justify-items-start">
                         @foreach ($countries as $id => $name)
@@ -91,7 +113,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md bg-white dark:bg-zinc-900 p-2">
                     <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">SECTOR</span>
                     <div class="form-control grid justify-items-start">
                         <label class="cursor-pointer label">
@@ -110,7 +132,7 @@
 
             <div>
                 <div
-                    class=" h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    class=" h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md bg-white dark:bg-zinc-900 p-2">
                     <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">COBERTURA</span>
                     <div class="form-control grid justify-items-start ">
                         @foreach ($coverages as $id => $name)
@@ -125,7 +147,7 @@
             </div>
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md bg-white dark:bg-zinc-900 p-2">
                     <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">CONVENIO CON:</span>
                     <div class="form-control grid justify-items-start ">
                         @foreach ($organizations as $id => $name)
@@ -137,12 +159,12 @@
                         @endforeach
                     </div>
                 </div>
-                
+
             </div>
             {{-- filtro por organizacion --}}
             <div>
                 <div
-                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2">
+                    class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md bg-white dark:bg-zinc-900 p-2">
                     <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">ORGANIZACIÓN</span>
                     <div class="form-control grid justify-items-start">
                         <label class="cursor-pointer label">
@@ -158,7 +180,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
         <div x-data="{ open: false }" class="grid content-end my-5">
