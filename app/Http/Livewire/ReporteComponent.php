@@ -10,8 +10,8 @@ use App\Models\Organization;
 use App\Models\Province;
 use App\Models\Region;
 use App\Models\Responsible;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
-use PDF;
 
 class ReporteComponent extends Component
 {
@@ -82,7 +82,7 @@ class ReporteComponent extends Component
         $this->agreements=$agreements->get();
     }
     public function genpdfcat(){
-        $pdf=PDF::loadView('PDFCAT',['agreements'=>$this->agreements,'titulo'=>$this->title])->output();
+        $pdf=Pdf::loadView('PDFCAT',['agreements'=>$this->agreements,'titulo'=>$this->title])->output();
         return response()->streamDownload(
             fn()=>print($pdf),"filename.pdf"
         );
@@ -113,7 +113,7 @@ class ReporteComponent extends Component
             'CI'=>$CI,'CN'=>$CN
             // ,$CUN,$CHCS,$CM,$CMUN,$CDIP,$CEF,$CEM,$CCC,$CONG,$CDEP,$OTROS
         ];
-        $pdf=PDF::loadView('PDFES',$dataes)->output();
+        $pdf=Pdf::loadView('PDFES',$dataes)->output();
         return response()->streamDownload(
             fn()=>print($pdf),"estadistico.pdf"
         );
