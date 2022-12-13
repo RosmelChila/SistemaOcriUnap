@@ -316,11 +316,11 @@
 
         <div class="mx-1">
             <div class="flex justify-end my-5">
-                <button
+                <button wire:click=""
                     class="mx-4 btn btn-warning btn-sm dark:btn text-white dark:btn-sm dark:btn-outline dark:btn-warning">CANCELAR</button>
                 <button wire:click.prevent="store()"
                     class=" btn btn-info text-white btn-sm dark:btn-outline dark:btn-info"
-                    type="submit">GUARDAR</button>
+                    type="submit" wire:loading.class="bg-blue-300" wire:target="store()">GUARDAR</button>
             </div>
         </div>
     </div>

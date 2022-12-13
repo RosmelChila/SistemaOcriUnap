@@ -1,10 +1,10 @@
 <x-app-layout>
-    <div class="">
+    {{-- <div class="">
         <div class="flex justify-start my-5">
-            <button class=" btn btn-accent btn-sm dark:btn dark:btn-sm">VOLVER</button>
+            <button class=" btn btn-info text-white btn-sm dark:btn dark:btn-sm">VOLVER</button>
         </div>
-    </div>
-    <div class="grid grid-rows-1 dark:bg-zinc-900 rounded-lg  p-4">
+    </div> --}}
+    <div class="grid grid-rows-1 dark:bg-zinc-900 rounded-lg  p-4 bg-white shadow-lg">
         <div>
             <span class="label-text text-zinc-900 dark:text-zinc-100">Resolución</span>
             <p class="label-text text-zinc-800 dark:text-zinc-400">{{$agreement[0]->resolution}}</p>
@@ -48,7 +48,7 @@
             <span class="text-xs font-semibold tracking-wide grid content-center">Acciones</span>
         </div>
         <div class="flex justify-end my-5">
-            <button class=" btn btn-accent btn-sm dark:btn dark:btn-sm">DESCARGAR CONVENIO</button>
+            <button class=" btn btn-info text-white btn-sm dark:btn dark:btn-sm">DESCARGAR CONVENIO</button>
         </div>
     </div>
 </x-app-layout>

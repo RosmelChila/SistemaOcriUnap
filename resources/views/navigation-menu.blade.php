@@ -26,8 +26,9 @@
         <div class="dropdown dropdown-end">
             <label tabindex="0" class="cursor-pointer indicator-item">
                 <div class="indicator">
-                    @if(Auth::user()->unreadNotifications->count()!= 0)
-                    <span class="indicator-item badge badge-primary">{{Auth::user()->unreadNotifications->count()}}</span>
+                    @if (Auth::user()->unreadNotifications->count() != 0)
+                        <span
+                            class="indicator-item badge badge-primary">{{ Auth::user()->unreadNotifications->count() }}</span>
                     @endif
                     <div class="grid w-7 h-7  place-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -36,13 +37,16 @@
                                 d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                         </svg>
                     </div>
-                </div></label>
+                </div>
+            </label>
 
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-zinc-100 dark:bg-zinc-900 rounded-lg w-52">
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-zinc-800 dark:bg-zinc-900 rounded-lg w-52 font-light">
                 @forelse (Auth::user()->Notifications as $notification)
                     <li><a href="{{ route('ver.id', $notification->data['id']) }}">
-                        <span class="p-2 text-xs">Un convenio esta
-                            {{ $notification->data['status'] }}</span></a></li>
+                            <span class="p-2 text-xs text-zinc-400">Un convenio esta
+                                {{ $notification->data['status'] }}</span></a></li>
+                    <li class="bg-zinc-800"><a href="">
+                            <span class="p-2 text-xs text-white">Un convenio esta sin leer </span></a></li>
                 @empty
                     <span class="p-2 text-xs">No hay Notificaciones</span>
                 @endforelse

@@ -13,6 +13,7 @@ use App\Models\Responsible;
 use App\Models\User;
 use App\Notifications\AgreementExpiration;
 use Carbon\Carbon;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -93,7 +94,7 @@ class AgregarComponent extends Component
             'organization_id'=>'required'
             // 'path'=>'required'
         ]);
-    
+
     $users=User::all();
     $date=Carbon::parse($this->subscription);
     $today=Carbon::now();
@@ -150,6 +151,11 @@ class AgregarComponent extends Component
     if($agreement->status=='POR VENCER'){
         Notification::send($users,new AgreementExpiration ($agreement->id,$agreement->status));
     }
+
+
     session()->flash('message', 'Post Created Successfully.');
+    $this->emit('alert');
+
     }
+
 }
