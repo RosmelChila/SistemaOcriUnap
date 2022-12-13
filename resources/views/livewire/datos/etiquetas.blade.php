@@ -1,10 +1,11 @@
 <div class="">
     @livewire('datos.crearpais')
     @livewire('datos.crearcobertura')
-    @livewire('datos.crearpais')
-    @livewire('datos.crearcobertura')
-    @livewire('datos.crearpais')
-    @livewire('datos.crearcobertura')
+    @livewire('crearcategoria-component')
+    @livewire('crearesponsable-component')
+    @livewire('crearegion-component')
+    @livewire('crearprovincia-component')
+    @livewire('creardistrito-component')
 
 
     {{-- @livewire('datos.crearcobertura')

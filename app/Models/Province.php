@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Province extends Model
 {
     use HasFactory;
-    protected $fillable=['name'];
+    protected $fillable=['name','region_id'];
     public function agreements(){
         return $this->hasMany(Agreement::class,'id','province_id');
     }
