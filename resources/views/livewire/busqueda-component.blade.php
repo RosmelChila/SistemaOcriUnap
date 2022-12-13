@@ -1,4 +1,4 @@
-<div class="py-40">
+<div class="py-40 bg-white dark:bg-zinc-900 h-screen">
 
     @livewireStyles
     <div class="grid justify-center h-10 gap-4 text-white">
