@@ -29,7 +29,7 @@
                     @if(Auth::user()->unreadNotifications->count()!= 0)
                     <span class="indicator-item badge badge-primary">{{Auth::user()->unreadNotifications->count()}}</span>
                     @endif
-                    <div class="grid w-7 h-7 bg-base-300 place-items-center">
+                    <div class="grid w-7 h-7  place-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-5 h-5 hover:text-sky-500">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -54,7 +54,7 @@
             <x-dropdown align="right" width="60">
                 <x-slot name="trigger">
                     <button type="button"
-                        class="inline-flex items-center rounded-md p-2 text-sm font-medium text-zinc-500 transition duration-150 ease-in-out hover:text-zinc-700 focus:outline-none focus:ring focus:ring-sky-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:bg-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200">
+                        class="inline-flex items-center rounded-md p-2 text-sm font-medium text-zinc-500 transition duration-150 ease-in-out hover:text-zinc-700 focus:outline-none focus:ring focus:ring-sky-500 focus:ring-offset-1 focus:ring-offset-white dark:text-zinc-400 dark:hover:text-zinc-200">
                         {{ Auth::user()->currentTeam->name }}
 
                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
