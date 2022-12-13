@@ -1,15 +1,16 @@
-<div class="py-40 bg-white dark:bg-zinc-900 h-screen">
+<div class=" bg-white dark:bg-zinc-900 ">
+<div class="py-40 h-screen container mx-auto">
 
     @livewireStyles
-    <div class="grid justify-center h-10 gap-4 text-white">
-        <div class="text-center mb-5 text-5xl font-bold text-zinc-800 dark:text-white" ><h1>¡Realiza tu busqueda!</h1></div>
-        <div class="container grid grid-cols-4 text-zinc-800 dark:text-white">
+    <div class="grid justify-center h-10 gap-4 text-white ">
+        <div class="text-center mb-5 text-5xl font-bold text-zinc-800 dark:text-white " ><h1>¡Realiza tu busqueda!</h1></div>
+        <div class=" grid grid-cols-4 text-zinc-800 dark:text-white  px-10 font-light mx-auto">
 
             <div class="">
                 <div class="">
-                    <label for="" class="">Buscar por Titulo de convenio
+                    <label for="" class="text-sm">Buscar por Titulo de convenio
                         <input wire:model='searchTerm' type="text" placeholder="Ingrese Nombre de Convenio"
-                            class="input w-full text-zinc-900 bg-white dark:text-white dark:bg-zinc-900 shadow-lg my-2" /></label>
+                            class="input w-full text-zinc-900 bg-white dark:text-white dark:bg-zinc-900 shadow-lg my-2 text-xs" /></label>
                 </div>
                 {{-- <div>
                     <label for="" class="">Responsables
@@ -38,9 +39,9 @@
                 </div> --}}
             </div>
             <div class="col-span-3 px-10">
-                <span>{{$agreements->count()}} Convenios Encontrados</span>
+                <span class="text-sm">{{$agreements->count()}} Convenios Encontrados</span>
                 @if ($agreements->count())
-                <table class="table-fixed ">
+                <table class="table-fixed shadow-lg">
                     <thead>
                         <tr
                             class=" text-xs font-semibold tracking-wide text-left text-zinc-500 uppercase border-b dark:border-zinc-700 bg-zinc-50 dark:text-zinc-400 dark:bg-zinc-900">
@@ -84,9 +85,9 @@
                                 }
                             ?>
                             </td>
-                            <td class="px-2 py-2 text-xs"   >
+                            <td class="px-2 py-2 text-xs text-center"   >
                                 <a href="">
-                                    <button class="btn btn-sm btn-warning dark:btn-warning mx-2"><svg
+                                    <button class="btn btn-xs btn-warning dark:btn-warning mx-2"><svg
                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                             class="w-4 h-4">
                                             <path fill-rule="evenodd"
@@ -95,7 +96,7 @@
                                         </svg>
                                     </button></a>
                                     <a href="{{ route('ver') }}">
-                                    <button class="btn btn-sm btn-error dark:btn-error"><svg
+                                    <button class="btn btn-xs btn-error dark:btn-error"><svg
                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                             class="w-4 h-4">
                                             <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
@@ -158,4 +159,5 @@
     </div>
 
 
+</div>
 </div>
