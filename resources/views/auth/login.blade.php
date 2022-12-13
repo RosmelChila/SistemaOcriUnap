@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="hero min-h-screen bg-white dark:bg-zinc-900">
+    <div class="hero min-h-screen bg-white dark:bg-zinc-900 font-light">
         <div class="hero-content flex-col lg:flex-row-reverse">
             <div class="text-center lg:text-left">
                 <h1 class="text-5xl font-bold">Ocri - Una</h1>
@@ -16,7 +16,7 @@
                             </span>
                             <input type="email" id="email" name="email" placeholder="Email"
                                 :value=""
-                                class="input input-info dark:input w-full bg-zinc-100 dark:bg-zinc-800 dark:border-zinc-900" />
+                                class="input dark:input w-full bg-zinc-200 dark:bg-zinc-800 shadow-md text-xs" />
                         </label>
                     <x-input-error for="email" />
 
@@ -29,7 +29,7 @@
                             </span>
                             <input type="password" id="password" name="password" placeholder="password"
                                 :value=""
-                                class="input input-info dark:input w-full bg-zinc-100 dark:bg-zinc-800 dark:border-zinc-900" />
+                                class="input dark:input w-full bg-zinc-200 dark:bg-zinc-800 shadow-md text-xs" />
                         </label>
                     <x-input-error for="password" />
 

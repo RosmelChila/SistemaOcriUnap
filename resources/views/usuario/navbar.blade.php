@@ -26,11 +26,11 @@
         </div>
 
         <div x-ref="tab" :style="handleToggle()"
-            class="relative w-full overflow-hidden transition-all duration-700 lg:hidden max-h-0">
+            class="relative w-full overflow-hidden transition-all duration-700 lg:hidden max-h-0 ">
             <div class="flex flex-col my-3 space-y-2 text-sm hover:font-b text-zinc-600 dark:text-zinc-100">
-                <a href="#" class="hover:text-zinc-900 dark:hover:text-zinc-400"><span>Inicio</span></a>
-                <a href="{{ route('resultado') }}" class="hover:text-zinc-900 dark:hover:text-zinc-400"><span>Convenio</span></a>
-                <a href="#" class="hover:text-zinc-900 dark:hover:text-zinc-400"><span>Contacto</span></a>
+                <a href="#" class="hover:text-zinc-900 dark:hover:text-zinc-400 font-bold"><span>Inicio</span></a>
+                <a href="{{ route('resultado') }}" class="hover:text-zinc-900 dark:hover:text-zinc-400 font-bold"><span>Convenio</span></a>
+                <a href="#" class="hover:text-zinc-900 dark:hover:text-zinc-400 font-bold"><span>Contacto</span></a>
             </div>
             <div>
                 <a href="#"
@@ -39,16 +39,13 @@
                 </a>
             </div>
         </div>
-        <!-- End toggle menu -->
-        <!-- End show menu sm,md -->
 
-        <!-- Show Menu lg -->
         <div class="hidden w-full lg:flex lg:items-center lg:w-auto">
             <div
-                class="items-center flex-1 pt-6 justify-center text-sm text-zinc-900 dark:text-zinc-100 lg:pt-0 list-reset lg:flex">
+                class="items-center flex-1 pt-6 justify-center text-xs text-zinc-900 dark:text-zinc-100 lg:pt-0 list-reset lg:flex font-bold">
                 <div class="mr-3">
                     <a href="{{ route('inicio') }}"
-                        class="inline-block px-4 py-2 no-underline hover:text-zinc-900 dark:hover:text-zinc-400 text-zinc-600 dark:text-zinc-100">
+                        class="inline-block px-4 py-2 no-underline hover:text-sky-500 dark:hover:text-yellow-400 text-zinc-600 dark:text-zinc-100">
                         Inicio
                     </a>
                 </div>
@@ -90,13 +87,13 @@
                 <!-- End Dropdown 1 --> --}}
                 <div class="mr-3">
                     <a href="{{ route('resultado') }}"
-                        class="inline-block px-4 py-2 no-underline hover:text-zinc-900 dark:hover:text-zinc-400 text-zinc-600 dark:text-zinc-100">
+                        class="inline-block px-4 py-2 no-underline hover:text-sky-500 dark:hover:text-yellow-400 text-zinc-600 dark:text-zinc-100">
                         Convenio
                     </a>
                 </div>
                 <div class="mr-3">
-                    <a href="{{ route('contacto') }}"
-                        class="inline-block px-4 py-2 no-underline hover:text-zinc-900 dark:hover:text-zinc-400 text-zinc-600 dark:text-zinc-100">
+                    <a href="#contacto"
+                        class="inline-block px-4 py-2 no-underline hover:text-sky-500 dark:hover:text-yellow-400 text-zinc-600 dark:text-zinc-100">
                         Contacto
                     </a>
                 </div>
@@ -111,12 +108,12 @@
                         <a href="{{ url('/dashboard') }}"><button class="btn btn-sm">Iniciado</button></a>
                     @else
                         <a href="{{ route('login') }}"><button
-                                class="btn btn-primary btn-sm dark:btn-warning">Admin</button></a>
+                                class="btn btn-info text-white btn-xs dark:btn-warning">Admin</button></a>
                     @endauth
                 @endif
             </div>
             <div class="flex ">
-                <button class="btn btn-circle btn-xs" srText=" Toggle dark mode" @click="toggleTheme">
+                <button class="text-zinc-800 dark:text-white" srText=" Toggle dark mode" @click="toggleTheme">
                     <svg x-show="!isDarkMode" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                         class="w-5 h-5">
                         <path fill-rule="evenodd"

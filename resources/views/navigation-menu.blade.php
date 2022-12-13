@@ -40,10 +40,11 @@
 
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-zinc-100 dark:bg-zinc-900 rounded-lg w-52">
                 @forelse (Auth::user()->Notifications as $notification)
-                    <li><a href="{{ route('ver.id', $notification->data['id']) }}">Un convenio esta
-                            {{ $notification->data['status'] }}</a></li>
+                    <li><a href="{{ route('ver.id', $notification->data['id']) }}">
+                        <span class="p-2 text-xs">Un convenio esta
+                            {{ $notification->data['status'] }}</span></a></li>
                 @empty
-                    <span class="p-2 text-sm">No hay Notificaciones</span>
+                    <span class="p-2 text-xs">No hay Notificaciones</span>
                 @endforelse
             </ul>
 

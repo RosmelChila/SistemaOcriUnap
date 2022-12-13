@@ -35,6 +35,7 @@
 
    @include('usuario.navbar')
     @livewire('busqueda-component')
+   @livewire('contacto-component')
    <x-footer/>
 
 </div>
