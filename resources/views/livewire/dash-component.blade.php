@@ -33,10 +33,15 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-zinc-700 dark:bg-zinc-900">
+                        @php
+                            $i=1;
+                        @endphp
                         @foreach ($expirate as $expire)
                         <tr class="text-zinc-700 dark:text-zinc-400">
                             <td class="px-2 py-2 text-xs">
-                                1
+                                @php
+                                    echo $i;
+                                @endphp
                             </td>
                             <td class="px-2 py-2 text-xs">
                                 {{$expire->title}}
@@ -87,6 +92,9 @@
                                 </div>
                             </td>
                         </tr>
+                        @php
+                            $i++;
+                        @endphp
                         @endforeach
                     </tbody>
                 </table>
