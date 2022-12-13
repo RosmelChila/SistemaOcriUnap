@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 {{-- <html x-data :class="$store.darkMode.on && 'dark'" lang="{{ str_replace('_', '-', app()->getLocale()) }}"> --}}
@@ -34,7 +35,7 @@
 <div x-data="mainState" :class="{ dark: isDarkMode }" x-cloak>
 
    @include('usuario.navbar')
-    @livewire('busqueda-component')
+    @livewire('ver-component')
    <x-footer/>
 
 </div>
