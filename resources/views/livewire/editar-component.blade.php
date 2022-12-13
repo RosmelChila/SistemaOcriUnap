@@ -1,19 +1,4 @@
 <div>
-    <div class="">
-        <div class="flex justify-end my-1">
-            <a href="{{ route('etiquetas') }}">
-                <button
-                    class="mx-2 btn btn-error btn-sm dark:btn text-white dark:btn-sm dark:btn-outline dark:btn-error">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                    </svg>
-                    AGREGAR ETIQUETAS</button>
-            </a>
-
-        </div>
-    </div>
     <div class="grid grid-cols-1 gap-1 font-light">
         {{-- para datos 1 --}}
         <div class="shadow-lg grid grid-rows-2 grid-flow-col dark:bg-zinc-900 rounded-lg m-1 p-2">
@@ -22,7 +7,7 @@
                     <span
                         class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Resolución</span>
                 </label>
-                <input wire:model="resolution" type="text" name="resolution" placeholder=""
+                <input wire:model.defer="resolution" type="text" placeholder=""
                     class="input input-bordered input-sm  w-full bg-zinc-200 dark:bg-zinc-800 dark:input dark:input-sm" />
                 <x-input-error for="resolution" />
 
