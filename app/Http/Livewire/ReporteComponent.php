@@ -18,6 +18,7 @@ class ReporteComponent extends Component
     public $responsible=[],$country=[],$location=[],$sector=[],$cobertura=[],$category=[],$organization=[],$inidate,$enddate;
     public $agreements=[],$title='INGRESE EL TITULO DE SU REPORTE AQUI';
     public $organizacion=[];
+    public $status=[];
     public function render()
     {
         $countries=Country::pluck('name','id');
@@ -49,6 +50,9 @@ class ReporteComponent extends Component
                 $agreements->whereHas('responsibles',function($agreements) use($resp){
                     $agreements->whereIn('name',$resp);
                 });
+        }
+        if($this->status){
+            $agreements->whereIn('status',$this->status);
         }
         if($this->cobertura){
                 $coberturas=$this->cobertura;

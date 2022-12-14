@@ -151,9 +151,6 @@ class AgregarComponent extends Component
     if($agreement->status=='POR VENCER'){
         Notification::send($users,new AgreementExpiration ($agreement->id,$agreement->status));
     }
-
-
-    session()->flash('message', 'Post Created Successfully.');
     $this->emit('alert');
 
     }
