@@ -44,25 +44,25 @@
                 </label>
             </div>
         </div>
-        <div class=" space-y-1  md:basis-1/3 max-w-sm  overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 ">
-            <span
-                class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif py-1">ESTADOS</span>
-            <div class="flex justify-between">
-                <label class="cursor-pointer label">
-                    <input wire:model.defer='responsible' type="checkbox" value=""
-                        class="checkbox checkbox-xs checkbox-warning font-serif" />
-                    <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Activo</span>
-                </label>
-                <label class="cursor-pointer label">
-                    <input wire:model.defer='responsible' type="checkbox" value=""
-                        class="checkbox checkbox-xs checkbox-warning font-serif" />
-                    <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Por vencer</span>
-                </label>
-                <label class="cursor-pointer label">
-                    <input wire:model.defer='responsible' type="checkbox" value=""
-                        class="checkbox checkbox-xs checkbox-warning font-serif" />
-                    <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Vencidos</span>
-                </label>
+        <div
+        class=" space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 ">
+        <span class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif py-1">ESTADOS</span>
+        <div class="flex justify-between">
+            <label class="cursor-pointer label">
+                <input wire:model.defer='responsible' type="checkbox" value=""
+                    class="checkbox checkbox-xs checkbox-warning font-serif" />
+                <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Activo</span>
+            </label>
+            <label class="cursor-pointer label">
+                <input wire:model.defer='responsible' type="checkbox" value=""
+                    class="checkbox checkbox-xs checkbox-warning font-serif" />
+                <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Por vencer</span>
+            </label>
+            <label class="cursor-pointer label">
+                <input wire:model.defer='responsible' type="checkbox" value=""
+                    class="checkbox checkbox-xs checkbox-warning font-serif" />
+                <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Vencidos</span>
+            </label>
 
             </div>
         </div>

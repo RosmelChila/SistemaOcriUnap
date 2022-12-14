@@ -303,9 +303,9 @@
             <div class="flex justify-end my-5">
                 <button
                     class="mx-4 btn btn-warning btn-sm dark:btn text-white dark:btn-sm dark:btn-outline dark:btn-warning">CANCELAR</button>
-                <button wire:click.prevent="store()"
+                <button wire:click.prevent="saveup()"
                     class=" btn btn-info text-white btn-sm dark:btn-outline dark:btn-info"
-                    type="submit">GUARDAR</button>
+                    type="submit">ACTUALIZAR</button>
             </div>
         </div>
     </div>

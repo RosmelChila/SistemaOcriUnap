@@ -4,11 +4,7 @@
         '-tranzinc-y-full': scrollingDown,
         'tranzinc-y-0': scrollingUp,
     }">
-
-
-
     <div class="flex items-center gap-4">
-
         <x-button type="button" class="md:hidden" iconOnly variant="secondary" srText="Toggle dark mode"
             @click="toggleTheme">
             <x-heroicon-o-moon x-show="!isDarkMode" aria-hidden="true" class="w-6 h-6" />
@@ -40,13 +36,21 @@
                 </div>
             </label>
 
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-zinc-800 dark:bg-zinc-900 rounded-lg w-52 font-light">
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-zinc-800 dark:bg-zinc-900 rounded-lg w-60 font-light">
                 @forelse (Auth::user()->Notifications as $notification)
-                    <li><a href="{{ route('ver.id', $notification->data['id']) }}">
-                            <span class="p-2 text-xs text-zinc-400">Un convenio esta
-                                {{ $notification->data['status'] }}</span></a></li>
-                    <li class="bg-zinc-800"><a href="">
-                            <span class="p-2 text-xs text-white">Un convenio esta sin leer </span></a></li>
+                    @if (!is_null($notification->read_at))
+                    <li><a href="{{ route('ver.id', $notification->data['id'])}}">
+                            <span class="p-2 text-xs text-zinc-400">Un convenio esta {{ $notification->data['status'] }}<br/>{{ $notification->created_at }}</span>
+                        </a>
+                    </li>
+                    @else
+                    <li class="bg-zinc-800"><a href="{{ route('ver.id', $notification->data['id'])}}">
+                            <span class="p-2 text-xs text-white">Un convenio esta{{ $notification->data['status'] }}</span>
+                        </a>
+                    </li>
+                    @endif
+
+
                 @empty
                     <span class="p-2 text-xs">No hay Notificaciones</span>
                 @endforelse

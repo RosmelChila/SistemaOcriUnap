@@ -11,6 +11,7 @@ use App\Models\Province;
 use App\Models\Region;
 use App\Models\Responsible;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReporteController extends Controller
 {
@@ -37,6 +38,12 @@ class ReporteController extends Controller
         return view('administrador.convenio.reporte',$dates);
     }
     public function ver(Request $request){
+
+        foreach(Auth::user()->Notifications as $notificacion){
+            if($notificacion->data['id']==$request->id){
+                $notificacion->markAsRead();
+            }
+        }
         $agreement=Agreement::where('id',$request->id)->get();
         return view('administrador.convenio.verconvenio',['agreement'=>$agreement]);
     }
