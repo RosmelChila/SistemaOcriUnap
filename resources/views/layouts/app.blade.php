@@ -20,7 +20,25 @@
         [x-cloak] {
             display: none;
         }
+
+
+            #container {
+                background-color: red;
+                width: 1000px;
+                margin: 20px auto;
+            }
+            .ck-editor__editable[role="textbox"] {
+                /* editing area */
+                min-height: 200px;
+            }
+            .ck-content .image {
+                /* block images */
+                max-width: 80%;
+                margin: 20px auto;
+            }
+
     </style>
+
     @livewireStyles
     @stack('css')
 

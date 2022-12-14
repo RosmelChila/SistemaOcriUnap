@@ -38,13 +38,13 @@
 
             </div>
             {{-- {{ $objetive }} --}}
-            <div class="mx-2 row-span-2" wire:ignore>
+            <div class="mx-2 grid grid-cols-1 md:row-span-2 w-full " wire:ignore>
                 <label class="label">
                     <span
                         class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Objetivos</span>
                 </label>
                 <textarea id="editor" wire:model='objetive' name="objetive"
-                    class="textarea w-full bg-zinc-200  dark:bg-zinc-800 h-24 dark:textarea-bordered" placeholder=""></textarea>
+                    class="" placeholder=""></textarea>
                 <x-input-error for="objetive" />
 
             </div>
@@ -284,7 +284,7 @@
 
                 </div>
                 <div x-show="show" class="space-y-6 overflow-hidden dark:bg-zinc-900 dark:text-zinc-100 ">
-                    <div class="form-control px-2  grid-cols-10 grid justify-items-start">
+                    <div class="form-control px-2 grid-cols-3  md:grid-cols-9 grid justify-items-start">
                         @if (sizeof($responsibles) > 0)
                             @foreach ($responsibles as $id => $name)
                                 <label class="cursor-pointer label">
