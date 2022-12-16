@@ -11,7 +11,6 @@
                     </svg>
                     AGREGAR ETIQUETAS</button>
             </a>
-
         </div>
     </div>
     <div class="grid grid-cols-1 gap-1 font-light">
@@ -37,14 +36,14 @@
                 <x-input-error for="title" />
 
             </div>
+            
             {{-- {{ $objetive }} --}}
             <div class="mx-2 grid grid-cols-1 md:row-span-2 w-full " wire:ignore>
                 <label class="label">
                     <span
                         class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Objetivos</span>
                 </label>
-                <textarea id="editor" wire:model='objetive' name="objetive"
-                    class="" placeholder=""></textarea>
+                <textarea wire:model='objetive' name="objetive" id="objetive" placeholder="escribe"></textarea>
                 <x-input-error for="objetive" />
 
             </div>
@@ -325,20 +324,19 @@
             </div>
         </div>
     </div>
-    @push('js')
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.16.0/basic/ckeditor.js"></script>
     <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .then(function(editor){
-                editor.model.document.on('change:data',() =>{
-                    @this.set('objetive',editor.getData());
+        
+        $(document).ready(function(){
+            const editor = CKEDITOR.replace('objetive');
+            editor.on('change',function(event){
+                console.log(event.editor.getData())
+                @this.set('objetive',event.editor.getData());
             })
         })
-            .catch( error => {
-                console.error( error );
-            } );
+        // $(document).ready(function(){
+        //     CKEDITOR.instances['objetive'].setData('<ol><li>Mundo</li></ol>');
+        // })
     </script>
-
-    @endpush
 </div>

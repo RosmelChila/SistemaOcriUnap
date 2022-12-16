@@ -6,8 +6,6 @@
     @livewire('crearegion-component')
     @livewire('crearprovincia-component')
     @livewire('creardistrito-component')
-
-
     {{-- @livewire('datos.crearcobertura')
             @livewire('datos.crearcobertura')
             @livewire('datos.crearcobertura') --}}
