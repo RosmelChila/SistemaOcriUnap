@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Agreement;
 use App\Models\Country;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -22,5 +23,8 @@ class InternationalComponent extends Component
     }
     public function countries($pais){
         $this->country=$pais;
+    }
+    public function descargar($path){
+        return Storage::disk('s3')->download($path);
     }
 }

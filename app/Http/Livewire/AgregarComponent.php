@@ -15,6 +15,7 @@ use App\Notifications\AgreementExpiration;
 use Carbon\Carbon;
 use Illuminate\Console\View\Components\Alert;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -145,7 +146,10 @@ class AgregarComponent extends Component
             $status='VENCIDO';
         }
     }
-    $path=$this->paths->store('files');
+    $folder="convenios";
+    $path_save=Storage::disk('s3')->put($folder,$this->paths,'public');
+    $path=$path_save;
+    // $path=$this->paths->store('files');
     $agreement=Agreement::create($validatedDate+['country_id'=>$this->countryid]+['region_id'=>$this->regionid]+['province_id'=>$this->provinceid]+['district_id'=>$this->districtid]+['path'=>$path]+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
     $agreement->responsibles()->sync($this->responsible);
     if($agreement->status=='POR VENCER'){
