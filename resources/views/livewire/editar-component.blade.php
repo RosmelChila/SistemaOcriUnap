@@ -22,13 +22,12 @@
                 <x-input-error for="title" />
 
             </div>
-            <div class="mx-2 row-span-2">
+            <div class="mx-2 grid grid-cols-1 md:row-span-2 w-full " wire:ignore>
                 <label class="label">
                     <span
                         class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Objetivos</span>
                 </label>
-                <textarea wire:model='objetive' name="objetive"
-                    class="textarea w-full bg-zinc-200  dark:bg-zinc-800 h-24 dark:textarea-bordered" placeholder=""></textarea>
+                <textarea wire:model='objetive' name="objetive" id="objetive" placeholder="escribe"></textarea>
                 <x-input-error for="objetive" />
 
             </div>
@@ -309,4 +308,18 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.16.0/basic/ckeditor.js"></script>
+    <script>
+        $(document).ready(function(){
+            CKEDITOR.instances['objetive'].setData('objetive');
+        })
+        $(document).ready(function(){
+            const editor = CKEDITOR.replace('objetive');
+            editor.on('change',function(event){
+                console.log(event.editor.getData())
+                @this.set('objetive',event.editor.getData());
+            })
+        })
+    </script>
 </div>
