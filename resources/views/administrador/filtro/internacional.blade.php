@@ -1,3 +1,178 @@
 <x-app-layout>
+<<<<<<< Updated upstream
     @livewire('international-component')
+=======
+    <div class="container grid grid-cols-2 gap-4 mx-auto px-6">
+        <div class="flex justify-start">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
+              </svg>
+              <span class="px-5">Usuarios registrados</span>
+        </div>
+
+        <div class="container grid grid-cols-6 gap-4 p-4">
+            <div class="min-w-0-4 bg-white rounded-lg shadow-xs dark:bg-gray-900 py-4">
+                <span class="px-5 text-center">Regiones</span>
+                <span class="px-5 text-center text-sky-200">--------------- ></span>
+                <table class="w-full whitespace-no-wrap">
+                    <thead>
+                        {{-- <tr
+                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                            <th class=""></th>
+                        </tr> --}}
+                    </thead>
+                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3 flex justify-center">
+                                <a href="" class="hover:bg-gray-800 py-1 px-10 rounded-full"><p class="font-semibold">PERU</p></a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            {{-- para las tablas --}}
+            <div class="container grid px-6 mx-auto col-span-5 ">
+                <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                    <div class="w-full overflow-x-auto">
+                        <table class="table-fixed ">
+                            <thead>
+                                <tr
+                                    class=" text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-900">
+                                    <th class="px-2 py-2">N°</th>
+                                    <th class="px-2 py-2 w-1/3">TÍTULO</th>
+                                    <th class="px-2 py-2 w-1/5">RESOLUCIÓN</th>
+                                    <th class="px-2 py-2 w-1/6">ESTADO</th>
+                                    <th class="px-2 py-2 w-1/6">EXPIRACIÓN</th>
+                                    <th class="px-2 py-2 w-1/6">ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-900">
+                                <tr class="text-gray-700 dark:text-gray-400">
+                                    <td class="px-2 py-2 text-xs">
+                                        1
+                                    </td>
+                                    <td class="px-2 py-2 text-xs">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis officia excepturi saepe,
+                                        delectus quis ipsam cum modi dicta neque laudantium sint optio laboriosam, dolor,
+                                        eligendi quos minima dignissimos id earum.
+                                    </td>
+                                    <td class="px-2 py-2 text-xs">
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde fugit hic tempora nobis
+                                        quos magnam quaerat aliquid voluptas. Quas velit beatae incidunt nisi ut qui sint
+                                        commodi possimus, praesentium aut.
+                                    </td>
+                                    <td class="px-2 py-2 text-xs">
+                                        <div class="flex items-stretch px-10 ">
+                                        <button class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-indigo-500 shadow-lg shadow-indigo-500/50 text-gray-100">
+                                            Por vencer
+                                        </button></div>
+                                    </td>
+                                    <td class="px-3 py-3 text-xs">
+                                        27/12/2300
+                                    <td class="px-3 py-3">
+                                        <div class="flex items-center space-x-4 text-sm">
+                                            <button
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                aria-label="Edit">
+                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path
+                                                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
+                                                    </path>
+                                                </svg>
+                                            </button>
+                                            <button
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                aria-label="Delete">
+                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd"
+                                                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </button>
+                                            <button
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                aria-label="Delete">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                    fill="currentColor" class="w-5 h-5">
+                                                    <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {{-- para paginación --}}
+                    <div
+                        class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-900">
+                        <span class="flex items-center col-span-3">
+                            Paginas 21-30 of 100
+                        </span>
+                        <span class="col-span-2"></span>
+                        <!-- Pagination -->
+                        <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
+                            <nav aria-label="Table navigation">
+                                <ul class="inline-flex items-center">
+                                    <li>
+                                        <button
+                                            class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-sky"
+                                            aria-label="Previous">
+                                            <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd" fill-rule="evenodd"></path>
+                                            </svg>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-sky">
+                                            1
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-sky">
+                                            2
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            class="px-3 py-1 text-white transition-colors duration-150 bg-sky-600 border border-r-0 border-sky-600 rounded-md focus:outline-none focus:shadow-outline-sky">
+                                            3
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-sky">
+                                            4
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-sky"
+                                            aria-label="Next">
+                                            <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                    clip-rule="evenodd" fill-rule="evenodd"></path>
+                                            </svg>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+>>>>>>> Stashed changes
 </x-app-layout>
