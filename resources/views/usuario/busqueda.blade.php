@@ -32,15 +32,14 @@
 
 <body>
 <div x-data="mainState" :class="{ dark: isDarkMode }" x-cloak>
-
-   @include('usuario.navbar')
+    @include('usuario.navbar')
     @livewire('busqueda-component')
-   @livewire('contacto-component')
    <x-footer/>
 
 </div>
 </body>
 </html>
+
 
 
 
