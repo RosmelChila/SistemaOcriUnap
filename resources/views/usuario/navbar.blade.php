@@ -1,8 +1,7 @@
     <nav x-data="accordion(6)"
         class="fixed top-0 z-40 flex flex-wrap items-center justify-between w-full px-4 py-5 tracking-wide shadow-md bg-white dark:bg-zinc-900 md:px-8 md:py-2  lg:px-14">
         <div class="flex items-center">
-            <img src="/img/logo.png" alt="logo OCRI"
-                class="h-9">
+            <img src="/img/logo.png" alt="logo OCRI" class="h-9">
         </div>
 
         <div @click="handleClick()" x-data="{ open: false }"
@@ -26,26 +25,37 @@
 
         <div x-ref="tab" :style="handleToggle()"
             class="relative w-full overflow-hidden transition-all duration-700 lg:hidden max-h-0 ">
-            <div class="flex flex-col m-2 space-y-2 text-sm hover:font-b text-zinc-600 dark:text-white mt-10 font-light">
-                <a href="{{ route('inicio') }}" class="hover:text-sky-500 dark:hover:text-yellow-400"><span>INICIO</span></a>
-                <a href="{{ route('resultado') }}" class="hover:text-yellow-400 dark:hover:text-zinc-400 "><span>CONVENIO</span></a>
-                <a href="{{ route('contacto') }}" class="hover:text-sky-500 dark:hover:text-yellow-400 "><span>NOSOTROS</span></a>
+            <div
+                class="flex flex-col m-2 space-y-2 text-sm hover:font-b text-zinc-600 dark:text-white mt-10 font-light">
+                <a href="{{ route('inicio') }}"
+                    class="hover:text-sky-500 dark:hover:text-yellow-400"><span>INICIO</span></a>
+                <a href="{{ route('resultado') }}"
+                    class="hover:text-yellow-400 dark:hover:text-zinc-400 "><span>CONVENIO</span></a>
+                <a href="{{ route('contacto') }}"
+                    class="hover:text-sky-500 dark:hover:text-yellow-400 "><span>NOSOTROS</span></a>
             </div>
             <div class="flex justify-end">
-                <a href="#"
-                    class="btn btn-info text-white btn-xs dark:btn-warning ">
-                    admin
-                </a>
+                @if (Route::has('login'))
+                    @auth
+                    <a href="{{ route('login') }}" class="btn btn-info text-white btn-xs dark:btn-warning ">
+                        Iniciado
+                    </a>
+                    @else
+                    <a href="{{ route('login') }}" class="btn btn-info text-white btn-xs dark:btn-warning ">
+                        Admin
+                    </a>
+                    @endauth
+                @endif
                 <div class="flex px-2">
                     <button class="text-zinc-800 dark:text-white" srText=" Toggle dark mode" @click="toggleTheme">
-                        <svg x-show="!isDarkMode" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="w-5 h-5">
+                        <svg x-show="!isDarkMode" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" class="w-5 h-5">
                             <path fill-rule="evenodd"
                                 d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
                                 clip-rule="evenodd" />
                         </svg>
-                        <svg x-show="isDarkMode" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="w-5 h-5">
+                        <svg x-show="isDarkMode" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" class="w-5 h-5">
                             <path
                                 d="M20.798 11.012l-3.188 3.416L9.462 6.28l4.24-4.542a.75.75 0 011.272.71L12.982 9.75h7.268a.75.75 0 01.548 1.262zM3.202 12.988L6.39 9.572l8.148 8.148-4.24 4.542a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262zM3.53 2.47a.75.75 0 00-1.06 1.06l18 18a.75.75 0 101.06-1.06l-18-18z" />
                         </svg>
@@ -134,5 +144,4 @@
                 }
             }));
         })
-
     </script>

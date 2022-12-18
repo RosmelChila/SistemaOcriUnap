@@ -1,9 +1,9 @@
 @props(['isActive' => false, 'title' => '', 'collapsible' => false])
 
 @php
-    $isActiveClasses =  $isActive ? 'text-white bg-sky-500 shadow-lg hover:bg-sky-600' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-dark-eval-2';
+    $isActiveClasses =  $isActive ? 'text-white border-l-4 border-sky-500 hover:bg-sky-500' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-dark-eval-2';
 
-    $classes = 'flex-shrink-0 flex items-center gap-2 p-2 transition-colors rounded-md overflow-hidden ' . $isActiveClasses;
+    $classes = 'flex-shrink-0 flex items-center gap-2 p-2 transition-colors rounded-sm  overflow-hidden ' . $isActiveClasses;
 
     if($collapsible) $classes .= ' w-full';
 @endphp
@@ -16,7 +16,7 @@
             <x-icons.empty-circle class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         @endif
 
-        <span class="text-base font-medium whitespace-nowrap text-zinc-800 dark:text-zinc-500 mx-4" x-show="isSidebarOpen || isSidebarHovered">
+        <span class="text-sm whitespace-nowrap text-zinc-700 mx-4 font-sans dark:text-white hover:text-sky-500" x-show="isSidebarOpen || isSidebarHovered">
             {{ $title }}
         </span>
 
@@ -33,7 +33,7 @@
             <x-icons.empty-circle class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         @endif
 
-        <span class="text-base font-medium whitespace-nowrap mx-4" x-show="isSidebarOpen || isSidebarHovered">
+        <span class="text-sm whitespace-nowrap text-zinc-700 mx-4 font-sans dark:text-white hover:text-sky-500" x-show="isSidebarOpen || isSidebarHovered">
             {{ $title }}
         </span>
     </a>

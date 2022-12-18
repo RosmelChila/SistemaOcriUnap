@@ -13,14 +13,14 @@
                 d="M10.933 19.231l-7.668-4.13-1.37.739a.75.75 0 000 1.32l9.75 5.25c.221.12.489.12.71 0l9.75-5.25a.75.75 0 000-1.32l-1.37-.738-7.668 4.13a2.25 2.25 0 01-2.134-.001z"
                 fill="#0ED3CF" />
         </svg>
-        <p class="ml-2 text-lg 2xl:text-xl"><strong>OCRI</strong></p>
+        <p class="ml-2  2xl:text-md font-sans">OCRI<strong>UNA</strong></p>
     </a>
 
     <!-- Toggle button -->
     <x-button type="button" iconOnly srText="Toggle sidebar" variant="secondary"
         x-show="isSidebarOpen || isSidebarHovered" @click="isSidebarOpen = !isSidebarOpen">
-        <x-icons.menu-fold-right x-show="!isSidebarOpen" aria-hidden="true" class="hidden w-6 h-6 lg:block" />
-        <x-icons.menu-fold-left x-show="isSidebarOpen" aria-hidden="true" class="hidden w-6 h-6 lg:block" />
-        <x-heroicon-o-x aria-hidden="true" class="w-6 h-6 lg:hidden" />
+        <x-icons.menu-fold-right x-show="!isSidebarOpen" aria-hidden="true" class="hidden w-5 h-5 lg:block" />
+        <x-icons.menu-fold-left x-show="isSidebarOpen" aria-hidden="true" class="hidden w-5 h-5 lg:block" />
+        <x-heroicon-o-x aria-hidden="true" class="w-5 h-5 lg:hidden" />
     </x-button>
 </div>

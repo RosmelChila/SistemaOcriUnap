@@ -5,11 +5,6 @@
         'tranzinc-y-0': scrollingUp,
     }">
     <div class="flex items-center gap-4">
-        <x-button type="button" class="md:hidden" iconOnly variant="secondary" srText="Toggle dark mode"
-            @click="toggleTheme">
-            <x-heroicon-o-moon x-show="!isDarkMode" aria-hidden="true" class="w-6 h-6" />
-            <x-heroicon-o-sun x-show="isDarkMode" aria-hidden="true" class="w-6 h-6" />
-        </x-button>
     </div>
     {{-- para el busacador --}}
     {{-- @livewire('searchb-component') --}}
