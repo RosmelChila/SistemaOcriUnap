@@ -1,17 +1,17 @@
-<div>
-    <div class="mt-4">
-        <div wire:click="$set('open',true)"
-            class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2 cursor-pointer grid justify-center">
-            <div class="grid justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
-                  </svg>
-    
-            </div>
-            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 font-serif text-xs">Distrito</span>
-    
+<div class="mt-4">
+    <div wire:click="$set('open',true)"
+        class="flex  rounded-lg shadow-md dark:bg-zinc-900 p-2 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+          </svg>
+
+
+          <span class="label-text text-zinc-700 dark:text-zinc-400 font-light text-sm px-4">Distrito</span>
+
         </div>
-    
+
+    </div>
+
         <x-dialog-modal wire:model="open">
             <x-slot name="title">
                 <h1>agregar distrito</h1>
@@ -36,7 +36,7 @@
                                     @endforelse
                                 </select>
                                 <x-input-error for="countryid" />
-            
+
                             </div>
                             <div class="grid content-center">
                                 <label class="label">

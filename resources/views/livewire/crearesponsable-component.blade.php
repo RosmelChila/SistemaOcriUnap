@@ -1,14 +1,17 @@
-<div>
-    <div class="mt-4">
-        <div wire:click="$set('open',true)"
-            class="h-full md:basis-1/3 max-w-sm space-y-1 overflow-hidden rounded-lg shadow-md dark:bg-zinc-900 p-2 cursor-pointer grid justify-center">
-            <div class="grid justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
-                  </svg>
-            </div>
-            <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 font-serif text-xs">Responsable</span>
+<div class="mt-4">
+    <div wire:click="$set('open',true)"
+        class="flex  rounded-lg shadow-md dark:bg-zinc-900 p-2 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z" />
+            <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+          </svg>
+
+
+          <span class="label-text text-zinc-700 dark:text-zinc-400 font-light text-sm px-4">Responsable</span>
+
         </div>
+
+    </div>
         <x-dialog-modal wire:model="open">
             <x-slot name="title">
                 <h1>agregar Responsable</h1>
@@ -43,5 +46,4 @@
                     type="submit">GUARDAR</button>
             </x-slot>
         </x-dialog-modal>
-    </div>
 </div>

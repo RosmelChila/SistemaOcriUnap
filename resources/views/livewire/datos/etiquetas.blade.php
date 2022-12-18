@@ -1,26 +1,18 @@
 <div class="">
-    @livewire('datos.crearpais')
-    @livewire('datos.crearcobertura')
-    @livewire('crearcategoria-component')
-    @livewire('crearesponsable-component')
-    @livewire('crearegion-component')
-    @livewire('crearprovincia-component')
-    @livewire('creardistrito-component')
-    {{-- @livewire('datos.crearcobertura')
-            @livewire('datos.crearcobertura')
-            @livewire('datos.crearcobertura') --}}
+    <span class="px-5 text-xs">Agregar ubicación</span>
+    <div class=" w-full md:w-52 grid  justify-center">
+        @livewire('datos.crearpais')
+        @livewire('crearegion-component')
+        @livewire('crearprovincia-component')
+        @livewire('creardistrito-component')
+    </div>
 
+    <span class="px-5 text-xs mt-4">Agregar datos</span>
 
-    {{-- <div class="w-full bg-red-100">
-              @livewire('datos.crearcobertura')kfnskfn
-            </div>
-            <div class="bg-sky-200">              @livewire('datos.crearcobertura')kfnskfn
-            </div>
-            <div class="bg-red-900">              @livewire('datos.crearcobertura')kfnskfn
-            </div>
-            <div class="bg-red-300">holllal</div>
-        </div>
-        <div>
-        @livewire('datos.crearcobertura') --}}
+    <div class="w-full md:w-52 grid  justify-center ">
+        @livewire('datos.crearcobertura')
+        @livewire('crearcategoria-component')
+        @livewire('crearesponsable-component')
+    </div>
 </div>
 
