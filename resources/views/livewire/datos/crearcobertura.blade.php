@@ -34,8 +34,8 @@
         <x-slot name="footer">
             <button wire:click="$set('open',false)"
                 class="mx-4 btn btn-accent btn-sm dark:btn dark:btn-sm">CANCELAR</button>
-            <button wire:click="save" class=" btn btn-accent btn-sm dark:btn dark:btn-sm"
-                type="submit">GUARDAR</button>
+            <button wire:click.prevent="save" class=" btn btn-accent btn-sm dark:btn dark:btn-sm"
+                type="submit" wire:target="save">GUARDAR</button>
         </x-slot>
     </x-dialog-modal>
 

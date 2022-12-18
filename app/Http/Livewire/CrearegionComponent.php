@@ -18,6 +18,7 @@ class CrearegionComponent extends Component
             'name' => $this->name,
             'country_id'=>$this->country_id
         ]);
+        $this->emit('alert');
     }
     public function render()
     {

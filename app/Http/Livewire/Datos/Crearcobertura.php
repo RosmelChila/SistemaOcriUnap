@@ -14,6 +14,9 @@ class Crearcobertura extends Component
         Coverage::create([
             'name' => $this->name
         ]);
+
+
+    $this->emit('alert');
     }
     public function render()
     {
