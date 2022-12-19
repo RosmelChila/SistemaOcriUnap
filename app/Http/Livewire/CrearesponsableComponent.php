@@ -15,6 +15,7 @@ class CrearesponsableComponent extends Component
             'name' => $this->name,
             'description'=>$this->description
         ]);
+        $this->emit('alert');
     }
     public function render()
     {

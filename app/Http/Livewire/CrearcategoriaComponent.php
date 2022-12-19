@@ -15,6 +15,7 @@ class CrearcategoriaComponent extends Component
         Organization::create([
             'name' => $this->name
         ]);
+        $this->emit('alert');
     }
     public function render()
     {

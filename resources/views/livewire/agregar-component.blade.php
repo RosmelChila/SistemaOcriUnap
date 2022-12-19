@@ -283,7 +283,7 @@
 
                 </div>
                 <div x-show="show" class="space-y-6 overflow-hidden dark:bg-zinc-900 dark:text-zinc-100 ">
-                    <div class="form-control px-2 grid-cols-3  md:grid-cols-9 grid justify-items-start">
+                    <div class="form-control px-2  grid-cols-10 grid justify-items-start">
                         @if (sizeof($responsibles) > 0)
                             @foreach ($responsibles as $id => $name)
                                 <label class="cursor-pointer label">

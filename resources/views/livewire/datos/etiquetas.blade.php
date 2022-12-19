@@ -1,5 +1,5 @@
 <div class="">
-    <span class="px-5 text-xs">Agregar ubicación</span>
+    <span class="px-5 text-xs mt-4">Agregar ubicación</span>
     <div class=" w-full md:w-52 grid  justify-center">
         @livewire('datos.crearpais')
         @livewire('crearegion-component')

@@ -14,6 +14,7 @@ class Crearpais extends Component
         Country::create([
             'name' => $this->name
         ]);
+        $this->emit('alert');
     }
     public function render()
     {

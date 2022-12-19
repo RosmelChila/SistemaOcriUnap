@@ -17,6 +17,7 @@ class CrearprovinciaComponent extends Component
             'name' => $this->name,
             'region_id'=>$this->region
         ]);
+        $this->emit('alert');
     }
     public function updatedCountry($country_id){
         $this->regions=Region::where('country_id',$country_id)->pluck('name','id');
