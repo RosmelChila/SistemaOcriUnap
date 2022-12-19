@@ -30,6 +30,10 @@
                 margin-right: 1cm;
                 margin-bottom: 1cm;
             }
+            ul,ol,li{
+                margin-left: 1%;
+                padding-left: 1%;
+            }
 
             /** Definir las reglas del encabezado **/
             header {
@@ -92,7 +96,7 @@
                         {{$responsible->name}}
                          @endforeach
                     </td>
-                    <td style="text-align:justify">{{ $agreement->objetive}}</td>
+                    <td style="text-align:justify">{!! html_entity_decode($agreement->objetive)!!}</td>
                     <td style="text-align: center">
                         @php
                             $ini=1;

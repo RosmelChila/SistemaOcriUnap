@@ -41,4 +41,7 @@ class BusquedaComponent extends Component
             $this->sort=$sort;
         }
     }
+    public function descargar($path){
+        return Storage::disk('s3')->download($path);
+    }
 }

@@ -61,7 +61,7 @@ Route::middleware([
 });
     //para usuarios
 Route::view('/resultado', 'usuario.busqueda')->name('resultado');
-Route::view('/ver', 'usuario.ver')->name('ver');
+Route::view('/ver2/{id2}', 'usuario.ver')->name('ver2.id2');
 Route::view('/contacto', 'usuario.contacto')->name('contacto');
 Route::view('/inicio', 'usuario.index')->name('inicio');
 

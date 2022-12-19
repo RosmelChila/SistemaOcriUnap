@@ -35,12 +35,13 @@
 <div x-data="mainState" :class="{ dark: isDarkMode }" x-cloak>
 
    @include('usuario.navbar')
-    @livewire('ver-component')
+    @livewire('ver-component',['id2'=>$id2])
    @livewire('contacto-component')
 
    <x-footer/>
 
 </div>
+@livewireScripts
 </body>
 </html>
 
