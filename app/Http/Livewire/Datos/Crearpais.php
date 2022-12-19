@@ -18,7 +18,6 @@ class Crearpais extends Component
     }
     public function render()
     {
-
        return view('livewire.datos.crearpais');
 
     }

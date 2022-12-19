@@ -1,7 +1,7 @@
 <div>
     <div class="grid grid-cols-1 gap-1 font-light">
         {{-- para datos 1 --}}
-        <div class="shadow-lg grid grid-rows-2 grid-flow-col dark:bg-zinc-900 rounded-lg m-1 p-2">
+        <div class="shadow-lg grid grid-rows-2 dark:bg-zinc-900 rounded-lg m-1 p-2">
             <div class="grid content-center col-span-1">
                 <label class="label">
                     <span

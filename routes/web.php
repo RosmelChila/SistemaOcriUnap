@@ -52,7 +52,7 @@ Route::middleware([
     Route::get('/ver/{id}',[ReporteController::class,'ver'])->name('ver.id');
 
     //agregar etiquetas
-    Route::get('/etiquetas', App\Http\Livewire\Datos\Etiquetas::class)->name("etiquetas");  // crear
+    Route::view('/etiquetas','etiquetas')->name("etiquetas");  // crear
 
     //ruta redireccion para el busacador
     Route::get('/resultados',[ReporteController::class,'search'])->name('buscar');

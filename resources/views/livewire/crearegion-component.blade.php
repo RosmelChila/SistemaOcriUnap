@@ -13,7 +13,7 @@
             </x-slot>
             <x-slot name="content">
                 <form action="">
-                    <div class="grid grid-rows-2 grid-flow-col dark:bg-zinc-900 rounded-lg py-4">
+                    <div class="grid grid-flow-col dark:bg-zinc-900 rounded-lg py-4">
                         <div class="px-4 grid content-center col-span-1">
                             <select wire:model.defer="country_id" value="{{ old('id') }}"
                             class="select select-sm bg-zinc-200 dark:bg-zinc-800 dark:select-sm font-light">
