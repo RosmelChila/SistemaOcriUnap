@@ -31,7 +31,7 @@
                 </div>
             </label>
 
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-zinc-800 dark:bg-zinc-900 rounded-lg w-60 font-light">
+            <ul tabindex="0" class="dropdown-content menu p-2  bg-white dark:bg-zinc-900 rounded-lg w-60 font-light shadow-sm">
                 @forelse (Auth::user()->Notifications as $notification)
                     @if (!is_null($notification->read_at))
                     <li><a href="{{ route('ver.id', $notification->data['id'])}}">

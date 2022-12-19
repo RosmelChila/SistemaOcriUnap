@@ -39,7 +39,7 @@
                 <button wire:click="$set('open',false)"
                     class="mx-4 btn btn-accent btn-sm dark:btn dark:btn-sm">CANCELAR</button>
                 <button wire:click="save" class=" btn btn-accent btn-sm dark:btn dark:btn-sm"
-                    type="submit">GUARDAR</button>
+                    type="submit" >GUARDAR</button>
             </x-slot>
         </x-dialog-modal>
 </div>
