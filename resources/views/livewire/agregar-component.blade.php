@@ -21,7 +21,7 @@
                     <span
                         class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Resolución</span>
                 </label>
-                <input wire:model="resolution" type="text" name="resolution" placeholder=""
+                <input wire:model.defer="resolution" type="text" name="resolution" placeholder=""
                     class="input input-bordered input-sm  w-full bg-zinc-200 dark:bg-zinc-800 dark:input dark:input-sm" />
                 <x-input-error for="resolution" />
 
@@ -31,7 +31,7 @@
                     <span
                         class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Título</span>
                 </label>
-                <input wire:model='title' type="text" name="title" placeholder=""
+                <input wire:model.defer='title' type="text" name="title" placeholder=""
                     class="input input-bordered input-sm  w-full bg-zinc-200 dark:bg-zinc-800 dark:input dark:input-sm" />
                 <x-input-error for="title" />
 
@@ -43,7 +43,7 @@
                     <span
                         class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Objetivos</span>
                 </label>
-                <textarea wire:model='objetive' name="objetive" id="objetive" placeholder="escribe"></textarea>
+                <textarea wire:model.defer='objetive' name="objetive" id="objetive" placeholder="escribe"></textarea>
                 <x-input-error for="objetive" />
 
             </div>
@@ -56,7 +56,7 @@
                         <span
                             class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Cobertura</span>
                     </label>
-                    <select wire:model='coverage_id' name="coverage_id" value="{{ old('id') }}"
+                    <select wire:model.defer='coverage_id' name="coverage_id" value="{{ old('id') }}"
                         class="select select-sm bg-zinc-200 dark:bg-zinc-800 dark:select-sm font-light">
                         <option selected value=''>...</option>
                         @foreach ($coverages as $id => $name)
@@ -72,7 +72,7 @@
                         <span
                             class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Categoria</span>
                     </label>
-                    <select wire:model='organization_id' name="organization_id" value="{{ old('id') }}"
+                    <select wire:model.defer='organization_id' name="organization_id" value="{{ old('id') }}"
                         class="select select-sm bg-zinc-200 dark:bg-zinc-800 dark:select-sm font-light w-full">
                         <option selected value=''>...</option>
                         @foreach ($organizations as $id => $name)
@@ -88,7 +88,7 @@
                         <span
                             class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Sector</span>
                     </label>
-                    <select wire:model="sector" name="sector"
+                    <select wire:model.defer="sector" name="sector"
                         class="select select-sm bg-zinc-200 dark:bg-zinc-800 dark:select-sm  font-light">
                         <option selected value=''>...</option>
                         <option>PUBLICO</option>
@@ -102,7 +102,7 @@
                         <span
                             class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Organización</span>
                     </label>
-                    <select wire:model="organization" name="organization"
+                    <select wire:model.defer="organization" name="organization"
                         class="select select-sm bg-zinc-200 dark:bg-zinc-800 dark:select-sm font-light">
                         <option selected value=''>...</option>
                         <option>UNIVERSIDAD</option>
@@ -123,7 +123,7 @@
                             de
                             suscripción</span>
                     </label>
-                    <input wire:model='subscription' name="subscription" type="date" placeholder=""
+                    <input wire:model.defer='subscription' name="subscription" type="date" placeholder=""
                         class="input input-bordered input-sm bg-zinc-200 dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                     <x-input-error for="subscription" />
 
@@ -135,7 +135,7 @@
                             aprobación
                             C.U.</span>
                     </label>
-                    <input wire:model='approbation' name="approbation" type="date" placeholder=""
+                    <input wire:model.defer='approbation' name="approbation" type="date" placeholder=""
                         class="input input-bordered  input-sm bg-zinc-200 dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                     <x-input-error for="approbation" />
 
@@ -145,7 +145,7 @@
                     <label class="label">
                         <span class="label-text text-zinc-900 dark:text-zinc-100 ">Vencimiento en años</span>
                     </label>
-                    <input wire:model='years' type="number" name="years" value="0"
+                    <input wire:model.defer='years' type="number" name="years" value="0"
                         class="input input-bordered input-sm bg-zinc-200 dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                     <x-input-error for="years" />
 
@@ -154,7 +154,7 @@
                     <label class="label">
                         <span class="label-text text-zinc-900 dark:text-zinc-100">Vencimiento en mes</span>
                     </label>
-                    <input type="number" wire:model='months' name="months" value="0"
+                    <input type="number" wire:model.defer='months' name="months" value="0"
                         class="input input-bordered input-sm bg-zinc-200 dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                 </div>
 
@@ -162,7 +162,7 @@
                     <label class="label">
                         <span class="label-text text-zinc-900 dark:text-zinc-100">Vencimiento en dias</span>
                     </label>
-                    <input wire:model='days' type="number" name="days" value="0"
+                    <input wire:model.defer='days' type="number" name="days" value="0"
                         class="input input-bordered input-sm bg-zinc-200 dark:input dark:input-sm dark:bg-zinc-800 w-full" />
                 </div>
             </div>
@@ -175,7 +175,7 @@
                         <span
                             class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Localización</span>
                     </label>
-                    <select wire:model="location" name="location"
+                    <select wire:model.defer="location" name="location"
                         class="select select-sm bg-zinc-200 dark:bg-zinc-800 dark:select-sm font-light">
                         <option selected value=''>...</option>
                         <option>INTERNACIONAL</option>
@@ -307,7 +307,7 @@
                 <span
                     class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500 mb-1">Convenio
                     Escaneado (PDF)</span>
-                <input wire:model='paths' name="paths" id="paths" type="file"
+                <input wire:model.defer='paths' name="paths" id="paths" type="file"
                     class="file-input file-input-sm file-input-accent dark:file-input-error w-full max-w-xs bg-zinc-200 dark:bg-zinc-800 text-xs font-light" />
             </div>
             <x-input-error for="paths" />
