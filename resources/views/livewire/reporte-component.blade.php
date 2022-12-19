@@ -8,8 +8,8 @@
                 <span class="text-xs tracking-wide grid content-center font-light">Descaargar según las opciones </span>
             </div>
             <div class="flex justify-end ">
-                <button wire:click='genpdfcat'
-                    class=" btn btn-info text-white btn-xs dark:btn-outline dark:btn-info">REPORTE</button>
+                <a target="_blank" href="" wire:click='genpdfcat'
+                    class=" btn btn-info text-white btn-xs dark:btn-outline dark:btn-info">REPORTE</a>
                     <input type="text" wire:model='title' placeholder=""
                     class="input input-xs bg-zinc-200 dark:bg-zinc-900 dark:input dark:input-xs text-xs w-full mx-1">
             </div>
@@ -21,9 +21,9 @@
                 <span class="text-xs font-light tracking-wide grid content-center">Descargar reporte estadístico</span>
             </div>
             <div class="flex justify-start ">
-                <button wire:click='genpdfest'
+                <a  target="_blank" href="" wire:click='genpdfest'
                     class="btn btn-info text-white btn-xs dark:btn-outline dark:btn-info">REPORTE
-                    ESTADISTICO</button>
+                    ESTADISTICO</a>
             </div>
         </div>
 

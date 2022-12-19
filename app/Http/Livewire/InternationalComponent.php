@@ -24,7 +24,4 @@ class InternationalComponent extends Component
     public function countries($pais){
         $this->country=$pais;
     }
-    public function descargar($path){
-        return Storage::disk('s3')->download($path);
-    }
 }
