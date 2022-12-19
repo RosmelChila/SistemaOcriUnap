@@ -50,9 +50,8 @@
         <div class="flex justify-end my-5">
             <span class="text-xs font-semibold tracking-wide grid content-center">Acciones</span>
         </div>
-        <a target="_blank" href='https://storage-ariel.s3.amazonaws.com/{{$agree->path}}'>PDF</a>
         <div class="flex justify-end my-5">
-            <button wire:click="descargar('{{$agree->path}}')" class=" btn btn-accent btn-sm dark:btn dark:btn-sm">DESCARGAR CONVENIO</button>
+            <a target="_blank" href="{{route('descarga.path',$agree->id)}}" class=" btn btn-accent btn-sm dark:btn dark:btn-sm">DESCARGAR CONVENIO</a>
         </div>
     </div>
 @endforeach

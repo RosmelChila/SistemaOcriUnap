@@ -5,19 +5,20 @@
           </svg>
           <span class="px-5 text-xs">Convenios Locales</span>
     </div>
-<div class="grid grid-rows gap-2 md:gap-4 md:grid-cols-5 ">
+<div class="grid grid-rows gap-4 md:gap-2 md:grid-cols-5 font-light">
     <div class="col-span-1 ">
         <aside class="rounded-lg bg-dark-eval-1" aria-label="Sidebar">
             <div class="overflow-y-auto py-4 px-3 bg-zinc-50 dark:bg-zinc-900 rounded-lg grid justify-center shadow-lg">
                 {{-- esta lista es para filtro de paises --}}
                 <ul class="space-y-2">
+                    @foreach ($regions as $region)
                     <li class=" text-zinc-800 hover:text-cyan-500 dark:text-white hover:border-l-4 dark:hover:text-cyan-500">
-                        <button
+                        <button wire:click.prevent="regions('{{$region->name}}')"
                             class="flex items-center p-1 text-sm font-light">
-                            <span class="ml-1 text-center">Melgar</span>
+                            <span class="ml-1 text-center">{{$region->name}}</span>
                         </a>
                     </li>
-
+                    @endforeach
                 </ul>
             </div>
         </aside>
@@ -41,25 +42,51 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y dark:divide-zinc-700 dark:bg-zinc-900">
-
+                             @php $i=1; @endphp
+                             @foreach ($agreements as $agreement)
                             <tr class="text-zinc-700 dark:text-zinc-400">
                                 <td class="px-2 py-2 text-xs">
-                                   1
+                                    @php echo $i; @endphp
                                 </td>
                                 <td class="px-2 py-2 text-xs">
-                                    titulo
+                                    {{$agreement->title}}
                                 </td>
                                 <td class="px-2 py-2 text-xs">
-                                    resoluion
+                                    {{$agreement->resolution}}
                                 </td>
                                 <td class="px-2 py-2 text-xs">
-                                    estado
+                                    {{-- Estados --}}
+                                <?php
+                                    if($agreement->status=='VIGENTE'){
+                                ?>
+                                        <div class="grid justify-items-center px-10 ">
+                                            <span class="bg-green-600 text-zinc-100 px-4 py-1 rounded-lg shadow-lg">vigente</span>
+
+                                        </div>
+                                <?php
+                                    }
+                                    if($agreement->status=='POR VENCER'){
+                                ?>
+                                        <div class="px-5 grid justify-items-center">
+                                            <span class="bg-red-500 text-zinc-100 px-4 py-1 rounded-lg shadow-lg">Por vencer</span>
+                                        </div>
+                                <?php
+                                    }
+                                    if($agreement->status=='VENCIDO'){
+                                ?>
+                                        <div class="grid justify-items-center px-10 ">
+                                            <span class="bg-zinc-600 text-zinc-100 px-4 py-1 rounded-lg shadow-lg">Vencido</span>
+                                        </div>
+                                <?php
+                                    }
+                                ?>
+                                    {{-- Estados Fin --}}
                                 </td>
                                 <td class="px-3 py-3 text-xs text-center">
-                                   expiracion
+                                    {{$agreement->expiration}}
                                 <td class="px-3 py-3">
                                     <div class="flex items-center space-x-4 text-sm">
-                                        <a href=""
+                                        <a href="{{route('editar.ide',$agreement->id)}}"
                                             class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                             aria-label="Edit">
                                             <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
@@ -69,16 +96,17 @@
                                                 </path>
                                             </svg>
                                         </a>
-                                        <button
+                                        <a target="_blank" href="{{route('descarga.path',$agreement->id)}}"
+                                        {{-- wire:click="descargar('{{$agreement->path}}')" --}}
+
                                             class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
-                                            aria-label="Delete">
+                                            aria-label="Donwload">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                                                 <path d="M10 2a.75.75 0 01.75.75v5.59l1.95-2.1a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0L6.2 7.26a.75.75 0 111.1-1.02l1.95 2.1V2.75A.75.75 0 0110 2z" />
                                                 <path d="M5.273 4.5a1.25 1.25 0 00-1.205.918l-1.523 5.52c-.006.02-.01.041-.015.062H6a1 1 0 01.894.553l.448.894a1 1 0 00.894.553h3.438a1 1 0 00.86-.49l.606-1.02A1 1 0 0114 11h3.47a1.318 1.318 0 00-.015-.062l-1.523-5.52a1.25 1.25 0 00-1.205-.918h-.977a.75.75 0 010-1.5h.977a2.75 2.75 0 012.651 2.019l1.523 5.52c.066.239.099.485.099.732V15a2 2 0 01-2 2H3a2 2 0 01-2-2v-3.73c0-.246.033-.492.099-.73l1.523-5.521A2.75 2.75 0 015.273 3h.977a.75.75 0 010 1.5h-.977z" />
                                               </svg>
-
-                                        </button>
-                                        <a href=""
+                                            </a>
+                                        <a href="{{route('ver.id',$agreement->id)}}"
                                             class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
                                             aria-label="Delete">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -92,13 +120,14 @@
                                     </div>
                                 </td>
                             </tr>
-
+                            @php $i++; @endphp
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
                 {{-- para paginación --}}
                 <div>
-
+                    {{$agreements->links()}}
             </div>
         </div>
     </div>
