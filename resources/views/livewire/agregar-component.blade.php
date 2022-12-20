@@ -3,7 +3,7 @@
         <div class="flex justify-end my-1">
             <a href="{{route('etiquetas') }}">
                 <button
-                    class="mx-2 btn btn-error btn-xs dark:btn text-white dark:btn-xs  dark:btn-error">
+                    class="mx-2 btn btn-primary btn-xs dark:btn text-white dark:btn-xs  dark:btn-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -15,7 +15,7 @@
     </div>
     <div class="grid grid-cols-1 gap-1 font-light ">
         {{-- para datos 1 --}}
-        <div class="shadow-lg grid grid-rows-2 bg-white dark:bg-zinc-900 rounded-lg m-1 p-2">
+        <div class="shadow-sm grid grid-rows-2 bg-white dark:bg-zinc-900 rounded-sm m-1 p-2">
             <div class="grid content-center col-span-1">
                 <label class="label">
                     <span
@@ -43,13 +43,13 @@
                     <span
                         class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Objetivos</span>
                 </label>
-                <textarea wire:model.defer='objetive' name="objetive" id="objetive" placeholder="escribe"></textarea>
+                <textarea wire:model.defer='objetive' name="objetive" id="objetive" placeholder="escribe" class=""></textarea>
                 <x-input-error for="objetive" />
 
             </div>
         </div>
 
-        <div class="shadow-lg bg-white dark:bg-zinc-900 rounded-lg p-2 m-1">
+        <div class="shadow-sm bg-white dark:bg-zinc-900 rounded-sm px-2 py-1 m-1">
             <div class="grid grid-row md:grid-cols-4 gap-4">
                 <div class="grid content-center">
                     <label class="label">
@@ -114,7 +114,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg bg-white  dark:bg-zinc-900 rounded-lg p-2 m-1">
+        <div class="shadow-sm bg-white  dark:bg-zinc-900 rounded-sm px-2 py-1 m-1">
             <div class="grid grid-row md:grid-cols-5 gap-4">
                 <div class="grid content-center">
                     <label class="label">
@@ -168,7 +168,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg bg-white dark:bg-zinc-900 rounded-lg p-2 m-1">
+        <div class="shadow-sm bg-white dark:bg-zinc-900 rounded-sm px-2 py-1 m-1">
             <div class="grid grid-row md:grid-cols-5 gap-4">
                 <div class="grid content-center">
                     <label class="label">
@@ -252,7 +252,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg bg-white dark:bg-zinc-900 rounded-lg m-1 py-2">
+        <div class="shadow-sm bg-white dark:bg-zinc-900 rounded-sm m-1  px-2 py-1">
             <div x-data="{ show: true }" class="w-full px-3 ">
                 <div class=" ">
                     <label for="check-menu" class="  align-middle cursor-pointer w-full flex justify-between">
@@ -283,12 +283,12 @@
 
                 </div>
                 <div x-show="show" class="space-y-6 overflow-hidden dark:bg-zinc-900 dark:text-zinc-100 ">
-                    <div class="form-control px-2  grid-cols-10 grid justify-items-start">
+                    <div class="form-control px-2 grid-cols-3 md:grid-cols-10 grid justify-items-start">
                         @if (sizeof($responsibles) > 0)
                             @foreach ($responsibles as $id => $name)
                                 <label class="cursor-pointer label">
                                     <input wire:model.defer='responsible' type="checkbox" value="{{ $id }}"
-                                        class="checkbox checkbox-xs checkbox-accent dark:checkbox-error"
+                                        class="checkbox checkbox-xs checkbox-info dark:checkbox-error"
                                         name="responsibles[]"{{ is_array(old('responsibles')) && in_array($id, old('responsibles')) ? 'checked' : '' }} />
                                     <span
                                         class="label-text px-1 text-zinc-700 dark:text-zinc-400">{{ $name }}</span>
@@ -302,13 +302,13 @@
             </div>
         </div>
 
-        <div class="shadow-lg bg-white dark:bg-zinc-900 rounded-lg m-1 py-2 font-light">
-            <div class="grid content-center px-3 dark:bg-zinc-900 rounded-lg">
+        <div class="shadow-sm bg-white dark:bg-zinc-900 rounded-sm m-1  px-2 py-1 font-light">
+            <div class="grid content-center px-3 dark:bg-zinc-900 rounded-sm">
                 <span
                     class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500 mb-1">Convenio
                     Escaneado (PDF)</span>
                 <input wire:model.defer='paths' name="paths" id="paths" type="file"
-                    class="file-input file-input-sm file-input-accent dark:file-input-error w-full max-w-xs bg-zinc-200 dark:bg-zinc-800 text-xs font-light" />
+                    class="file-input file-input-xs file-input-info dark:file-input-error w-full max-w-xs bg-zinc-200 dark:bg-zinc-800 text-xs font-light" />
             </div>
             <x-input-error for="paths" />
 
@@ -319,8 +319,8 @@
                 {{-- <button wire:click=""
                     class="mx-4 btn btn-warning btn-xs dark:btn text-white dark:btn-xs dark:btn-warning">CANCELAR</button> --}}
                 <button wire:click.prevent="store()"
-                    class=" btn btn-info text-white btn-xs dark:btn-info"
-                    type="submit" wire:loading.class="bg-blue-300" wire:target="store()">GUARDAR</button>
+                    class=" btn btn-info text-white btn-xs dark:btn-error"
+                    type="submit" wire:loading.class="bg-blue-300" wire:target="store()">GUARDAR CONVENIO</button>
             </div>
         </div>
     </div>

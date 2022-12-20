@@ -1,11 +1,11 @@
 <div>
-    <div class="grid grid-cols-1 gap-1 font-light">
+    <div class="grid grid-cols-1 gap-1 font-light ">
         {{-- para datos 1 --}}
-        <div class="shadow-lg grid grid-rows-2 dark:bg-zinc-900 rounded-lg m-1 p-2">
+        <div class="shadow-sm bg-white grid grid-rows-2 dark:bg-zinc-900 rounded-sm m-1 px-2 py-1">
             <div class="grid content-center col-span-1">
                 <label class="label">
                     <span
-                        class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Resolución</span>
+                        class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500 ">Resolución</span>
                 </label>
                 <input wire:model.defer="resolution" type="text" placeholder=""
                     class="input input-bordered input-sm  w-full bg-zinc-200 dark:bg-zinc-800 dark:input dark:input-sm" />
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg  dark:bg-zinc-900 rounded-lg p-2 m-1">
+        <div class="shadow-sm bg-white  dark:bg-zinc-900 rounded-sm px-2 m-1 py-1">
             <div class="grid grid-row md:grid-cols-4 gap-4">
                 <div class="grid content-center">
                     <label class="label">
@@ -98,7 +98,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg  dark:bg-zinc-900 rounded-lg p-2 m-1">
+        <div class="shadow-sm bg-white  dark:bg-zinc-900 rounded-sm px-2 m-1 py-1">
             <div class="grid grid-row md:grid-cols-5 gap-4">
                 <div class="grid content-center">
                     <label class="label">
@@ -152,7 +152,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg  dark:bg-zinc-900 rounded-lg p-2 m-1">
+        <div class="shadow-sm bg-white  dark:bg-zinc-900 rounded-sm px-2 m-1 py-1">
             <div class="grid grid-row md:grid-cols-5 gap-4">
                 <div class="grid content-center">
                     <label class="label">
@@ -236,7 +236,7 @@
             </div>
         </div>
 
-        <div class="shadow-lg dark:bg-zinc-900 rounded-lg m-1 py-2">
+        <div class="shadow-sm bg-white dark:bg-zinc-900 rounded-sm m-1 px-2 py-1">
             <div x-data="{ show: true }" class="w-full px-3 ">
                 <div class=" ">
                     <label for="check-menu" class="  align-middle cursor-pointer w-full flex justify-between">
@@ -267,12 +267,12 @@
 
                 </div>
                 <div x-show="show" class="space-y-6 overflow-hidden dark:bg-zinc-900 dark:text-zinc-100 ">
-                    <div class="form-control px-2  grid-cols-10 grid justify-items-start">
+                    <div class="form-control px-2 grid-cols-3 md:grid-cols-10 grid justify-items-start">
                         @if (sizeof($responsibles) > 0)
                             @foreach ($responsibles as $id => $name)
                                 <label class="cursor-pointer label">
                                     <input wire:model.defer='responsible' type="checkbox" value="{{ $id }}"
-                                        class="checkbox checkbox-xs checkbox-accent dark:checkbox-error"
+                                        class="checkbox checkbox-xs checkbox-info text-white dark:checkbox-warning       "
                                         name="responsibles[]"{{ is_array(old('responsibles')) && in_array($id, old('responsibles')) ? 'checked' : '' }} />
                                     <span
                                         class="label-text px-1 text-zinc-700 dark:text-zinc-400">{{ $name }}</span>
@@ -286,13 +286,13 @@
             </div>
         </div>
 
-        <div class="shadow-lg dark:bg-zinc-900 rounded-lg m-1 py-2 font-light">
+        <div class="shadow-sm bg-white dark:bg-zinc-900 rounded-sm m-1 px-2 font-light py-1">
             <div class="grid content-center px-3 dark:bg-zinc-900 rounded-lg">
                 <span
                     class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500 mb-1">Convenio
                     Escaneado (PDF)</span>
                 <input wire:model='paths' name="paths" id="paths" type="file"
-                    class="file-input file-input-sm file-input-accent dark:file-input-error w-full max-w-xs bg-zinc-200 dark:bg-zinc-800 text-xs font-light" />
+                    class="file-input file-input-xs file-input-info dark:file-input-warning w-full max-w-xs bg-zinc-200 dark:bg-zinc-800 text-xs font-light" />
             </div>
             <x-input-error for="paths" />
 
@@ -300,14 +300,16 @@
 
         <div class="mx-1">
             <div class="flex justify-end my-5">
-                <button
-                    class="mx-4 btn btn-warning btn-sm dark:btn text-white dark:btn-sm dark:btn-outline dark:btn-warning">CANCELAR</button>
+                {{-- <button
+                    class="mx-4 btn btn-warning btn-sm dark:btn text-white dark:btn-sm dark:btn-outline dark:btn-warning">CANCELAR</button> --}}
                 <button wire:click.prevent="saveup()"
-                    class=" btn btn-info text-white btn-sm dark:btn-outline dark:btn-info"
-                    type="submit">ACTUALIZAR</button>
+                    class=" btn btn-info text-white btn-sm dark:btn-warning"
+                    type="submit">Guardar cambios</button>
             </div>
         </div>
     </div>
+
+
     <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/4.16.0/basic/ckeditor.js"></script>
     <script>

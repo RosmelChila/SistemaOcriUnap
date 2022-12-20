@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="grid grid-rows-1 bg-zinc-100 dark:bg-zinc-800 rounded-lg shadow-lg p-4">
-        
+
         <div>
             <span class="label-text text-zinc-900 dark:text-zinc-100"><b>RESOLUCION</b></span>
             <p class="label-text text-zinc-800 dark:text-zinc-400">{{$agree->resolution}}</p>
@@ -44,7 +44,7 @@
                 @endforeach
             </ol>
         </div>
-        
+
     </div>
     <div class="">
         <div class="flex justify-end my-5">

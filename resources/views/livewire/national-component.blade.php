@@ -8,7 +8,7 @@
 <div class="grid grid-rows gap-4 md:gap-2 md:grid-cols-5 font-light">
     <div class="col-span-1 ">
         <aside class="rounded-lg bg-dark-eval-1" aria-label="Sidebar">
-            <div class="overflow-y-auto py-4 px-3 bg-zinc-50 dark:bg-zinc-900 rounded-lg grid justify-center shadow-lg">
+            <div class="overflow-y-auto py-4 px-3 bg-white dark:bg-zinc-900 rounded-sm grid justify-center shadow-sm">
                 {{-- esta lista es para filtro de paises --}}
                 <ul class="space-y-2">
                     @foreach ($regions as $region)
@@ -26,13 +26,13 @@
     </div>
     <div class="col-span-4">
         <div class="container grid mx-auto ">
-            <div class="w-full overflow-hidden rounded-lg shadow-lg">
+            <div class="w-full overflow-hidden rounded-sm shadow-sm">
                 <div class="w-full overflow-x-auto ">
                     {{-- esta tabla es para el contenido --}}
                     <table class="table-fixed ">
                         <thead>
                             <tr
-                                class=" text-xs font-semibold tracking-wide text-left text-zinc-500 uppercase border-b dark:border-zinc-700 bg-zinc-50 dark:text-zinc-400 dark:bg-zinc-900">
+                                class=" text-xs font-semibold tracking-wide text-left text-zinc-600 uppercase border-b dark:border-zinc-700 bg-teal-100 dark:text-zinc-400 dark:bg-zinc-900">
                                 <th class="px-2 py-2 ">N°</th>
                                 <th class="px-2 py-2 w-1/3 text-center">TÍTULO</th>
                                 <th class="px-2 py-2 w-1/5 text-center">RESOLUCIÓN</th>

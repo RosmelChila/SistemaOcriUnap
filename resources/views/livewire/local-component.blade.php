@@ -8,7 +8,7 @@
 <div class="grid grid-rows gap-4 md:gap-2 md:grid-cols-5 font-light">
     <div class="col-span-1 ">
         <aside class="rounded-lg bg-dark-eval-1" aria-label="Sidebar">
-            <div class="overflow-y-auto py-4 px-3 bg-zinc-50 dark:bg-zinc-900 rounded-lg grid justify-center shadow-lg">
+            <div class="overflow-y-auto py-4 px-3 bg-white dark:bg-zinc-900 rounded-sm grid justify-center shadow-sm">
                 {{-- esta lista es para filtro de paises --}}
                 <ul class="space-y-2">
                     @foreach ($regions as $region)
@@ -26,13 +26,13 @@
     </div>
     <div class="col-span-4">
         <div class="container grid mx-auto ">
-            <div class="w-full overflow-hidden rounded-lg shadow-lg">
+            <div class="w-full overflow-hidden rounded-sm shadow-sm">
                 <div class="w-full overflow-x-auto ">
                     {{-- esta tabla es para el contenido --}}
                     <table class="table-fixed ">
                         <thead>
                             <tr
-                                class=" text-xs font-semibold tracking-wide text-left text-zinc-500 uppercase border-b dark:border-zinc-700 bg-zinc-50 dark:text-zinc-400 dark:bg-zinc-900">
+                                class=" text-xs font-semibold tracking-wide text-left text-zinc-600 uppercase border-b dark:border-zinc-700 bg-teal-100 dark:text-zinc-400 dark:bg-zinc-900">
                                 <th class="px-2 py-2 ">N°</th>
                                 <th class="px-2 py-2 w-1/3 text-center">TÍTULO</th>
                                 <th class="px-2 py-2 w-1/5 text-center">RESOLUCIÓN</th>
@@ -87,7 +87,7 @@
                                 <td class="px-3 py-3">
                                     <div class="flex items-center space-x-4 text-sm">
                                         <a href="{{route('editar.ide',$agreement->id)}}"
-                                            class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
+                                            class="flex items-center justify-between px-1 py-1 text-sm font-medium leading-5 bg-yellow-500  text-white rounded-lg  focus:outline-none focus:shadow-outline-zinc"
                                             aria-label="Edit">
                                             <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                 viewBox="0 0 20 20">
@@ -99,7 +99,7 @@
                                         <a target="_blank" href="{{route('descarga.path',$agreement->id)}}"
                                         {{-- wire:click="descargar('{{$agreement->path}}')" --}}
 
-                                            class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
+                                            class="flex items-center justify-between px-1 py-1 text-sm font-medium leading-5 bg-orange-500 text-white rounded-lg  focus:outline-none focus:shadow-outline-zinc"
                                             aria-label="Donwload">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                                                 <path d="M10 2a.75.75 0 01.75.75v5.59l1.95-2.1a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0L6.2 7.26a.75.75 0 111.1-1.02l1.95 2.1V2.75A.75.75 0 0110 2z" />
@@ -107,7 +107,7 @@
                                               </svg>
                                             </a>
                                         <a href="{{route('ver.id',$agreement->id)}}"
-                                            class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-sky-600 rounded-lg dark:text-zinc-400 focus:outline-none focus:shadow-outline-zinc"
+                                            class="flex items-center justify-between px-1 py-1 text-sm font-medium leading-5 bg-teal-500 rounded-lg text-white focus:outline-none focus:shadow-outline-zinc"
                                             aria-label="Delete">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                                 fill="currentColor" class="w-5 h-5">

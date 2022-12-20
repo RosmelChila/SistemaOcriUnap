@@ -35,8 +35,11 @@
 <div x-data="mainState" :class="{ dark: isDarkMode }" x-cloak>
 
    @include('usuario.navbar')
-   @livewire('inicio-component')
-   @livewire('contacto-component')
+   @livewire('busqueda-component')
+
+
+   {{-- @livewire('inicio-component') --}}
+   {{-- @livewire('contacto-component') --}}
 
    <x-footer/>
 
