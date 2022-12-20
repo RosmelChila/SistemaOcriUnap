@@ -206,7 +206,7 @@
 
         <div x-data="{ open: false }" class="">
             <div class="flex justify-end my-1">
-                <span class="text-xs font-light tracking-wide grid content-center">Descargar reporte estadístico</span>
+                <span class="text-xs font-light tracking-wide grid content-center">Consultar convenios</span>
             </div>
             <div class="flex justify-end ">
                 <button x-on:click="open = !open" wire:click.prevent="reporte()"
