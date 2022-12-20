@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="container grid px-6 mx-auto shadow-lg bg-zinc-100 dark:bg-zinc-900 rounded-lg">
+    <div class="container grid px-6 mx-auto shadow-lg bg-white dark:bg-zinc-900 rounded-lg">
         <div class="w-full overflow-hidden">
             <div class="w-full overflow-x-auto">
                 <table class="table-fixed ">
@@ -32,7 +32,7 @@
                             <th class="px-2 py-2 w-1/6 text-center">VER CONVENIO</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white divide-y dark:divide-zinc-700 dark:bg-zinc-900">
+                    <tbody class="bg-white  dark:divide-zinc-700 dark:bg-zinc-900">
                         @php
                             $i=1;
                         @endphp

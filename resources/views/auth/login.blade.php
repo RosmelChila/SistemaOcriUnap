@@ -1,10 +1,6 @@
 <x-guest-layout>
     <div class="hero min-h-screen bg-white dark:bg-zinc-900 font-light">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-            <div class="text-center lg:text-left">
-                <h1 class="text-5xl font-bold">Ocri - Una</h1>
-                <p class="py-6">Oficina de Cooperación y Relaciones Internacionales</p>
-            </div>
+        <div class="hero-content flex-col md:flex-row-reverse">
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-zinc-100 dark:bg-zinc-800 p-10">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -16,9 +12,9 @@
                             </span>
                             <input type="email" id="email" name="email" placeholder="Email"
                                 :value=""
-                                class="input dark:input w-full bg-zinc-200 dark:bg-zinc-800 shadow-md text-xs" />
+                                class="input dark:input w-full bg-zinc-200 dark:bg-zinc-800  text-xs" />
                         </label>
-                    <x-input-error for="email" />
+                        <x-input-error for="email" />
 
                     </div>
                     <div class="mt-4">
@@ -29,9 +25,9 @@
                             </span>
                             <input type="password" id="password" name="password" placeholder="password"
                                 :value=""
-                                class="input dark:input w-full bg-zinc-200 dark:bg-zinc-800 shadow-md text-xs" />
+                                class="input dark:input w-full bg-zinc-200 dark:bg-zinc-800 text-xs" />
                         </label>
-                    <x-input-error for="password" />
+                        <x-input-error for="password" />
 
                     </div>
                     <div class="mt-4 flex items-center  ">
@@ -46,10 +42,15 @@
                     </div>
 
                     <div class="mt-8 flex justify-end">
-                        <button class="btn btn-accent dark:btn-warning text-zinc-100">INGRESAR</button>
+                        <button class="btn btn-accent dark:btn-success  text-white btn-sm">INGRESAR</button>
                     </div>
                 </form>
             </div>
+            <div class="text-center lg:text-left">
+                <h1 class="text-5xl font-bold">Ocri - Una</h1>
+                <p class="py-6">Oficina de Cooperación y Relaciones Internacionales</p>
+            </div>
+
         </div>
 
 

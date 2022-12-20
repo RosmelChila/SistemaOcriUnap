@@ -1,42 +1,41 @@
-<div class=" bg-white dark:bg-zinc-900 ">
-    <div class="py-32 min-h-screen">
+
+<div class=" bg-white dark:bg-zinc-800 ">
+    <div class="py-10 min-h-screen">
 
         @livewireStyles
-        <div class="grid justify-center  text-white">
-            <div class="text-center mb-5 text-md md:text-5xl font-bold text-zinc-800 dark:text-white ">¡Realiza tu
-                busqueda!</div>
 
-            <div class="grid justify-center px-4">
-                <label for="" class="text-sm text-center text-zinc-800 dark:text-white">Buscar por Titulo de
-                    convenio
+        <div class="grid justify-center">
+            <p class="mb-5 text-zinc-800 dark:text-white font-light">Buscar convenios suscritos con la Universidad Nacional del Altiplano Puno</p>
+        </div>
+        <div class="grid justify-center  text-white my-5">
+
+            <div class="grid justify-center px-4 ">
                     <input wire:model='searchTerm' type="text" placeholder="Ingrese Nombre de Convenio"
-                    class="input w-full text-zinc-900 bg-white dark:text-white dark:bg-zinc-900 shadow-lg my-2 text-xs" /></label>
+                    class="input shadow-sm text-zinc-900 bg-white dark:text-white dark:bg-zinc-900  my-2 text-xs w-80 text-center input-xs" />
             </div>
 
-
-
+            <!-- component -->
         </div>
 
-
-        <div class="grid px-4    md:px-72 ">
+        <div class="px-4 md:px-72 ">
             <div class="w-full overflow-hidden">
-                <div class="w-full overflow-x-auto shadow-lg bg-zinc-100 dark:bg-zinc-900 rounded-lg px-4">
-                    <span class="text-xs">{{ $agreements->count() }} Convenios encontrados</span>
+                <div class="w-full overflow-x-auto bg-zinc-100 dark:bg-zinc-800 rounded-lg px-1">
+                    <span class="text-xs text-zinc-700 dark:text-zinc-100">{{ $agreements->count() }} Convenios encontrados</span>
                     @if ($agreements->count())
-                        <table class="table-fixed ">
+                        <table class="rounded-md bg-white dark:bg-zinc-800">
                             <thead>
                                 <tr
-                                    class=" text-xs font-semibold tracking-wide text-left text-zinc-500 uppercase border-b dark:border-zinc-700 bg-zinc-50 dark:text-zinc-400 dark:bg-zinc-900">
-                                    <th class="px-2 py-2">N°</th>
+                                    class=" text-xs font-semibold text-zinc-800 uppercase dark:border-zinc-700 bg-zinc-100 dark:text-zinc-100 dark:bg-zinc-900 ">
+                                    <th class="px-2 py-2 w-10">N°</th>
                                     <th class="px-2 py-2 cursor-pointer" wire:click="order('title')">TÍTULO</th>
                                     <th class="px-2 py-2 cursor-pointer w-1/6 text-center" wire:click="order('status')">
                                         ESTADO</th>
                                     <th class="px-2 py-2 w-1/6 text-center">ACCIONES</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y dark:divide-zinc-700 dark:bg-zinc-900">
+                            <tbody class="">
                                 @foreach ($agreements as $agreement)
-                                    <tr class="text-zinc-700 dark:text-zinc-400">
+                                    <tr class="text-zinc-800 dark:text-zinc-100">
                                         <td class="px-2 py-2 text-xs">
                                             1
                                         </td>
@@ -108,8 +107,6 @@
                                 </div>
                     @endif
                 </div>
-                {{-- para paginación --}}
-                {{-- {{$expirate->links()}} --}}
                 {{ $agreements->links() }}
             </div>
 

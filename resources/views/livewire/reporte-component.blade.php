@@ -9,7 +9,7 @@
             </div>
             <div class="flex justify-end ">
                 <a target="_blank" href="" wire:click='genpdfcat'
-                    class=" btn btn-info text-white btn-xs dark:btn-outline dark:btn-info">REPORTE</a>
+                    class=" btn btn-info text-white btn-xs  dark:btn-info">REPORTE</a>
                     <input type="text" wire:model='title' placeholder=""
                     class="input input-xs bg-zinc-200 dark:bg-zinc-900 dark:input dark:input-xs text-xs w-full mx-1">
             </div>
@@ -22,7 +22,7 @@
             </div>
             <div class="flex justify-start ">
                 <a  target="_blank" href="" wire:click='genpdfest'
-                    class="btn btn-info text-white btn-xs dark:btn-outline dark:btn-info">REPORTE
+                    class="btn btn-info text-white btn-xs  dark:btn-info">REPORTE
                     ESTADISTICO</a>
             </div>
         </div>
@@ -210,7 +210,7 @@
 
     <div x-data="{ open: false }" class="grid content-end my-5">
         <button x-on:click="open = !open" wire:click.prevent="reporte()"
-            class="justify-self-end btn btn-info text-white btn-sm dark:btn-outline dark:btn-info"
+            class="justify-self-end btn btn-info text-white  btn-xs dark:btn-info"
             type="submit">CONSULTAR</button>
     </div>
     <div x-show="open" x-om:click.away="open = false" class="w-full overflow-x-auto">
@@ -226,7 +226,7 @@
                     <th class="px-2 py-2 w-1/6 text-center">VER CONVENIO</th>
                 </tr>
             </thead>
-            <tbody class="bg-white divide-y dark:divide-zinc-700 dark:bg-zinc-900">
+            <tbody class="bg-white dark:divide-zinc-700 dark:bg-zinc-900">
                 @php
                     $i = 1;
                 @endphp

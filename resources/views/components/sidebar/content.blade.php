@@ -3,20 +3,20 @@
     <x-sidebar.link  title="Dashboard" href="{{ route('dashboard') }}" :isActive="request()->routeIs('dashboard')">
         <x-slot name="icon">
 
-            <x-icons.dashboard class="flex-shrink-0 w-6 h-6 text-cyan-500 dark:text-white" aria-hidden="true" />
+            <x-icons.dashboard class="flex-shrink-0 w-6 h-6 text-zinc-500 dark:text-white" aria-hidden="true" />
         </x-slot>
     </x-sidebar.link>
 
     {{-- Examples --}}
     <x-sidebar.link title="Usuarios" href="{{ route('usuarios') }}" :isActive="request()->routeIs('usuarios')">
         <x-slot name="icon">
-            <x-icons.usuarios class="flex-shrink-0 w-6 h-6 text-cyan-500 dark:text-white" aria-hidden="true" />
+            <x-icons.usuarios class="flex-shrink-0 w-6 h-6 text-zinc-500 dark:text-white" aria-hidden="true" />
         </x-slot>
     </x-sidebar.link>
 
     <x-sidebar.dropdown title="Localización" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
-            <x-icons.mundo class="flex-shrink-0 w-6 h-6 text-cyan-500 dark:text-white" aria-hidden="true" />
+            <x-icons.mundo class="flex-shrink-0 w-6 h-6 text-zinc-500 dark:text-white" aria-hidden="true" />
         </x-slot>
 
         <x-sidebar.sublink title="Internacional" href="{{ route('internacional') }}"
@@ -29,7 +29,7 @@
     {{-- para documentos --}}
     <x-sidebar.dropdown title="Convenios" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
-            <x-icons.conve class="flex-shrink-0 w-6 h-6 text-cyan-500 dark:text-white" aria-hidden="true" />
+            <x-icons.conve class="flex-shrink-0 w-6 h-6 text-zinc-500 dark:text-white" aria-hidden="true" />
         </x-slot>
 
         <x-sidebar.sublink title="Agregar" href="{{ route('agregar') }}"
@@ -41,7 +41,7 @@
     {{-- para usuarios --}}
     <x-sidebar.link title="Soporte" href="{{ route('soporte') }}" :isActive="request()->routeIs('soporte')">
         <x-slot name="icon">
-            <x-icons.help class="flex-shrink-0 w-6 h-6 text-cyan-500 dark:text-white" aria-hidden="true" />
+            <x-icons.help class="flex-shrink-0 w-6 h-6 text-zinc-500 dark:text-white" aria-hidden="true" />
         </x-slot>
     </x-sidebar.link>
 

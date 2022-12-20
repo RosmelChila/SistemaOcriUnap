@@ -41,7 +41,7 @@
                                 <th class="px-2 py-2 w-1/6 text-center">ACCIONES</th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y dark:divide-zinc-700 dark:bg-zinc-900">
+                        <tbody class="bg-white  dark:divide-zinc-700 dark:bg-zinc-900">
                              @php $i=1; @endphp
                              @foreach ($agreements as $agreement)
                             <tr class="text-zinc-700 dark:text-zinc-400">

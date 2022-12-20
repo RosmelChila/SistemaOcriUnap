@@ -3,9 +3,9 @@
         <div class="flex justify-end my-1">
             <a href="{{route('etiquetas') }}">
                 <button
-                    class="mx-2 btn btn-error btn-sm dark:btn text-white dark:btn-sm dark:btn-outline dark:btn-error">
+                    class="mx-2 btn btn-error btn-xs dark:btn text-white dark:btn-xs  dark:btn-error">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
+                        stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
                     </svg>
@@ -13,13 +13,13 @@
             </a>
         </div>
     </div>
-    <div class="grid grid-cols-1 gap-1 font-light">
+    <div class="grid grid-cols-1 gap-1 font-light ">
         {{-- para datos 1 --}}
         <div class="shadow-lg grid grid-rows-2 bg-white dark:bg-zinc-900 rounded-lg m-1 p-2">
             <div class="grid content-center col-span-1">
                 <label class="label">
                     <span
-                        class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500">Resolución</span>
+                        class="label-text text-zinc-900 dark:text-zinc-100 after:content-['*'] after:ml-0.5 after:text-red-500 ">Resolución</span>
                 </label>
                 <input wire:model.defer="resolution" type="text" name="resolution" placeholder=""
                     class="input input-bordered input-sm  w-full bg-zinc-200 dark:bg-zinc-800 dark:input dark:input-sm" />
@@ -36,7 +36,7 @@
                 <x-input-error for="title" />
 
             </div>
-            
+
             {{-- {{ $objetive }} --}}
             <div class="mx-2 grid grid-cols-1 md:row-span-2 w-full " wire:ignore>
                 <label class="label">
@@ -316,10 +316,10 @@
 
         <div class="mx-1">
             <div class="flex justify-end my-5">
-                <button wire:click=""
-                    class="mx-4 btn btn-warning btn-sm dark:btn text-white dark:btn-sm dark:btn-outline dark:btn-warning">CANCELAR</button>
+                {{-- <button wire:click=""
+                    class="mx-4 btn btn-warning btn-xs dark:btn text-white dark:btn-xs dark:btn-warning">CANCELAR</button> --}}
                 <button wire:click.prevent="store()"
-                    class=" btn btn-info text-white btn-sm dark:btn-outline dark:btn-info"
+                    class=" btn btn-info text-white btn-xs dark:btn-info"
                     type="submit" wire:loading.class="bg-blue-300" wire:target="store()">GUARDAR</button>
             </div>
         </div>
@@ -327,7 +327,7 @@
     <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/4.16.0/basic/ckeditor.js"></script>
     <script>
-        
+
         $(document).ready(function(){
             const editor = CKEDITOR.replace('objetive');
             editor.on('change',function(event){
