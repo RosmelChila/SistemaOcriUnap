@@ -255,38 +255,32 @@
                             {{ $agreement->resolution }}
                         </td>
                         <td class="px-2 py-2 text-xs">
-                            <?php
-                                        if($agreement->status=='VIGENTE'){
-                                    ?>
-                            <div class="grid justify-items-center px-10 ">
-                                <button
-                                    class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-green-500 shadow-lg shadow-green-500/50 text-zinc-100">
-                                    Activo
-                                </button>
-                            </div>
-                            <?php
-                                        }
-                                        if($agreement->status=='POR VENCER'){
-                                    ?>
-                            <div class="px-5 grid justify-items-center">
-                                <button
-                                    class=" px-2 py-1 rounded-md rounded-r-lg cursor-no-drop bg-red-500 shadow-lg shadow-red-500/50 text-zinc-100">
-                                    Por vencer
-                                </button>
-                            </div>
-                            <?php
-                                        }
-                                        if($agreement->status=='VENCIDO'){
-                                    ?>
-                            <div class="grid justify-items-center px-10 ">
-                                <button
-                                    class="px-3 py-1 rounded-md rounded-r-lg cursor-no-drop bg-zinc-500 shadow-lg shadow-zinc-500/50 text-zinc-100">
-                                    Vencido
-                                </button>
-                            </div>
-                            <?php
-                                        }
-                                    ?>
+                            {{-- Estados --}}
+                        <?php
+                            if($agreement->status=='VIGENTE'){
+                        ?>
+                                <div class="grid justify-items-center px-10 ">
+                                    <span class="bg-green-600 text-zinc-100 px-4 py-1 rounded-lg shadow-lg">vigente</span>
+
+                                </div>
+                        <?php
+                            }
+                            if($agreement->status=='POR VENCER'){
+                        ?>
+                                <div class="px-5 grid justify-items-center">
+                                    <span class="bg-red-500 text-zinc-100 px-4 py-1 rounded-lg shadow-lg">Por vencer</span>
+                                </div>
+                        <?php
+                            }
+                            if($agreement->status=='VENCIDO'){
+                        ?>
+                                <div class="grid justify-items-center px-10 ">
+                                    <span class="bg-zinc-600 text-zinc-100 px-4 py-1 rounded-lg shadow-lg">Vencido</span>
+                                </div>
+                        <?php
+                            }
+                        ?>
+                            {{-- Estados Fin --}}
                         </td>
                         <td class="px-3 py-3 text-xs text-center">
                             {{ $agreement->expiration }}
