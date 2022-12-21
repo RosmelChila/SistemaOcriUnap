@@ -39,8 +39,8 @@
                         </a>
                     </li>
                     @else
-                    <li class="bg-zinc-800"><a href="{{ route('ver.id', $notification->data['id'])}}">
-                            <span class="p-2 text-xs text-white">Un convenio esta{{ $notification->data['status'] }}</span>
+                    <li class="bg-white dark:bg-zinc-800"><a href="{{ route('ver.id', $notification->data['id'])}}">
+                            <span class="p-2 text-xs text-black dark:text-white">Un convenio esta{{ $notification->data['status'] }}</span>
                         </a>
                     </li>
                     @endif
