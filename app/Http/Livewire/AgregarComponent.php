@@ -13,7 +13,6 @@ use App\Models\Responsible;
 use App\Models\User;
 use App\Notifications\AgreementExpiration;
 use Carbon\Carbon;
-use Illuminate\Console\View\Components\Alert;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;

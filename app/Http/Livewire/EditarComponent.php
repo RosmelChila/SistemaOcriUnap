@@ -26,7 +26,7 @@ class EditarComponent extends Component
     public $location,$coverage_id,$organization_id,$paths,$responsible=[];
     public $countryid,$regionid,$provinceid,$districtid;
     public $regions=[],$provinces=[],$districts=[];
-    public $ide,$agreement=[],$status;
+    public $ide,$agreement=[],$status,$notification;
 
     protected $rules=[
         'paths'=>['nullable']
@@ -61,6 +61,7 @@ class EditarComponent extends Component
             $this->days=$agreement->days;
             $this->objetive=$agreement->objetive;
             $this->sector=$agreement->sector;
+            $this->notification=$agreement->notification;
             $this->organization=$agreement->organization;
             $this->location=$agreement->location;
             $this->status=$agreement->status;
@@ -133,6 +134,7 @@ class EditarComponent extends Component
     $endDate=$date->addMonths($this->months);
     $endDate=$date->addDays($this->days);
     $status=$this->status;
+    $notification=$this->notification;
     $expiration=$endDate->toDateString();
     if($endDate>=$today){
         if($this->years==0 && $this->months==0 && $this->days==0){
@@ -202,10 +204,11 @@ class EditarComponent extends Component
     
     $agree=Agreement::find($this->ide);
     $agree->responsibles()->sync($this->responsible);
+
     if($this->status==$status){
 
     }elseif($agree->status=='POR VENCER'){
-        Notification::send($users,new AgreementExpiration ($agree->id,$agree->status));
+        Notification::send($users,new AgreementExpiration ($this->ide,$status));
     }
     $this->emit('alert');$this->emit('alert');
     }
