@@ -48,10 +48,12 @@
                                             </tr>
                                         </thead>
                                         <tbody class="">
+                                            @php $i=1; @endphp
                                             @foreach ($agreements as $agreement)
                                                 <tr class="text-zinc-800 dark:text-zinc-100">
+
                                                     <td class="px-2 py-2 text-xs">
-                                                        1
+                                                        @php echo $i; @endphp
                                                     </td>
                                                     <td class="px-2 py-2 text-xs">
                                                         {{ $agreement->title }}
@@ -110,6 +112,7 @@
                                                             </button></a>
                                                     </td>
                                                 </tr>
+                                                @php $i++; @endphp
                                             @endforeach
                                         </tbody>
                                     </table>
