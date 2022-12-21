@@ -11,6 +11,7 @@ use App\Models\Province;
 use App\Models\Region;
 use App\Models\Responsible;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Livewire\Component;
 
 class ReporteComponent extends Component
@@ -105,20 +106,23 @@ class ReporteComponent extends Component
         }
         $CI=$estadistico->where('location','INTERNACIONAL')->count();
         $CN=$estadistico->whereIn('location',['NACIONAL','LOCAL'])->count();
-        $CUN=$estadistico->where('organization_id','1')->count();
-        $CHCS=$estadistico->where('organization_id','2')->count();
-        $CM=$estadistico->where('organization_id','3')->count();
-        $CMUN=$estadistico->where('organization_id','4')->count();
-        $CDIP=$estadistico->where('organization_id','5')->count();
-        $CEF=$estadistico->where('organization_id','6')->count();
-        $CEM=$estadistico->where('organization_id','7')->count();
+        $CUN=$estadistico->where('organization_id','4')->count();
+        $CHCS=$estadistico->where('organization_id','1')->count();
+        $CM=$estadistico->where('organization_id','5')->count();
+        $CMUN=$estadistico->where('organization_id','6')->count();
+        $CDIP=$estadistico->where('organization_id','7')->count();
+        $CEF=$estadistico->where('organization_id','3')->count();
+        $CEM=$estadistico->where('organization_id','2')->count();
         $CCC=$estadistico->where('organization_id','8')->count();
         $CONG=$estadistico->where('organization_id','9')->count();
         $CDEP=$estadistico->where('organization_id','10')->count();
         $OTROS=$estadistico->where('organization_id','11')->count();
-        $TOTAL=$estadistico->where('organization_id','12')->count();
+        $TOTAL=$estadistico->count();
+        $titulo=$this->title;
+        $anios=Carbon::parse($this->inidate)->isoFormat('Y');
         $dataes=[
-            'CI'=>$CI,'CN'=>$CN
+            'CI'=>$CI,'CN'=>$CN,'CUN'=>$CUN,'CHCS'=>$CHCS,'CM'=>$CM,'CMUN'=>$CMUN,'CDIP'=>$CDIP,'CEF'=>$CEF,'CEM'=>$CEM,
+            'CCC'=>$CCC,'CONG'=>$CONG,'CDEP'=>$CDEP,'OTROS'=>$OTROS,'TOTAL'=>$TOTAL,'titulo'=>$titulo,'anios'=>$anios
             // ,$CUN,$CHCS,$CM,$CMUN,$CDIP,$CEF,$CEM,$CCC,$CONG,$CDEP,$OTROS
         ];
         $pdf=Pdf::loadView('PDFES',$dataes)->output();
