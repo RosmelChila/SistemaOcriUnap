@@ -178,7 +178,7 @@
 
 
 
-    <div class="py-4 grid grid-cols-3 justify-center">
+    <div class="py-4 grid grid-cols-1 md:grid-cols-3 justify-center">
         <div class="">
             <div class=" my-1">
 
@@ -305,7 +305,7 @@
                     @endphp
                 @empty
                     <tr>
-                        <td colspan="6" style="height: 100px" align="center">No hay Resultados</td>
+                        <td colspan="6" style="height: 100px" class="text-xs text-center">No hay Resultados</td>
                     </tr>
                 @endforelse
             </tbody>
