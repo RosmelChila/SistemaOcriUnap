@@ -124,10 +124,11 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{$agreements->links('pagination-links')}}
+
                 </div>
                 {{-- para paginación --}}
                 <div>
-                    {{$agreements->links()}}
             </div>
         </div>
     </div>

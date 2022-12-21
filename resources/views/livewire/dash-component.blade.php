@@ -100,7 +100,7 @@
                 </table>
             </div>
             {{-- para paginación --}}
-            {{$expirate->links()}}
+            {{$expirate->links('pagination-links')}}
         </div>
     </div>
 </div>

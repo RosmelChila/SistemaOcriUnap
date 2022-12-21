@@ -46,7 +46,7 @@
 
     <div class="">
         <div class="flex justify-end my-5">
-            <a target="_blank" href="{{route('descarga.path',$agreement[0]->id)}}" class=" btn btn-info text-white btn-sm dark:btn-outline dark:btn-info">DESCARGAR CONVENIO</a>
+            <a target="_blank" href="{{route('descarga.path',$agreement[0]->id)}}" class=" btn btn-info text-white btn-xs dark:btn-info">DESCARGAR CONVENIO</a>
         </div>
     </div>
 </x-app-layout>
