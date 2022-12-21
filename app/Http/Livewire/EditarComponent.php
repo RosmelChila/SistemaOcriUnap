@@ -11,7 +11,9 @@ use App\Models\Province;
 use App\Models\Region;
 use App\Models\Responsible;
 use App\Models\User;
+use App\Notifications\AgreementExpiration;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -172,6 +174,11 @@ class EditarComponent extends Component
         $path=$this->paths;
     }
     Agreement::where('id',$this->ide)->update($validatedDate+['country_id'=>$this->countryid]+['region_id'=>$this->regionid]+['province_id'=>$this->provinceid]+['district_id'=>$this->districtid]+['path'=>$path]+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
-    $this->emit('alert');
+    $agree=Agreement::find($this->ide);
+    $agree->responsibles()->sync($this->responsible);
+    if($agree->status=='POR VENCER'){
+        Notification::send($users,new AgreementExpiration ($agree->id,$agree->status));
+    }
+    $this->emit('alert');$this->emit('alert');
     }
 }
