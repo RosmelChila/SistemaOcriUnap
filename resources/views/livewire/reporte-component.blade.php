@@ -22,19 +22,19 @@
                 class="text-xs tracking-wide grid justify-items-center text-zinc-800 dark:text-zinc-100 font-seerif">ESTADOS</span>
             <div class="form-control grid justify-items-start">
                 <label class="cursor-pointer label">
-                    <input wire:model.defer='responsible' type="checkbox" value=""
+                    <input wire:model.defer='status' type="checkbox" value="VIGENTE"
                         class="checkbox checkbox-xs checkbox-warning font-serif" />
-                    <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Activo</span>
+                    <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">VIGENTE</span>
                 </label>
                 <label class="cursor-pointer label">
-                    <input wire:model.defer='responsible' type="checkbox" value=""
+                    <input wire:model.defer='status' type="checkbox" value="POR VENCER"
                         class="checkbox checkbox-xs checkbox-warning font-serif" />
-                    <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Por vencer</span>
+                    <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">POR VENCER</span>
                 </label>
                 <label class="cursor-pointer label">
-                    <input wire:model.defer='responsible' type="checkbox" value=""
+                    <input wire:model.defer='status' type="checkbox" value="VENCIDO"
                         class="checkbox checkbox-xs checkbox-warning font-serif" />
-                    <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">Vencidos</span>
+                    <span class="label-text px-1 text-zinc-700 dark:text-zinc-400 text-xs">VENCIDOS</span>
                 </label>
 
             </div>
