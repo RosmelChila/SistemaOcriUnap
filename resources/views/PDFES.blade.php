@@ -80,8 +80,8 @@
 
         <!-- Envuelva el contenido de su PDF dentro de una etiqueta principal -->
         <main>
-            <p style="text-align: center"><b>RESUMEN DE CONVENIOS SUSCRITOS DURANTE EL AÑO 2019</b></p>
-            <P>La Oficina de Cooperacion y Relaciones Internacionales, durante el año 2019 ha registrado la firma de 75 convenios.</P>
+            <p style="text-align: center"><b>{{$titulo}}</b></p>
+            <P>La Oficina de Cooperacion y Relaciones Internacionales, durante el año {{$anios}} ha registrado la firma de {{$TOTAL}} convenios.</P>
             <table class="center" style="width: 78%">
                     <tr>
                         <td><li>Convenios Internacionales</li></td>
@@ -93,7 +93,7 @@
                     </tr>
                     <tr>
                         <td style="padding-left: 8%"><li type="circle">Convenios Con Universidades Nacionales</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$CUN}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 8%"><li type="circle">Convenios Con Entidades Publicas</li></td>
@@ -101,19 +101,19 @@
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"><li type="square">Convenios con Hospitales y Centros de Salud</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$CHCS}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"><li type="square">Convenios con Ministerios</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$CM}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"><li type="square">Convenios con Municipalidades</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$CMUN}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"><li type="square">Convenios con Diversas Instituciones Públicas</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$CDIP}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 8%"><li type="circle">Convenios Con Entidades Privadas</li></td>
@@ -121,31 +121,31 @@
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"><li type="square">Convenios con Entidades Financieras</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$CEF}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"><li type="square">Convenios con Empresas Mineras</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$CEM}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"><li type="square">Convenios con Comunidades Campesinas</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$CCC}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"><li type="square">Convenios con ONGs</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$CONG}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"><li type="square">Convenios con Diversas Entidades Privadas</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$CDEP}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"><li>OTROS</li></td>
-                        <td style="text-align:right">09</td>
+                        <td style="text-align:right">{{$OTROS}}</td>
                     </tr>
                     <tr>
                         <td style="padding-left: 16%"></td>
-                        <td style="text-align:right"><b><u>TOTAL:75</u></b></td>
+                        <td style="text-align:right"><b><u>TOTAL: {{ $TOTAL}}</u></b></td>
                     </tr>
             </table>
            {{-- <ol>
