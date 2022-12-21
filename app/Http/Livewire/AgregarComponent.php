@@ -28,6 +28,10 @@ class AgregarComponent extends Component
     public $countryid=null,$regionid=null,$provinceid=null,$districtid=null;
     public $regions=[],$provinces=[],$districts=[];
 
+    protected $rules=[
+        'paths'=>['required','mimes:pdf']
+    ];
+
     public function updatedCountryid($country_id){
         $this->regions=Region::where('country_id',$country_id)->pluck('name','id');
         $this->regionid=null;
@@ -75,6 +79,7 @@ class AgregarComponent extends Component
             $region_id=$this->regionid;
             $province_id=$this->provinceid;
             $district_id=$this->districtid;
+        $this->validate();
         $validatedDate = $this->validate([
             'resolution'=>'required|unique:agreements,resolution',
             'title'=>'required',
@@ -105,7 +110,7 @@ class AgregarComponent extends Component
 
     $expiration=$endDate->toDateString();
     if($endDate>=$today){
-        if($this->years==0 && $this->months && $this->days==0){
+        if($this->years==0 && $this->months==0 && $this->days==0){
             $status='VIGENTE';
             $notification=$date->addYears('1000');
         }

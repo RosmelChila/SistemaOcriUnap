@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Notifications\AgreementExpiration;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -25,7 +26,11 @@ class EditarComponent extends Component
     public $location,$coverage_id,$organization_id,$paths,$responsible=[];
     public $countryid,$regionid,$provinceid,$districtid;
     public $regions=[],$provinces=[],$districts=[];
-    public $ide,$pathh,$agreement=[];
+    public $ide,$agreement=[],$status;
+
+    protected $rules=[
+        'paths'=>['nullable']
+    ];
 
     public function updatedCountryid($country_id){
         $this->regions=Region::where('country_id',$country_id)->pluck('name','id');
@@ -58,6 +63,7 @@ class EditarComponent extends Component
             $this->sector=$agreement->sector;
             $this->organization=$agreement->organization;
             $this->location=$agreement->location;
+            $this->status=$agreement->status;
             $this->coverage_id=$agreement->coverage_id;
             $this->organization_id=$agreement->organization_id;
             $this->countryid=$agreement->country_id;
@@ -67,8 +73,8 @@ class EditarComponent extends Component
             $this->provinceid=$agreement->province_id;
             $this->districts=District::where('province_id',$this->provinceid)->pluck('name','id');
             $this->districtid=$agreement->district_id;
-            $this->paths=$agreement->path;
-            $this->pathh=$agreement->path;
+            // $this->paths=$agreement->path;
+            // $this->pathh=$agreement->path;
             foreach($agreement->responsibles as $resp){
                 $this->responsible[]=$resp->id;
             }
@@ -95,7 +101,9 @@ class EditarComponent extends Component
         // $agreements=Agreement::find($this->ide);
         return view('livewire.editar-component',$dates);
     }
+
     public function saveup(){
+        $this->validate();
         $validatedDate = $this->validate([
             'resolution'=>'required|unique:agreements,resolution,'.$this->ide,
             'title'=>'required',
@@ -124,10 +132,10 @@ class EditarComponent extends Component
     $endDate=$date->addYears($this->years);
     $endDate=$date->addMonths($this->months);
     $endDate=$date->addDays($this->days);
-
+    $status=$this->status;
     $expiration=$endDate->toDateString();
     if($endDate>=$today){
-        if($this->years==0 && $this->months && $this->days==0){
+        if($this->years==0 && $this->months==0 && $this->days==0){
             $status='VIGENTE';
             $notification=$date->addYears('1000');
         }
@@ -168,15 +176,35 @@ class EditarComponent extends Component
             $status='VENCIDO';
         }
     }
-    if($this->paths!=$this->pathh){
-       $path=$this->paths->store('files'); 
+    if($this->paths==null){
+        Agreement::where('id',$this->ide)->update($validatedDate+
+        ['country_id'=>$this->countryid]+
+        ['region_id'=>$this->regionid]+
+        ['province_id'=>$this->provinceid]+
+        ['district_id'=>$this->districtid]+
+        ['expiration'=>$expiration]+
+        ['status'=>$status]+
+        ['notification'=>$notification]);
     }else{
-        $path=$this->paths;
+        $folder="convenios";
+        $path_save=Storage::disk('s3')->put($folder,$this->paths,'public');
+        $path=$path_save;
+        Agreement::where('id',$this->ide)->update($validatedDate+
+        ['country_id'=>$this->countryid]+
+        ['region_id'=>$this->regionid]+
+        ['province_id'=>$this->provinceid]+
+        ['district_id'=>$this->districtid]+
+        ['path'=>$path]+
+        ['expiration'=>$expiration]+
+        ['status'=>$status]+
+        ['notification'=>$notification]);
     }
-    Agreement::where('id',$this->ide)->update($validatedDate+['country_id'=>$this->countryid]+['region_id'=>$this->regionid]+['province_id'=>$this->provinceid]+['district_id'=>$this->districtid]+['path'=>$path]+['expiration'=>$expiration]+['status'=>$status]+['notification'=>$notification]);
+    
     $agree=Agreement::find($this->ide);
     $agree->responsibles()->sync($this->responsible);
-    if($agree->status=='POR VENCER'){
+    if($this->status==$status){
+
+    }elseif($agree->status=='POR VENCER'){
         Notification::send($users,new AgreementExpiration ($agree->id,$agree->status));
     }
     $this->emit('alert');$this->emit('alert');
