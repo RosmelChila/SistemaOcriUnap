@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </label>
-            <div tabindex="0" class="dropdown-content menu p-2  bg-white dark:bg-zinc-900 rounded-lg  font-light shadow-sm overflow-y-autO h-80">
+            <div tabindex="0" class="dropdown-content menu p-2  bg-white dark:bg-zinc-900 rounded-lg  font-light shadow-sm overflow-y-auto h-80">
             <ul class="w-64" >
                 @forelse (Auth::user()->Notifications as $notification)
                     @if (!is_null($notification->read_at))
