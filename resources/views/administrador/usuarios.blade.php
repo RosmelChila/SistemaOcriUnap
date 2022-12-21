@@ -2,7 +2,7 @@
         <div class="grid grid-rows-1 gap-4 justify-center md:grid-cols-4">
             @foreach ($users as $user)
             {{-- para foto y datos de usuario --}}
-            <div class="md:basis-1/3 mx-4 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-sm   dark:bg-zinc-900 dark:text-zinc-100 bg-teal-100">
+            <div class="md:basis-1/3 mx-4 max-w-sm p-6 space-y-6 overflow-hidden rounded-lg shadow-sm   dark:bg-zinc-900 dark:text-zinc-100 bg-white">
                 <div class="flex space-x-4">
                     {{-- esta imagen cambia aletriamente icono si no logras filtrar img eso no mas queda --}}
                     <img alt="" src="https://source.unsplash.com/100x100/?portrait" class="object-cover w-12 h-12 rounded-full shadow dark:bg-zinc-500">

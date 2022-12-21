@@ -11,9 +11,9 @@
                 <strong class="mx-4">Contacto</strong> Con equipo de desarrollo</span>
         </div>
         <section class="text-gray-600 body-font">
-            <div class="container px-5  mx-auto flex flex-wrap">
-                <div class="flex flex-wrap -m-4">
-                    <div class="p-4 lg:w-1/2 md:w-full">
+            <div class="">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="">
                         <div
                             class="flex rounded-lg bg-white shadow-md dark:bg-zinc-900 p-8 sm:flex-row flex-col">
                             <div
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-4 lg:w-1/2 md:w-full">
+                    <div class="">
                         <div
                             class="flex rounded-lg bg-white shadow-md dark:bg-zinc-900 p-8 sm:flex-row flex-col">
                             <div
