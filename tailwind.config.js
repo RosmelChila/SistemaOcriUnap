@@ -26,6 +26,12 @@ module.exports = {
                     'eval-3': '#2C3142',
                 },
                 cyan: colors.cyan,
+                'inicio': '#65A8D1',
+                'btn-inicio': '#16425B',
+                'inicio-ver': '#5A6268',
+                'inicio-descargar': '#138496',
+
+
             },
         },
     },
