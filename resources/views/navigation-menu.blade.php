@@ -30,8 +30,8 @@
                     </div>
                 </div>
             </label>
-
-            <ul tabindex="0" class="dropdown-content menu p-2  bg-white dark:bg-zinc-900 rounded-lg w-60 font-light shadow-sm">
+            <div tabindex="0" class="dropdown-content menu p-2  bg-white dark:bg-zinc-900 rounded-lg  font-light shadow-sm overflow-y-auto h-50">
+            <ul class="w-48" >
                 @forelse (Auth::user()->Notifications as $notification)
                     @if (!is_null($notification->read_at))
                     <li><a href="{{ route('ver.id', $notification->data['id'])}}">
@@ -50,7 +50,7 @@
                     <span class="p-2 text-xs">No hay Notificaciones</span>
                 @endforelse
             </ul>
-
+</div>
         </div>
 
         {{-- para notificaciones con bolita arriba --}}
