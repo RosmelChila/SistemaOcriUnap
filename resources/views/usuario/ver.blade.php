@@ -36,12 +36,10 @@
 
    @include('usuario.navbar')
     @livewire('ver-component',['id2'=>$id2])
-   @livewire('contacto-component')
-
    <x-footer/>
+   @livewireScripts
 
 </div>
-@livewireScripts
 </body>
 </html>
 

@@ -27,7 +27,7 @@
 
             </div>
 
-                    <div class="">
+                    <div class="py-10">
                         <div class="w-full overflow-hidden">
                             <span class="text-xs text-white dark:text-zinc-100">{{ $agreements->count() }} Convenios
                                 encontrados</span>
@@ -125,7 +125,7 @@
                                             </div>
                             @endif
                         </div>
-                        {{ $agreements->links() }}
+                        {{ $agreements->links('pagination-links') }}
                     </div>
 
                 </div>

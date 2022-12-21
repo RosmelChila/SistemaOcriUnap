@@ -1,7 +1,7 @@
 <!-- component -->
 <div class="">
     <div class="antialiased dark:bg-zinc-900">
-        <div class="w-full text-black bg-inicio dark:text-zinc-200 dark:bg-zinc-900 font-light">
+        <div class="w-full  bg-inicio text-zinc-200 dark:bg-zinc-900 font-light">
             <div x-data="{ open: true }"
                 class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
                 <div class="flex flex-row items-center justify-between p-4">
