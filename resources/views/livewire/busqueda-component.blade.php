@@ -15,7 +15,7 @@
                     Buscar convenios
                     {{-- <span class="underline decoration-teal-500">customers</span> --}}
                 </h1>
-                <p class="py-2 text-white ">Suscritos con la Universidad Nacional del Altiplano Puno</p>
+                <p class="py-5 text-white ">Suscritos con la Universidad Nacional del Altiplano Puno</p>
                 <div class="grid justify-center md:flex">
                     <input wire:model='searchTerm' type="text" placeholder="Ingrese Nombre de Convenio"
                     class="input shadow-sm text-zinc-900 bg-white dark:text-white dark:bg-zinc-900 py-2  text-xs w-80 text-center input-sm" />
